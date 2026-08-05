@@ -24,9 +24,9 @@ export function ProductCategoriesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categoriesData.map((category) => (
-            <Link 
-              key={category.id} 
-              href={`/products/${category.id}`}
+            <Link
+              key={category.id}
+              href={`/products?category=${category.id}`}
               className="group flex flex-col p-8 rounded-2xl bg-background/5 border border-primary-foreground/10 hover:bg-background/10 hover:border-primary-foreground/20 transition-all duration-300"
             >
               <div className="flex items-center gap-4 mb-6">

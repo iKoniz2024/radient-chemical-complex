@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Container } from "@/components/shared/Container"
+import { categoriesData } from "@/data/categories"
 
 export function Footer() {
   return (
@@ -33,10 +34,9 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <h3 className="font-montserrat font-semibold text-lg">Products</h3>
             <nav aria-label="Product Links" className="flex flex-col gap-2 text-sm text-primary-foreground/80">
-              <Link href="/products/pretreatment" className="hover:text-secondary transition-colors">Pretreatment Auxiliaries</Link>
-              <Link href="/products/dyeing" className="hover:text-secondary transition-colors">Dyeing Auxiliaries</Link>
-              <Link href="/products/finishing" className="hover:text-secondary transition-colors">Finishing Agents</Link>
-              <Link href="/products/denim-washing" className="hover:text-secondary transition-colors">Denim Washing</Link>
+              {categoriesData.map((cat) => (
+                <Link key={cat.id} href={`/products?category=${cat.id}`} className="hover:text-secondary transition-colors">{cat.title}</Link>
+              ))}
             </nav>
           </div>
 
