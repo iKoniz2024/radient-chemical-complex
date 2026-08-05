@@ -43,5 +43,11 @@ export const companyData = {
     title: "Founder & CEO",
     quote: "Great things in business are never done by one person; they're accomplished by a team united in purpose and passion.",
     content: "Since the inception of Radiant Chemical Complex in 2017, our journey has been guided by a clear vision: to transform the textile industry through innovation, sustainability, and excellence. We remain dedicated to pushing the boundaries of innovation, fostering sustainable growth, and upholding the trust placed in us by our stakeholders."
+  },
+  contact: {
+    phone: "+880 1911-288839",
+    address: "House 19, Road 4/A, Diabari, Sector 15, Uttara, Dhaka-1230",
+    email: "info@radiantgroup-bd.com",
+    website: "www.radiantgroup-bd.com"
   }
 }
