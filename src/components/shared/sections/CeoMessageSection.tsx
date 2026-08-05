@@ -25,7 +25,7 @@ export function CeoMessageSection() {
               <Quote className="absolute top-10 right-10 w-24 h-24 text-primary-foreground/5 rotate-180" />
               
               <h2 className="font-montserrat text-2xl md:text-3xl font-bold mb-6 text-secondary leading-snug">
-                "{ceoMessage.quote}"
+                &quot;{ceoMessage.quote}&quot;
               </h2>
               
               <p className="text-primary-foreground/80 text-lg leading-relaxed mb-10">

@@ -2,10 +2,25 @@ import { notFound } from "next/navigation"
 import { Container } from "@/components/shared/Container"
 import { SectionWrapper } from "@/components/shared/SectionWrapper"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { productsData } from "@/data/products"
 import { categoriesData } from "@/data/categories"
-import Link from "next/link"
 import { ArrowLeft, CheckCircle2 } from "lucide-react"
+import { Metadata } from "next"
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params
+  const product = productsData.find((p) => p.id === id)
+  
+  if (!product) {
+    return { title: 'Product Not Found' }
+  }
+  
+  return {
+    title: product.name,
+    description: product.properties.substring(0, 160) + '...',
+  }
+}
 
 export async function generateStaticParams() {
   return productsData.map((product) => ({

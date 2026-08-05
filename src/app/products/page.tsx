@@ -5,6 +5,12 @@ import { CategoryFilter } from "@/features/products/components/CategoryFilter"
 import { ProductGrid } from "@/features/products/components/ProductGrid"
 import { ProductCard } from "@/features/products/components/ProductCard"
 import { productsData } from "@/data/products"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: 'Products Portfolio',
+  description: 'Explore our comprehensive range of sustainable textile auxiliary chemicals including pretreatment, dyeing, finishing, and denim washing.',
+}
 
 export default async function ProductsPage({
   searchParams,

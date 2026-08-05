@@ -4,6 +4,12 @@ import { SectionWrapper } from "@/components/shared/SectionWrapper"
 import { AnimatedContainer } from "@/components/shared/AnimatedContainer"
 import { ContactForm } from "@/features/contact/components/ContactForm"
 import { ContactInfo } from "@/features/contact/components/ContactInfo"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description: 'Have a question or need a custom R&D solution? Reach out to the Radiant Chemical Complex team today.',
+}
 
 export default function ContactPage() {
   return (
@@ -35,7 +41,7 @@ export default function ContactPage() {
         <span className="text-muted-foreground/60 font-montserrat font-semibold tracking-widest uppercase relative z-20">
           Interactive Google Map
         </span>
-        <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 opacity-20 pointer-events-none">
+        <div aria-hidden="true" className="absolute inset-0 grid grid-cols-6 grid-rows-6 opacity-20 pointer-events-none">
           {Array.from({ length: 36 }).map((_, i) => (
             <div key={i} className="border-[0.5px] border-foreground"></div>
           ))}

@@ -6,23 +6,28 @@ import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Radiant Chemical Complex',
+    default: 'Radiant Chemical Complex | Sustainable Textile Solutions',
+  },
+  description: 'Global leader in sustainable textile auxiliary chemicals, developing eco-friendly, high-efficiency solutions for modern textile production.',
+  openGraph: {
+    title: 'Radiant Chemical Complex',
+    description: 'Eco-friendly textile chemical solutions.',
+    type: 'website',
+  },
+}
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  display: 'swap',
 })
 
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
-  display: 'swap',
 })
-
-export const metadata: Metadata = {
-  title: 'Radiant Chemical Complex | Solutions for a Sustainable Future',
-  description: 'Global leader in sustainable textile auxiliary chemicals. Eco-friendly solutions for pretreatment, dyeing, finishing, denim washing, and PSF industries.',
-  keywords: ['textile chemicals', 'auxiliary chemicals', 'sustainable textiles', 'denim washing', 'eco-friendly dye', 'Radiant Chemical Complex'],
-}
 
 export default function RootLayout({
   children,

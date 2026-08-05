@@ -13,7 +13,7 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <Link 
       href={`/products/${product.id}`}
-      className="group flex flex-col h-full bg-background border border-border rounded-xl p-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300"
+      className="group flex flex-col h-full bg-background border border-border rounded-xl p-6 shadow-sm hover:shadow-md hover:border-primary/30 hover:-translate-y-1 transition-all duration-300"
     >
       <div className="mb-4">
         <span className="inline-block px-3 py-1 rounded-full bg-muted text-xs font-medium text-muted-foreground mb-3">

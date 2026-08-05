@@ -22,7 +22,7 @@ export function Footer() {
           
           <div className="flex flex-col gap-4">
             <h3 className="font-montserrat font-semibold text-lg">Company</h3>
-            <nav className="flex flex-col gap-2 text-sm text-primary-foreground/80">
+            <nav aria-label="Company Links" className="flex flex-col gap-2 text-sm text-primary-foreground/80">
               <Link href="/about" className="hover:text-secondary transition-colors">About Us</Link>
               <Link href="/sustainability" className="hover:text-secondary transition-colors">Sustainability</Link>
               <Link href="/customization" className="hover:text-secondary transition-colors">R&D Customization</Link>
@@ -32,7 +32,7 @@ export function Footer() {
 
           <div className="flex flex-col gap-4">
             <h3 className="font-montserrat font-semibold text-lg">Products</h3>
-            <nav className="flex flex-col gap-2 text-sm text-primary-foreground/80">
+            <nav aria-label="Product Links" className="flex flex-col gap-2 text-sm text-primary-foreground/80">
               <Link href="/products/pretreatment" className="hover:text-secondary transition-colors">Pretreatment Auxiliaries</Link>
               <Link href="/products/dyeing" className="hover:text-secondary transition-colors">Dyeing Auxiliaries</Link>
               <Link href="/products/finishing" className="hover:text-secondary transition-colors">Finishing Agents</Link>
