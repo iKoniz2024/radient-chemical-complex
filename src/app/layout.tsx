@@ -3,6 +3,9 @@ import { Inter, Montserrat } from 'next/font/google'
 import './globals.css'
 import { cn } from '@/lib/utils'
 
+import { Navbar } from '@/components/layout/Navbar'
+import { Footer } from '@/components/layout/Footer'
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -36,7 +39,11 @@ export default function RootLayout({
         )}
       >
         <div className="flex min-h-screen flex-col">
-          {children}
+          <Navbar />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
         </div>
       </body>
     </html>
