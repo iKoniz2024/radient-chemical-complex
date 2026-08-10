@@ -5,7 +5,7 @@ import { CoreValuesSection } from "@/components/shared/sections/CoreValuesSectio
 import { WhyChooseUsSection } from "@/components/shared/sections/WhyChooseUsSection"
 import { TimelineSection } from "@/features/about/components/TimelineSection"
 import { CeoMessageSection } from "@/components/shared/sections/CeoMessageSection"
-import { AnimatedContainer } from "@/components/shared/AnimatedContainer"
+import { CinematicSection } from "@/components/shared/animations/CinematicSection"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -16,30 +16,36 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHero 
-        title="About Radiant Chemical Complex" 
-        description="Pioneering sustainable, high-efficiency textile auxiliary solutions for a greener, thriving global industry."
-      />
+      <CinematicSection depth={1.5}>
+        <PageHero 
+          title="About Radiant Chemical Complex" 
+          description="Pioneering sustainable, high-efficiency textile auxiliary solutions for a greener, thriving global industry."
+        />
+      </CinematicSection>
       
-      <CompanyStorySection />
+      <CinematicSection depth={1}>
+        <CompanyStorySection />
+      </CinematicSection>
       
-      <AnimatedContainer animation="fade-up">
+      <CinematicSection depth={1.2}>
         <MissionVisionSection />
-      </AnimatedContainer>
+      </CinematicSection>
       
-      <AnimatedContainer animation="fade-in">
+      <CinematicSection depth={0.8}>
         <CoreValuesSection />
-      </AnimatedContainer>
+      </CinematicSection>
       
-      <TimelineSection />
+      <CinematicSection depth={1.1}>
+        <TimelineSection />
+      </CinematicSection>
       
-      <AnimatedContainer animation="fade-up">
+      <CinematicSection depth={1}>
         <WhyChooseUsSection />
-      </AnimatedContainer>
+      </CinematicSection>
       
-      <AnimatedContainer animation="scale-up">
+      <CinematicSection depth={1.3}>
         <CeoMessageSection />
-      </AnimatedContainer>
+      </CinematicSection>
     </>
   )
 }

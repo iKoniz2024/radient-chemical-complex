@@ -1,4 +1,6 @@
 import { Container } from "@/components/shared/Container"
+import { AnimatedContainer } from "@/components/shared/AnimatedContainer"
+import { FloatingElement } from "@/components/shared/animations/FloatingElement"
 
 export interface PageHeroProps {
   title: string
@@ -7,20 +9,32 @@ export interface PageHeroProps {
 
 export function PageHero({ title, description }: PageHeroProps) {
   return (
-    <div className="bg-primary text-primary-foreground py-20 relative overflow-hidden">
+    <div className="bg-primary text-primary-foreground py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-secondary/10 mix-blend-overlay"></div>
       
       {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-secondary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 -z-0"></div>
+      <FloatingElement className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 -z-0" duration={6} yOffset={20}>
+        <div className="w-[400px] h-[400px] bg-secondary/20 rounded-full blur-3xl"></div>
+      </FloatingElement>
+      <FloatingElement className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 -z-0" duration={8} yOffset={15} delay={1}>
+        <div className="w-[300px] h-[300px] bg-accent/20 rounded-full blur-3xl"></div>
+      </FloatingElement>
       
       <Container className="relative z-10">
-        <h1 className="font-montserrat text-4xl md:text-5xl font-bold mb-4">{title}</h1>
-        {description && (
-          <p className="text-xl text-primary-foreground/80 max-w-2xl">
-            {description}
-          </p>
-        )}
+        <AnimatedContainer animation="stagger-container" staggerChildren={0.15}>
+          <AnimatedContainer animation="stagger-item">
+            <h1 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-glow">{title}</h1>
+          </AnimatedContainer>
+          {description && (
+            <AnimatedContainer animation="stagger-item">
+              <p className="text-xl text-primary-foreground/80 max-w-2xl leading-relaxed">
+                {description}
+              </p>
+            </AnimatedContainer>
+          )}
+        </AnimatedContainer>
       </Container>
     </div>
   )
 }
+

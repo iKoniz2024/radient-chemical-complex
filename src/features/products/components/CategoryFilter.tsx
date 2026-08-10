@@ -8,7 +8,7 @@ export interface CategoryFilterProps {
 
 export function CategoryFilter({ activeCategoryId }: CategoryFilterProps) {
   return (
-    <div className="flex flex-col gap-2 bg-background border border-border rounded-xl p-4 sticky top-24">
+    <div className="flex flex-col gap-2 bg-background border border-border rounded-xl p-4">
       <h3 className="font-montserrat font-bold text-lg mb-2 px-3">Categories</h3>
       
       <Link 

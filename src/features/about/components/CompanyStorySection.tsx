@@ -29,16 +29,16 @@ export function CompanyStorySection() {
             </div>
           </AnimatedContainer>
           
-          <AnimatedContainer animation="fade-in" delay={0.2}>
-            <div className="relative h-[500px] w-full rounded-2xl overflow-hidden bg-muted flex items-center justify-center border border-border shadow-lg">
+          <AnimatedContainer animation="fade-in" delay={0.2} className="relative perspective-1000">
+            <div className="relative h-[500px] w-full rounded-3xl overflow-hidden bg-muted flex items-center justify-center border border-border shadow-[0_20px_50px_rgba(0,0,0,0.15)] group hover:shadow-[0_25px_60px_rgba(217,155,34,0.15)] transition-all duration-700 preserve-3d">
               {/* Factory / Scale Image Placeholder */}
-               <span className="text-muted-foreground/50 font-montserrat tracking-widest uppercase">Production Facilities</span>
+               <span className="text-muted-foreground/50 font-montserrat tracking-widest uppercase relative z-10 group-hover:scale-110 transition-transform duration-700">Production Facilities</span>
                
                {/* Stats Overlay */}
-               <div className="absolute bottom-0 left-0 right-0 bg-background/90 backdrop-blur border-t border-border p-6 grid grid-cols-3 divide-x divide-border">
+               <div className="absolute bottom-0 left-0 right-0 bg-background/80 backdrop-blur-xl border-t border-border p-6 grid grid-cols-3 divide-x divide-border translate-z-20">
                   {companyData.about.stats.map((stat, idx) => (
-                    <div key={idx} className="flex flex-col items-center text-center px-2">
-                      <span className="font-montserrat text-xl md:text-2xl font-bold text-primary">{stat.value}</span>
+                    <div key={idx} className="flex flex-col items-center text-center px-2 group/stat">
+                      <span className="font-montserrat text-xl md:text-2xl font-bold text-primary group-hover/stat:text-secondary group-hover/stat:scale-110 transition-all duration-300">{stat.value}</span>
                       <span className="text-xs font-medium text-muted-foreground uppercase mt-1">{stat.label}</span>
                     </div>
                   ))}

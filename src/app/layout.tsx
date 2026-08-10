@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
+import { SmartScrollButton } from '@/components/shared/SmartScrollButton'
 
 export const metadata: Metadata = {
   title: {
@@ -49,6 +50,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <SmartScrollButton />
         </div>
       </body>
     </html>

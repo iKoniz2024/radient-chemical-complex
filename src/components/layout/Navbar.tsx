@@ -7,11 +7,19 @@ import { Container } from "@/components/shared/Container"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion"
+import Image from "next/image"
+import { MagneticButton } from "@/components/shared/animations/MagneticButton"
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
+  const { scrollY } = useScroll()
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsScrolled(latest > 50)
+  })
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -37,41 +45,55 @@ export function Navbar() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className={cn(
+      "sticky top-0 z-50 w-full transition-all duration-500 ease-out border-b",
+      isScrolled 
+        ? "bg-background/70 backdrop-blur-xl border-border/40 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] py-0" 
+        : "bg-background/0 border-transparent py-2"
+    )}>
       <Container>
         <div className="flex h-16 md:h-20 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2" aria-label="Go to homepage">
-              <div aria-hidden="true" className="flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold font-montserrat text-sm md:text-base">
-                RCC
-              </div>
-              <span className="font-montserrat font-bold text-lg md:text-xl text-primary hidden sm:inline-block">
-                Radiant Chemical
-              </span>
+              <Image
+                src="/logo.png"
+                alt="Radiant Chemical Complex"
+                width={350}
+                height={90}
+                className="h-20 md:h-24 w-auto"
+                priority
+              />
             </Link>
           </div>
           
           {/* Desktop Navigation */}
           <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium">
             {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                href={link.href} 
-                className={cn(
-                  "transition-colors hover:text-secondary",
-                  pathname === link.href ? "text-secondary font-semibold" : "text-foreground/80"
-                )}
-                aria-current={pathname === link.href ? "page" : undefined}
-              >
-                {link.name}
-              </Link>
+              <MagneticButton key={link.name} strength={0.1}>
+                <Link 
+                  href={link.href} 
+                  className={cn(
+                    "transition-all duration-300 hover:text-secondary relative group px-2 py-1",
+                    pathname === link.href ? "text-secondary font-semibold" : "text-foreground/80"
+                  )}
+                  aria-current={pathname === link.href ? "page" : undefined}
+                >
+                  {link.name}
+                  <span className={cn(
+                    "absolute -bottom-1 left-0 w-full h-0.5 bg-secondary origin-left transition-transform duration-300",
+                    pathname === link.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  )} />
+                </Link>
+              </MagneticButton>
             ))}
           </nav>
 
           <div className="flex items-center gap-4">
-            <Button variant="default" className="hidden lg:flex" asChild>
-              <Link href="/contact">Request Sample</Link>
-            </Button>
+            <MagneticButton strength={0.15}>
+              <Button variant="default" className="hidden lg:flex shadow-[0_0_15px_rgba(217,155,34,0.3)] hover:shadow-[0_0_25px_rgba(217,155,34,0.5)] transition-shadow duration-300" asChild>
+                <Link href="/contact">Request Sample</Link>
+              </Button>
+            </MagneticButton>
             
             {/* Mobile Menu Toggle */}
             <Button 
@@ -94,11 +116,11 @@ export function Navbar() {
         {isMobileMenuOpen && (
           <motion.div
             id="mobile-menu"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="absolute top-[65px] left-0 right-0 h-[calc(100vh-65px)] bg-background/95 backdrop-blur-xl border-t border-border/50 md:hidden z-40 overflow-y-auto"
+            initial={{ opacity: 0, y: -20, filter: "blur(10px)", scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
+            exit={{ opacity: 0, y: -20, filter: "blur(10px)", scale: 0.95 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="absolute top-[65px] left-0 right-0 h-[calc(100vh-65px)] bg-background/80 backdrop-blur-2xl border-t border-border/50 md:hidden z-40 overflow-y-auto"
           >
             <Container className="py-8 flex flex-col gap-6">
               <nav className="flex flex-col gap-4" aria-label="Mobile Navigation">

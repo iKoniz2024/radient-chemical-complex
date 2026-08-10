@@ -94,3 +94,69 @@
     @apply bg-background text-foreground antialiased;
   }
 }
+
+@layer utilities {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  }
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)];
+  }
+  .depth-1 {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
+  }
+  .depth-2 {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.1), 0 10px 15px -3px rgba(0,0,0,0.1);
+  }
+  .depth-3 {
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05), 0 20px 25px -5px rgba(0,0,0,0.1);
+  }
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  .text-glow-secondary {
+    text-shadow: 0 0 10px rgba(217, 155, 34, 0.5), 0 0 20px rgba(217, 155, 34, 0.3);
+  }
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .cinematic-container {
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+  }
+}
+
+/* Ensure 3D transforms don't cause overflow */
+html {
+  overflow-x: clip;
+}
+
+/* Smooth GPU-accelerated transforms */
+.cinematic-layer {
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+}
+
+/* Product Marquee */
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+@keyframes marquee-right {
+  0% { transform: translateX(-33.333%); }
+  100% { transform: translateX(0); }
+}
+.animate-marquee-left {
+  animation: marquee-left var(--marquee-duration, 40s) linear infinite;
+}
+.animate-marquee-right {
+  animation: marquee-right var(--marquee-duration, 40s) linear infinite;
+}
+.product-marquee:hover .animate-marquee-left,
+.product-marquee:hover .animate-marquee-right {
+  animation-play-state: paused;
+}
