@@ -92,7 +92,7 @@ export function HomeHero() {
               Solutions for a <span className="text-secondary">Sustainable</span> Future
             </motion.h1>
 
-            <motion.p variants={itemVariants} className="max-w-[42rem] text-base leading-relaxed text-primary-foreground/80 sm:text-lg sm:leading-7">
+            <motion.p variants={itemVariants} className="max-w-2xl text-base leading-relaxed text-primary-foreground/80 sm:text-lg sm:leading-7">
               We are a catalyst for change in the global textile industry, developing eco-friendly, high-efficiency, and cost-effective solutions that meet the demands of modern textile production.
             </motion.p>
 
@@ -142,7 +142,7 @@ export function HomeHero() {
           </motion.div>
 
           {/* Right Side - Catalog Mosaic */}
-          <div className="hidden lg:flex items-center justify-center relative h-[550px]">
+          <div className="hidden lg:flex items-center justify-center relative h-137.5">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={scrolled ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
@@ -171,7 +171,7 @@ export function HomeHero() {
                     <TiltCard tiltAmount={15} scaleAmount={1.1} className="w-full h-full">
                       <motion.div
                         animate={{ rotate: page.rotate }}
-                        className="relative aspect-[3/4] rounded-xl bg-white/10 shadow-[0_15px_35px_rgba(0,0,0,0.25)] backdrop-blur-md border border-white/20 overflow-hidden transition-all duration-300 group-hover:shadow-[0_25px_50px_rgba(217,155,34,0.25)] group-hover:border-secondary/50"
+                        className="relative aspect-3/4 rounded-xl bg-white/10 shadow-[0_15px_35px_rgba(0,0,0,0.25)] backdrop-blur-md border border-white/20 overflow-hidden transition-all duration-300 group-hover:shadow-[0_25px_50px_rgba(217,155,34,0.25)] group-hover:border-secondary/50"
                       >
                         <Image
                           src={page.src}
@@ -180,7 +180,7 @@ export function HomeHero() {
                           className="object-cover rounded-xl transition-transform duration-700 group-hover:scale-110"
                           sizes="200px"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-tr from-secondary/40 via-transparent to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl mix-blend-overlay" />
+                        <div className="absolute inset-0 bg-linear-to-tr from-secondary/40 via-transparent to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl mix-blend-overlay" />
                       </motion.div>
                     </TiltCard>
                   </FloatingElement>
