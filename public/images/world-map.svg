@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D99B22" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#D99B22" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="#0A1930"/>
+  
+  <!-- Simplified World Map Continents -->
+  <g fill="#1a365d" stroke="#2d4a7a" stroke-width="0.5">
+    <!-- North America -->
+    <path d="M120,80 L180,60 L220,80 L240,120 L220,160 L180,180 L140,160 L120,120 Z"/>
+    <!-- South America -->
+    <path d="M200,220 L240,200 L260,240 L250,300 L220,340 L180,320 L170,260 Z"/>
+    <!-- Europe -->
+    <path d="M350,80 L400,60 L440,80 L450,120 L420,140 L380,150 L350,120 Z"/>
+    <!-- Africa -->
+    <path d="M360,160 L420,150 L460,180 L470,240 L440,300 L380,310 L350,260 L340,200 Z"/>
+    <!-- Asia -->
+    <path d="M460,60 L560,40 L640,80 L680,140 L660,200 L580,220 L500,200 L460,140 Z"/>
+    <!-- Australia -->
+    <path d="M620,300 L680,280 L720,300 L730,340 L700,370 L640,360 L610,330 Z"/>
+  </g>
+  
+  <!-- Network Connection Lines -->
+  <g stroke="#D99B22" stroke-width="1" opacity="0.6" filter="url(#blur)">
+    <!-- Americas to Europe -->
+    <line x1="220" y1="120" x2="380" y2="100"/>
+    <line x1="200" y1="140" x2="360" y2="120"/>
+    <!-- Europe to Asia -->
+    <line x1="440" y1="100" x2="520" y2="80"/>
+    <line x1="450" y1="120" x2="540" y2="100"/>
+    <!-- Asia to Australia -->
+    <line x1="600" y1="200" x2="660" y2="300"/>
+    <line x1="580" y1="180" x2="640" y2="280"/>
+    <!-- Africa to Europe -->
+    <line x1="400" y1="160" x2="400" y2="120"/>
+    <!-- Americas to Asia (Pacific) -->
+    <line x1="240" y1="100" x2="680" y2="100" opacity="0.3"/>
+  </g>
+  
+  <!-- Network Nodes (Cities/Hubs) -->
+  <g fill="#D99B22">
+    <!-- North America -->
+    <circle cx="180" cy="100" r="4" opacity="0.9"/>
+    <circle cx="160" cy="120" r="3" opacity="0.7"/>
+    <!-- South America -->
+    <circle cx="220" cy="260" r="3" opacity="0.7"/>
+    <!-- Europe -->
+    <circle cx="400" cy="100" r="5" opacity="0.9"/>
+    <circle cx="380" cy="110" r="3" opacity="0.7"/>
+    <!-- Africa -->
+    <circle cx="420" cy="220" r="3" opacity="0.7"/>
+    <!-- Asia -->
+    <circle cx="560" cy="120" r="5" opacity="0.9"/>
+    <circle cx="600" cy="160" r="4" opacity="0.8"/>
+    <circle cx="520" cy="100" r="3" opacity="0.7"/>
+    <!-- Australia -->
+    <circle cx="680" cy="320" r="3" opacity="0.7"/>
+  </g>
+  
+  <!-- Glowing Hubs -->
+  <g filter="url(#blur)">
+    <circle cx="400" cy="100" r="15" fill="url(#glow)" opacity="0.5"/>
+    <circle cx="560" cy="120" r="15" fill="url(#glow)" opacity="0.5"/>
+    <circle cx="180" cy="100" r="12" fill="url(#glow)" opacity="0.4"/>
+  </g>
+  
+  <!-- Bangladesh Highlight -->
+  <circle cx="540" cy="170" r="8" fill="#D99B22" opacity="0.9"/>
+  <circle cx="540" cy="170" r="12" fill="none" stroke="#D99B22" stroke-width="1" opacity="0.6"/>
+  
+  <!-- China Highlight -->
+  <circle cx="580" cy="140" r="8" fill="#D99B22" opacity="0.9"/>
+  <circle cx="580" cy="140" r="12" fill="none" stroke="#D99B22" stroke-width="1" opacity="0.6"/>
+</svg>

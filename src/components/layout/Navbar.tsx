@@ -1,21 +1,29 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useSyncExternalStore } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Container } from "@/components/shared/Container"
 import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Sun, Moon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion"
 import Image from "next/image"
 import { MagneticButton } from "@/components/shared/animations/MagneticButton"
+import { useTheme } from "next-themes"
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  )
   const pathname = usePathname()
   const { scrollY } = useScroll()
+  const { theme, setTheme } = useTheme()
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50)
@@ -56,7 +64,7 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2" aria-label="Go to homepage">
               <Image
-                src="/logo.png"
+                src="/images/logo.png"
                 alt="Radiant Chemical Complex"
                 width={350}
                 height={90}
@@ -94,6 +102,19 @@ export function Navbar() {
                 <Link href="/contact">Request Sample</Link>
               </Button>
             </MagneticButton>
+
+            {/* Theme Toggle */}
+            {mounted && (
+              <Button
+                variant="outline"
+                size="icon"
+                className="border-border bg-transparent text-foreground hover:bg-muted"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+              >
+                {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              </Button>
+            )}
             
             {/* Mobile Menu Toggle */}
             <Button 
@@ -120,7 +141,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
             exit={{ opacity: 0, y: -20, filter: "blur(10px)", scale: 0.95 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="absolute top-[65px] left-0 right-0 h-[calc(100vh-65px)] bg-background/80 backdrop-blur-2xl border-t border-border/50 md:hidden z-40 overflow-y-auto"
+            className="absolute top-16.25 left-0 right-0 h-[calc(100vh-65px)] bg-background/80 backdrop-blur-2xl border-t border-border/50 md:hidden z-40 overflow-y-auto"
           >
             <Container className="py-8 flex flex-col gap-6">
               <nav className="flex flex-col gap-4" aria-label="Mobile Navigation">

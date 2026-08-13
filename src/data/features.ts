@@ -1,10 +1,10 @@
-import { CheckCircle2, Factory, FlaskConical, Leaf } from 'lucide-react'
+import { CheckCircle2, Factory, FlaskConical, Leaf, FlaskRound, Send, Rocket, Cog } from 'lucide-react'
 
 export const customizationProcess = [
-  { step: "01", title: "Develop New Products", description: "According to specific requirements and targets." },
-  { step: "02", title: "Provide Samples", description: "To customers for rigorous testing and validation." },
-  { step: "03", title: "Pilot & Mass Production", description: "Scaling up from successful pilot batches." },
-  { step: "04", title: "Apply to Production", description: "Integrating seamlessly into dyeing and finishing." }
+  { step: "01", title: "Develop New Products", description: "According to specific requirements and targets.", icon: FlaskRound },
+  { step: "02", title: "Provide Samples", description: "To customers for rigorous testing and validation.", icon: Send },
+  { step: "03", title: "Pilot & Mass Production", description: "Scaling up from successful pilot batches.", icon: Rocket },
+  { step: "04", title: "Apply to Production", description: "Integrating seamlessly into dyeing and finishing.", icon: Cog }
 ]
 
 export const whyChooseUs = [

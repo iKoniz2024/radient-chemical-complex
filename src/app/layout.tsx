@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Montserrat } from 'next/font/google'
 import './globals.css'
 import { cn } from '@/lib/utils'
+import { Providers } from '@/components/layout/Providers'
 
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
@@ -13,6 +14,9 @@ export const metadata: Metadata = {
     default: 'Radiant Chemical Complex | Sustainable Textile Solutions',
   },
   description: 'Global leader in sustainable textile auxiliary chemicals, developing eco-friendly, high-efficiency solutions for modern textile production.',
+  icons: {
+    icon: '/images/logo.png',
+  },
   openGraph: {
     title: 'Radiant Chemical Complex',
     description: 'Eco-friendly textile chemical solutions.',
@@ -36,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased',
@@ -44,14 +48,16 @@ export default function RootLayout({
           montserrat.variable
         )}
       >
-        <div className="flex min-h-screen flex-col">
-          <Navbar />
-          <main className="flex-1">
-            {children}
-          </main>
-          <Footer />
-          <SmartScrollButton />
-        </div>
+        <Providers attribute="class" defaultTheme="light" enableSystem>
+          <div className="flex min-h-screen flex-col">
+            <Navbar />
+            <main className="flex-1">
+              {children}
+            </main>
+            <Footer />
+            <SmartScrollButton />
+          </div>
+        </Providers>
       </body>
     </html>
   )

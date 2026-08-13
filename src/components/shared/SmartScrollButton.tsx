@@ -102,9 +102,9 @@ export function SmartScrollButton() {
               perspective: "1000px",
             }}
           >
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-transparent opacity-50" />
-            <div className="absolute inset-[1px] rounded-full bg-gradient-to-br from-primary/80 to-primary/95" />
-            <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent via-white/5 to-white/10" />
+            <div className="absolute inset-0 rounded-full bg-linear-to-br from-white/10 to-transparent opacity-50" />
+            <div className="absolute inset-px rounded-full bg-linear-to-br from-primary/80 to-primary/95" />
+            <div className="absolute inset-0 rounded-full bg-linear-to-t from-transparent via-white/5 to-white/10" />
 
             <AnimatePresence mode="wait">
               <motion.div

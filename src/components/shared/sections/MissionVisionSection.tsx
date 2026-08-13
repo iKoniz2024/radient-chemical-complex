@@ -40,7 +40,7 @@ export function MissionVisionSection() {
           <AnimatedContainer animation="slide-right" delay={0.2} className="h-full">
             <TiltCard tiltAmount={8} scaleAmount={1.02} className="h-full">
               <div className="flex flex-col h-full bg-primary text-primary-foreground rounded-3xl p-8 md:p-10 shadow-[0_15px_40px_rgba(10,25,48,0.4)] border border-primary-foreground/10 group relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-50" />
+                <div className="absolute inset-0 bg-linear-to-br from-secondary/10 to-transparent opacity-50" />
                 
                 <div className="relative z-10 flex items-center gap-5 mb-8">
                   <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-secondary/20 text-secondary shadow-[0_0_20px_rgba(217,155,34,0.2)] group-hover:scale-110 group-hover:bg-secondary group-hover:text-primary transition-all duration-500">
@@ -55,7 +55,7 @@ export function MissionVisionSection() {
                   {companyData.vision.points.map((point, idx) => (
                     <li key={idx} className="flex items-start gap-3 group/item">
                       <div className="w-2 h-2 rounded-full bg-secondary mt-2.5 shrink-0 group-hover/item:scale-150 transition-transform shadow-[0_0_10px_rgba(217,155,34,0.8)]"></div>
-                      <span className="text-primary-foreground/90 group-hover/item:text-white transition-colors">{point}</span>
+                      <span className="text-primary-foreground/90 group-hover/item:text-primary-foreground transition-colors">{point}</span>
                     </li>
                   ))}
                 </ul>

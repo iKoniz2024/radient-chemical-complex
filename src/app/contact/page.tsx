@@ -45,7 +45,7 @@ export default function ContactPage() {
       </CinematicSection>
       
       <CinematicSection depth={1.2}>
-        <AnimatedContainer animation="fade-up" className="w-full h-[400px] md:h-[500px] border-t border-border overflow-hidden">
+        <AnimatedContainer animation="fade-up" className="w-full h-100 md:h-125 border-t border-border overflow-hidden">
           <GoogleMap
             lat={23.8691713}
             lng={90.3591579}

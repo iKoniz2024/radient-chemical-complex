@@ -12,7 +12,7 @@ export function ContactCtaSection() {
       {/* Decorative Background */}
       <div className="absolute inset-0 bg-secondary/10 -z-10"></div>
       <FloatingElement duration={8} yOffset={25} className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 -z-10">
-        <div className="w-[800px] h-[800px] bg-secondary/10 rounded-full blur-3xl"></div>
+        <div className="w-200 h-200 bg-secondary/10 rounded-full blur-3xl"></div>
       </FloatingElement>
       
       <Container>
@@ -37,6 +37,12 @@ export function ContactCtaSection() {
               <Button size="lg" variant="outline" className="bg-white/50 backdrop-blur-md" asChild>
                 <Link href="/products">Browse Catalog</Link>
               </Button>
+            </MagneticButton>
+            <MagneticButton strength={0.1}>
+              {/* <Button size="lg" variant="outline" className="bg-white/50 backdrop-blur-md" asChild>
+                <Link href="/https://drive.google.com/file/d/15_5J839RMjIzvYUyk-bA9LQD3b0iX7e_/view?usp=sharing">Download Catalog</Link>
+              </Button> */}
+              <Link href="https://drive.google.com/file/d/15_5J839RMjIzvYUyk-bA9LQD3b0iX7e_/view?usp=sharing" target="_blank" rel="noopener noreferrer"> <Button size="lg" variant="outline" className="bg-white/50 backdrop-blur-md"> Download Catalog </Button> </Link>
             </MagneticButton>
           </AnimatedContainer>
         </AnimatedContainer>

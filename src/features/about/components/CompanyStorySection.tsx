@@ -29,20 +29,22 @@ export function CompanyStorySection() {
             </div>
           </AnimatedContainer>
           
-          <AnimatedContainer animation="fade-in" delay={0.2} className="relative perspective-1000">
-            <div className="relative h-[500px] w-full rounded-3xl overflow-hidden bg-muted flex items-center justify-center border border-border shadow-[0_20px_50px_rgba(0,0,0,0.15)] group hover:shadow-[0_25px_60px_rgba(217,155,34,0.15)] transition-all duration-700 preserve-3d">
-              {/* Factory / Scale Image Placeholder */}
-               <span className="text-muted-foreground/50 font-montserrat tracking-widest uppercase relative z-10 group-hover:scale-110 transition-transform duration-700">Production Facilities</span>
-               
-               {/* Stats Overlay */}
-               <div className="absolute bottom-0 left-0 right-0 bg-background/80 backdrop-blur-xl border-t border-border p-6 grid grid-cols-3 divide-x divide-border translate-z-20">
-                  {companyData.about.stats.map((stat, idx) => (
-                    <div key={idx} className="flex flex-col items-center text-center px-2 group/stat">
-                      <span className="font-montserrat text-xl md:text-2xl font-bold text-primary group-hover/stat:text-secondary group-hover/stat:scale-110 transition-all duration-300">{stat.value}</span>
-                      <span className="text-xs font-medium text-muted-foreground uppercase mt-1">{stat.label}</span>
-                    </div>
-                  ))}
-               </div>
+          <AnimatedContainer animation="fade-in" delay={0.2}>
+            <div className="grid grid-cols-2 gap-4">
+              {companyData.about.stats.map((stat, idx) => (
+                <div key={idx} className="bg-primary/5 border border-primary/10 rounded-2xl p-8 flex flex-col items-center text-center hover:border-secondary/40 hover:bg-secondary/5 transition-all duration-500 group">
+                  <span className="font-montserrat text-3xl md:text-4xl font-bold text-secondary group-hover:scale-110 transition-transform duration-300">{stat.value}</span>
+                  <span className="text-sm font-medium text-muted-foreground uppercase mt-3 tracking-wider">{stat.label}</span>
+                </div>
+              ))}
+              <div className="bg-secondary/10 border border-secondary/20 rounded-2xl p-8 flex flex-col items-center text-center hover:border-secondary/40 hover:bg-secondary/5 transition-all duration-500 group col-span-2">
+                <span className="font-montserrat text-2xl md:text-3xl font-bold text-foreground leading-tight">
+                  {companyData.about.title}
+                </span>
+                <span className="text-sm font-medium text-muted-foreground uppercase mt-3 tracking-wider">
+                  Since 2017
+                </span>
+              </div>
             </div>
           </AnimatedContainer>
           

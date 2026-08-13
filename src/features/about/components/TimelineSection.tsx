@@ -115,7 +115,7 @@ export function TimelineSection() {
             initial={{ scaleY: 0 }}
             animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
             transition={{ type: "spring" as const, stiffness: 60, damping: 20, delay: 0.2 }}
-            className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2 origin-top"
+            className="absolute left-7 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2 origin-top"
           />
 
           <div className="flex flex-col gap-16">

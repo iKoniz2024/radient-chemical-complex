@@ -13,11 +13,11 @@ export function PageHero({ title, description }: PageHeroProps) {
       <div className="absolute inset-0 bg-secondary/10 mix-blend-overlay"></div>
       
       {/* Decorative Elements */}
-      <FloatingElement className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 -z-0" duration={6} yOffset={20}>
-        <div className="w-[400px] h-[400px] bg-secondary/20 rounded-full blur-3xl"></div>
+      <FloatingElement className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 z-0" duration={6} yOffset={20}>
+        <div className="w-100 h-100 bg-secondary/20 rounded-full blur-3xl"></div>
       </FloatingElement>
-      <FloatingElement className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 -z-0" duration={8} yOffset={15} delay={1}>
-        <div className="w-[300px] h-[300px] bg-accent/20 rounded-full blur-3xl"></div>
+      <FloatingElement className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 z-0" duration={8} yOffset={15} delay={1}>
+        <div className="w-75 h-75 bg-accent/20 rounded-full blur-3xl"></div>
       </FloatingElement>
       
       <Container className="relative z-10">

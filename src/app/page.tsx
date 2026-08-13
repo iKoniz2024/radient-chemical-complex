@@ -11,7 +11,9 @@ import { CinematicSection } from "@/components/shared/animations/CinematicSectio
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'Home | Sustainable Textile Chemicals',
+  title: {
+    absolute: 'Home | Radiant Chemical Complex',
+  },
   description: 'Welcome to Radiant Chemical Complex. We are a catalyst for change in the global textile industry, offering high-efficiency solutions.',
 }
 

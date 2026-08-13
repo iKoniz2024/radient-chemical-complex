@@ -4,8 +4,11 @@ import { categoriesData } from "@/data/categories"
 import Image from "next/image"
 import { AnimatedContainer } from "@/components/shared/AnimatedContainer"
 import { FloatingElement } from "@/components/shared/animations/FloatingElement"
+import { companyData } from "@/data/company"
 
 export function Footer() {
+
+  const { contact } = companyData
   return (
     <footer className="w-full border-t border-border bg-primary text-primary-foreground relative overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
@@ -15,7 +18,7 @@ export function Footer() {
             <FloatingElement yOffset={5} duration={3}>
               <div className="bg-white rounded-full p-2 inline-flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.1)]">
                 <Image
-                  src="/logo.png"
+                  src="/images/logo.png"
                   alt="Radiant Chemical Complex"
                   width={120}
                   height={50}
@@ -52,10 +55,9 @@ export function Footer() {
           <AnimatedContainer animation="stagger-item" className="flex flex-col gap-4">
             <h3 className="font-montserrat font-semibold text-lg text-glow-secondary">Contact</h3>
             <address className="flex flex-col gap-2 text-sm text-primary-foreground/80 not-italic">
-              <p>House 19, Road 4/A, Diabari</p>
-              <p>Sector 15, Uttara, Dhaka-1230</p>
-              <p className="mt-2 group hover:text-secondary transition-colors cursor-pointer"><span className="opacity-70 group-hover:opacity-100 transition-opacity">Phone:</span> +880 1911-288839</p>
-              <p className="group hover:text-secondary transition-colors cursor-pointer"><span className="opacity-70 group-hover:opacity-100 transition-opacity">Email:</span> info@radiantgroup-bd.com</p>
+              <p>{contact.address}</p>
+              <p className="mt-2 group hover:text-secondary transition-colors cursor-pointer"><span className="opacity-70 group-hover:opacity-100 transition-opacity">Phone:</span> {contact.phone}</p>
+              <p className="group hover:text-secondary transition-colors cursor-pointer"><span className="opacity-70 group-hover:opacity-100 transition-opacity">Email:</span> {contact.email}</p>
             </address>
           </AnimatedContainer>
         </AnimatedContainer>

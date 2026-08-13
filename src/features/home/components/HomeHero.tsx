@@ -5,33 +5,27 @@ import { Container } from "@/components/shared/Container"
 import Link from "next/link"
 import Image from "next/image"
 import { motion, Variants } from "framer-motion"
-import { useState, useEffect } from "react"
+import { useSyncExternalStore } from "react"
 import { Award, Globe, Layers } from "lucide-react"
 import { TiltCard } from "@/components/shared/animations/TiltCard"
 import { MagneticButton } from "@/components/shared/animations/MagneticButton"
 import { FloatingElement } from "@/components/shared/animations/FloatingElement"
 
 const catalogPages = [
-  { src: "/catalog/page1.png", label: "Page 1", top: "5%", left: "10%", rotate: -12, width: 180, zIndex: 1 },
-  { src: "/catalog/page2.png", label: "Page 2", top: "0%", left: "35%", rotate: 8, width: 170, zIndex: 3 },
-  { src: "/catalog/page3.png", label: "Page 3", top: "15%", left: "60%", rotate: -5, width: 190, zIndex: 2 },
-  { src: "/catalog/page4.png", label: "Page 4", top: "45%", left: "5%", rotate: 6, width: 175, zIndex: 4 },
-  { src: "/catalog/page5.png", label: "Page 5", top: "50%", left: "32%", rotate: -8, width: 185, zIndex: 5 },
-  { src: "/catalog/page6.png", label: "Page 6", top: "40%", left: "58%", rotate: 10, width: 195, zIndex: 2 },
+  { src: "/images/catalog/page1.webp", label: "Page 1", top: "5%", left: "10%", rotate: -12, width: 180, zIndex: 1 },
+  { src: "/images/catalog/page2.webp", label: "Page 2", top: "0%", left: "35%", rotate: 8, width: 170, zIndex: 3 },
+  { src: "/images/catalog/page3.webp", label: "Page 3", top: "15%", left: "60%", rotate: -5, width: 190, zIndex: 2 },
+  { src: "/images/catalog/page4.webp", label: "Page 4", top: "45%", left: "5%", rotate: 6, width: 175, zIndex: 4 },
+  { src: "/images/catalog/page5.webp", label: "Page 5", top: "50%", left: "32%", rotate: -8, width: 185, zIndex: 5 },
+  { src: "/images/catalog/page6.webp", label: "Page 6", top: "40%", left: "58%", rotate: 10, width: 195, zIndex: 2 },
 ]
 
 export function HomeHero() {
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 80) {
-        setScrolled(true)
-      }
-    }
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  )
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -81,7 +75,7 @@ export function HomeHero() {
             className="flex flex-col items-start gap-5"
             variants={containerVariants}
             initial="hidden"
-            animate={scrolled ? "visible" : "hidden"}
+            animate={mounted ? "visible" : "hidden"}
           >
             <motion.div variants={itemVariants} className="inline-flex items-center rounded-full border border-secondary/30 bg-secondary/10 px-3 py-1 text-sm text-secondary">
               <span className="flex h-2 w-2 rounded-full bg-secondary mr-2"></span>
@@ -103,7 +97,7 @@ export function HomeHero() {
                 </Button>
               </MagneticButton>
               <MagneticButton strength={0.15}>
-                <Button size="lg" variant="outline" className="bg-white/5 backdrop-blur-sm text-primary-foreground border-white/20 hover:bg-white/10 hover:text-primary-foreground hover:border-white/30" asChild>
+                <Button size="lg" variant="outline" className="bg-white/5 backdrop-blur-sm text-white border-white/20 hover:bg-white/10 hover:text-white hover:border-white/30" asChild>
                   <Link href="/customization">Custom R&D Services</Link>
                 </Button>
               </MagneticButton>
@@ -145,7 +139,7 @@ export function HomeHero() {
           <div className="hidden lg:flex items-center justify-center relative h-137.5">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
-              animate={scrolled ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+              animate={mounted ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
               transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
               className="absolute inset-0 bg-secondary/10 rounded-full blur-3xl"
             />
@@ -157,7 +151,7 @@ export function HomeHero() {
                   custom={i}
                   variants={cardVariants}
                   initial="hidden"
-                  animate={scrolled ? "visible" : "hidden"}
+                  animate={mounted ? "visible" : "hidden"}
                   style={{
                     position: "absolute",
                     top: page.top,
@@ -177,8 +171,9 @@ export function HomeHero() {
                           src={page.src}
                           alt={page.label}
                           fill
+                          loading="lazy"
                           className="object-cover rounded-xl transition-transform duration-700 group-hover:scale-110"
-                          sizes="200px"
+                          sizes="(max-width: 1024px) 0px, 200px"
                         />
                         <div className="absolute inset-0 bg-linear-to-tr from-secondary/40 via-transparent to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl mix-blend-overlay" />
                       </motion.div>

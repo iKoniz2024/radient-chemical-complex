@@ -35,9 +35,9 @@ export function ParallaxImage({
     >
       <motion.div
         style={{ y: yMapped }}
-        className={cn("absolute inset-0 w-full h-[130%] -top-[15%]", imageClassName)}
+        className={cn("absolute inset-0 w-full h-[130%] top-[15%]", imageClassName)}
       >
-        <Image {...imageProps} className="object-cover" fill />
+        <Image {...imageProps} alt={imageProps.alt ?? ""} className="object-cover" fill />
       </motion.div>
     </div>
   )

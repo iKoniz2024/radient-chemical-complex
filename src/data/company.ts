@@ -3,11 +3,21 @@ import { Handshake, Leaf, TrendingUp, ShieldCheck, Lightbulb, Users } from 'luci
 export const companyData = {
   about: {
     title: "About Us",
-    description: "At Radiant Chemical Complex, we are more than just a supplier of textile auxiliary chemicals—we are a catalyst for change in the global textile industry. Since our founding in 2017, we have been dedicated to developing eco-friendly, high-efficiency, and cost-effective solutions.",
+    description: "At Radiant Chemical Complex, we are more than just a supplier of textile auxiliary chemicals—we are a catalyst for change in the global textile industry. Since our founding in 2017, we have been dedicated to developing eco-friendly, high-efficiency, and cost-effective solutions that not only meet the demands of modern textile production. Our mission is rooted in the belief that innovation and sustainability can go hand in hand, driving progress while safeguarding the planet for future generations.\n\nAs a leader in the textile auxiliary sector, we serve a wide range of industries, including Pretreatment, Dyeing, Finishing, Denim Washing, and PSF (Polyester Staple Fiber). With production facilities in Bangladesh and China, we have an annual output of over 20,000 tons, making us one of the most trusted and innovative suppliers in the region. Our success is built on a foundation of cutting-edge research, global expertise, and a deep commitment to the communities we serve.",
     stats: [
       { label: "Annual Output", value: "20,000+ Tons" },
       { label: "Founded", value: "2017" },
       { label: "Facilities", value: "Bangladesh & China" }
+    ],
+    certifications: [
+      { name: "ISO", color: "#1a365d" },
+      { name: "SGS", color: "#e53e3e" },
+      { name: "IQNet", color: "#2b6cb0" },
+      { name: "GOTS", color: "#38a169" },
+      { name: "bluesign", color: "#00b5d8" },
+      { name: "bsi", color: "#1a365d" },
+      { name: "OEKO-TEX", color: "#d69e2e" },
+      { name: "ZDHC", color: "#805ad5" },
     ]
   },
   mission: {
@@ -45,9 +55,8 @@ export const companyData = {
     content: "Since the inception of Radiant Chemical Complex in 2017, our journey has been guided by a clear vision: to transform the textile industry through innovation, sustainability, and excellence. We remain dedicated to pushing the boundaries of innovation, fostering sustainable growth, and upholding the trust placed in us by our stakeholders."
   },
   contact: {
-    phone: "+880 1911-288839",
-    address: "House 19, Road 4/A, Diabari, Sector 15, Uttara, Dhaka-1230",
+    phone: "+880 1735-221962",
+    address: "House 35, Road 09, Block -H, Sector 16, Uttara, Dhaka-1230.",
     email: "info@radiantgroup-bd.com",
-    website: "www.radiantgroup-bd.com"
   }
 }
