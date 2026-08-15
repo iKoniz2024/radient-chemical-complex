@@ -81,7 +81,7 @@ export function AboutSection() {
                   ]
                   const loop = logos.concat(logos)
                   return loop.map((src, i) => (
-                    <div key={`${i}-${src}`} className="flex-shrink-0 w-20 h-20 flex items-center justify-center bg-white rounded-md border border-border p-2 mx-3">
+                    <div key={`${i}-${src}`} className="shrink-0 w-20 h-20 flex items-center justify-center bg-white rounded-md border border-border p-2 mx-3">
                       <Image src={src} alt={`Certificate ${i+1}`} width={72} height={72} className="object-contain" />
                     </div>
                   ))
