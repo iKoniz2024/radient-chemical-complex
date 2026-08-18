@@ -33,54 +33,53 @@ function TimelineItem({ item, idx }: { item: typeof timelineData[number]; idx: n
     >
       {/* Center Node */}
       <motion.div
-        initial={{ scale: 0, rotate: -180 }}
+        initial={{ scale: 0.6, opacity: 0 }}
         animate={showCard
-          ? { scale: isHovered ? 1.15 : 1, rotate: 0 }
-          : { scale: 0, rotate: -180 }
+          ? { scale: isHovered ? 1.12 : 1, opacity: 1 }
+          : { scale: 0.6, opacity: 0 }
         }
-        transition={{ type: "spring" as const, stiffness: 200, damping: 15 }}
+        transition={{ type: "spring" as const, stiffness: 260, damping: 20 }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="absolute left-0 md:left-1/2 w-14 h-14 bg-background border-4 border-primary rounded-full flex items-center justify-center shadow-md md:-translate-x-1/2 z-10 cursor-pointer"
+        className="absolute left-0 md:left-1/2 w-12 h-12 bg-background border-4 border-secondary rounded-full flex items-center justify-center shadow-md md:-translate-x-1/2 z-10 cursor-pointer transform-gpu"
       >
         <motion.div
           initial={{ scale: 0 }}
           animate={showCard
-            ? { scale: isHovered ? 1.4 : 1 }
+            ? { scale: isHovered ? 1.3 : 1 }
             : { scale: 0 }
           }
-          transition={{ type: "spring" as const, stiffness: 300, damping: 15, delay: 0.2 }}
-          className="w-3 h-3 bg-secondary rounded-full"
+          transition={{ type: "spring" as const, stiffness: 300, damping: 20, delay: 0.1 }}
+          className="w-2.5 h-2.5 bg-secondary rounded-full"
         />
       </motion.div>
 
       {/* Content Box */}
-      <div className={`w-full pl-20 md:pl-0 md:w-1/2 ${isEven ? "md:pl-16" : "md:pr-16 text-left md:text-right"}`}>
+      <div className={`w-full pl-16 md:pl-0 md:w-1/2 ${isEven ? "md:pl-12" : "md:pr-12 text-left md:text-right"}`}>
         <motion.div
-          initial={{ opacity: 0, x: isEven ? 100 : -100, scale: 0.85 }}
+          initial={{ opacity: 0, x: isEven ? 28 : -28 }}
           animate={showCard
-            ? { opacity: 1, x: isHovered ? (isEven ? -8 : 8) : 0, scale: isHovered ? 1.02 : 1 }
-            : { opacity: 0, x: isEven ? 100 : -100, scale: 0.85 }
+            ? { opacity: 1, x: isHovered ? (isEven ? -4 : 4) : 0 }
+            : { opacity: 0, x: isEven ? 28 : -28 }
           }
-          transition={{ type: "spring" as const, stiffness: 120, damping: 15 }}
+          transition={{ type: "spring" as const, stiffness: 220, damping: 20, mass: 0.75 }}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
+          className="transform-gpu"
         >
-          <TiltCard tiltAmount={5} scaleAmount={1.01} className="w-full">
-            <div className="bg-background p-6 rounded-2xl border border-border shadow-[0_5px_15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgba(217,155,34,0.15)] hover:border-secondary/40 transition-all duration-300 relative group preserve-3d">
-              <div className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-background border-border transform rotate-45 transition-[border-color] duration-300 group-hover:border-secondary/40 ${isEven ? "-left-2 border-b border-l" : "-right-2 border-t border-r"}`} />
-
+          <TiltCard tiltAmount={4} scaleAmount={1.01} className="w-full">
+            <div className="bg-card p-6 md:p-8 rounded-2xl border border-border shadow-sm hover:shadow-md hover:border-secondary/40 transition-all duration-300 relative group preserve-3d">
               <motion.span
-                className="inline-block px-3 py-1 rounded-full bg-secondary/20 text-secondary text-sm font-bold font-montserrat mb-3 relative z-10"
+                className="inline-block px-3 py-1 rounded-full bg-secondary/15 text-secondary text-sm font-bold font-montserrat mb-3 relative z-10"
                 animate={{ scale: isHovered ? 1.05 : 1 }}
-                transition={{ type: "spring" as const, stiffness: 400, damping: 15 }}
+                transition={{ type: "spring" as const, stiffness: 400, damping: 20 }}
               >
                 {item.year}
               </motion.span>
-              <h3 className="font-montserrat text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300 relative z-10">
+              <h3 className="font-montserrat text-xl font-bold text-foreground mb-2 group-hover:text-secondary transition-colors duration-300 relative z-10">
                 {item.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed relative z-10">
+              <p className="text-muted-foreground leading-relaxed font-sans relative z-10 text-sm md:text-base">
                 {item.description}
               </p>
             </div>
@@ -93,15 +92,16 @@ function TimelineItem({ item, idx }: { item: typeof timelineData[number]; idx: n
 
 export function TimelineSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
+  const isInView = useInView(sectionRef, { once: true, margin: "-40px" })
 
   return (
-    <SectionWrapper className="bg-muted/30 border-t border-border">
+    <SectionWrapper className="bg-background border-t border-border text-foreground">
       <Container>
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-          transition={{ type: "spring" as const, stiffness: 100, damping: 20 }}
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+          transition={{ type: "spring", stiffness: 220, damping: 20, mass: 0.75 }}
+          className="transform-gpu"
         >
           <SectionTitle
             title="Our Journey"

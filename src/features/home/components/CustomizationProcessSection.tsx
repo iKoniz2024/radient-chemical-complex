@@ -1,54 +1,165 @@
+"use client"
+
 import { Container } from "@/components/shared/Container"
 import { SectionWrapper } from "@/components/shared/SectionWrapper"
-import { SectionTitle } from "@/components/shared/SectionTitle"
-import { customizationProcess } from "@/data/features"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { AnimatedContainer } from "@/components/shared/AnimatedContainer"
-import { MagneticButton } from "@/components/shared/animations/MagneticButton"
+import { motion } from "framer-motion"
+import { FlaskConical, Send, Rocket, Cog, Sparkles, ArrowRight, CheckCircle2 } from "lucide-react"
 
 export function CustomizationProcessSection() {
+  const steps = [
+    {
+      step: "01",
+      title: "Molecular R&D Synthesis",
+      desc: "Formulating bespoke molecular recipes to match your target effect, fiber composition, and cost targets.",
+      icon: FlaskConical,
+      tag: "Stage 01 • R&D",
+      benefit: "Target Effect Match"
+    },
+    {
+      step: "02",
+      title: "Complimentary Lab Trial",
+      desc: "Fast dispatch of testing samples for rigorous validation on your mill machinery.",
+      icon: Send,
+      tag: "Stage 02 • Trial",
+      benefit: "48h Sample Dispatch"
+    },
+    {
+      step: "03",
+      title: "Pilot & Batch Scaling",
+      desc: "Seamless scale-up from pilot trials to multi-ton synthesis across automated reactor batches.",
+      icon: Rocket,
+      tag: "Stage 03 • Synthesis",
+      benefit: "Strict Repeatability"
+    },
+    {
+      step: "04",
+      title: "Mill Integration & Support",
+      desc: "On-site and remote technical support ensuring smooth continuous dyeing and finishing runs.",
+      icon: Cog,
+      tag: "Stage 04 • Execution",
+      benefit: "Zero Production Lag"
+    }
+  ]
+
   return (
-    <SectionWrapper className="bg-muted/50 border-y border-border">
-      <Container>
-        <SectionTitle 
-          title="Customization Process" 
-          subtitle="We research, match, and develop customized products for you." 
-        />
+    <SectionWrapper className="bg-muted/30 border-y border-border/60 py-20 md:py-28 overflow-hidden relative">
+      {/* Subtle Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 h-96 bg-secondary/5 rounded-full blur-[140px] pointer-events-none -z-10" />
+
+      <Container className="relative z-10">
         
-        <div className="relative mt-16 mb-12">
-          {/* Timeline Connector Line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-border -translate-y-1/2 z-0"></div>
+        {/* Section Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 md:mb-20 transform-gpu"
+        >
+          <div className="inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-secondary mb-4 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5" /> Tailored Molecular Engineering
+          </div>
+          <h2 className="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-[1.15]">
+            Our 4-Step <span className="text-secondary">Customization</span> Pipeline
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            From molecular R&D to bulk industrial execution — we engineer customized auxiliary chemicals designed specifically for your factory machinery.
+          </p>
+        </motion.div>
+
+        {/* Connected Industrial Flow Pipeline */}
+        <div className="relative">
           
-          <AnimatedContainer animation="stagger-container" staggerChildren={0.15} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {customizationProcess.map((process, idx) => (
-              <AnimatedContainer key={idx} animation="stagger-item" className="relative z-10 flex flex-col items-center text-center group">
-                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-primary-foreground font-montserrat font-bold text-2xl border-4 border-background shadow-[0_0_15px_rgba(217,155,34,0.3)] mb-6 group-hover:scale-110 group-hover:bg-secondary group-hover:text-primary-foreground transition-all duration-300">
-                  {process.step}
+          {/* Continuous Glowing Progress Track (Desktop) */}
+          <div className="hidden lg:block absolute top-7 left-[10%] right-[10%] h-[2.5px] bg-gradient-to-r from-secondary/20 via-secondary to-secondary/20 z-0 pointer-events-none" />
+
+          {/* 4 Pipeline Step Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative z-10">
+            {steps.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.55, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-col items-center text-center transform-gpu group"
+              >
+                {/* Illuminated Step Node Marker */}
+                <div className="relative mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-card border-2 border-secondary/60 flex items-center justify-center text-secondary shadow-lg group-hover:bg-secondary group-hover:text-[#0A1930] group-hover:border-secondary transition-all duration-300">
+                    <item.icon className="w-6 h-6" />
+                  </div>
+                  {/* Step Number Badge */}
+                  <span className="absolute -bottom-2 -right-2 px-2 py-0.5 rounded-full bg-secondary text-[#0A1930] text-[10px] font-extrabold shadow-xs">
+                    {item.step}
+                  </span>
                 </div>
-                <h3 className="font-montserrat text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{process.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {process.description}
-                </p>
-              </AnimatedContainer>
+
+                {/* Pipeline Step Card */}
+                <div className="w-full h-full flex flex-col justify-between p-6 sm:p-7 rounded-3xl bg-card border border-border/80 shadow-xs hover:shadow-xl hover:border-secondary/50 transition-all duration-300 text-left relative overflow-hidden group-hover:-translate-y-1">
+                  <div>
+                    <span className="text-[10px] font-bold text-secondary uppercase tracking-widest block mb-1">
+                      {item.tag}
+                    </span>
+
+                    <h3 className="font-montserrat text-lg font-bold text-foreground group-hover:text-secondary transition-colors duration-300 mb-2.5 leading-snug">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  <div className="mt-6 pt-4 border-t border-border/60 flex items-center justify-between text-xs">
+                    <span className="flex items-center gap-1.5 font-semibold text-foreground/80">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-secondary shrink-0" /> {item.benefit}
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
             ))}
-          </AnimatedContainer>
+          </div>
+
         </div>
         
-        <AnimatedContainer animation="fade-up" delay={0.2}>
-          <div className="flex flex-col items-center justify-center gap-4 text-center mt-12 bg-background/80 backdrop-blur-md p-8 rounded-3xl border border-border shadow-[0_10px_40px_rgba(0,0,0,0.08)] max-w-3xl mx-auto hover:shadow-[0_15px_50px_rgba(217,155,34,0.15)] hover:border-secondary/30 transition-all duration-500 relative overflow-hidden">
-            <div className="absolute inset-0 bg-linear-to-r from-transparent via-secondary/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-700" />
-            <h3 className="font-montserrat text-xl font-bold text-primary relative z-10">Need a specific target effect?</h3>
-            <p className="text-muted-foreground mb-4 relative z-10">
-              Send us two fabric samples (one untreated, one target effect) along with a chemical sample for reference.
-            </p>
-            <MagneticButton strength={0.15} className="relative z-10">
-              <Button size="lg" asChild className="shadow-[0_0_15px_rgba(217,155,34,0.3)]">
-                <Link href="/customization">Submit Fabric Sample</Link>
+        {/* Bottom Interactive Sample Submission Card */}
+        <motion.div 
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.85, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-16 max-w-4xl mx-auto rounded-3xl bg-[#0A1930] text-white border border-white/15 p-8 md:p-10 shadow-2xl relative overflow-hidden group transform-gpu"
+        >
+          <div className="absolute top-0 right-0 w-80 h-80 bg-secondary/15 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+            <div className="flex items-start gap-5">
+              <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center text-[#0A1930] shadow-lg shrink-0 mt-1">
+                <FlaskConical className="w-7 h-7 text-[#0A1930]" />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <h3 className="font-montserrat text-2xl font-bold text-white">
+                  Need a Specific Target Effect?
+                </h3>
+                <p className="text-sm md:text-base text-slate-300 leading-relaxed max-w-xl font-sans">
+                  Send us two fabric swatches (one untreated, one target finish) along with your reference chemical. Our R&D chemists will engineer the exact formula.
+                </p>
+              </div>
+            </div>
+
+            <div className="shrink-0 w-full md:w-auto">
+              <Button asChild size="lg" className="w-full md:w-auto bg-secondary text-[#0A1930] font-bold hover:bg-secondary/90 shadow-lg shadow-secondary/25 text-base px-8 py-6 rounded-2xl group">
+                <Link href="/customization">
+                  Submit Fabric Sample <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </Button>
-            </MagneticButton>
+            </div>
           </div>
-        </AnimatedContainer>
+        </motion.div>
+
       </Container>
     </SectionWrapper>
   )

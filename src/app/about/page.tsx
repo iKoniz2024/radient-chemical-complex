@@ -1,11 +1,6 @@
 import { PageHero } from "@/components/shared/PageHero"
 import { CompanyStorySection } from "@/features/about/components/CompanyStorySection"
-import { MissionVisionSection } from "@/components/shared/sections/MissionVisionSection"
-import { CoreValuesSection } from "@/components/shared/sections/CoreValuesSection"
-import { WhyChooseUsSection } from "@/components/shared/sections/WhyChooseUsSection"
 import { TimelineSection } from "@/features/about/components/TimelineSection"
-import { CeoMessageSection } from "@/components/shared/sections/CeoMessageSection"
-import { CinematicSection } from "@/components/shared/animations/CinematicSection"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -15,37 +10,17 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <>
-      <CinematicSection depth={1.5}>
-        <PageHero 
-          title="About Radiant Chemical Complex" 
-          description="Pioneering sustainable, high-efficiency textile auxiliary solutions for a greener, thriving global industry."
-        />
-      </CinematicSection>
+    <div className="min-h-screen bg-background text-foreground">
+      <PageHero 
+        title="About Radiant Chemical Complex" 
+        description="Pioneering sustainable, high-efficiency textile auxiliary solutions for a greener, thriving global industry."
+        backgroundImage="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1920"
+      />
       
-      <CinematicSection depth={1}>
+      <div className="relative z-10">
         <CompanyStorySection />
-      </CinematicSection>
-      
-      <CinematicSection depth={1.2}>
-        <MissionVisionSection />
-      </CinematicSection>
-      
-      <CinematicSection depth={0.8}>
-        <CoreValuesSection />
-      </CinematicSection>
-      
-      <CinematicSection depth={1.1}>
         <TimelineSection />
-      </CinematicSection>
-      
-      <CinematicSection depth={1}>
-        <WhyChooseUsSection />
-      </CinematicSection>
-      
-      <CinematicSection depth={1.3}>
-        <CeoMessageSection />
-      </CinematicSection>
-    </>
+      </div>
+    </div>
   )
 }

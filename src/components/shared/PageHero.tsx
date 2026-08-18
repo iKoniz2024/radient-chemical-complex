@@ -1,16 +1,25 @@
 import { Container } from "@/components/shared/Container"
 import { AnimatedContainer } from "@/components/shared/AnimatedContainer"
 import { FloatingElement } from "@/components/shared/animations/FloatingElement"
+import { cn } from "@/lib/utils"
 
 export interface PageHeroProps {
   title: string
   description?: string
+  backgroundImage?: string
+  className?: string
 }
 
-export function PageHero({ title, description }: PageHeroProps) {
+export function PageHero({ title, description, backgroundImage, className }: PageHeroProps) {
   return (
-    <div className="bg-primary text-primary-foreground py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-secondary/10 mix-blend-overlay"></div>
+    <div 
+      className={cn(
+        "text-white py-24 relative overflow-hidden bg-primary",
+        backgroundImage && "bg-cover bg-center bg-no-repeat bg-fixed",
+        className
+      )}
+      style={backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : undefined}
+    >
       
       {/* Decorative Elements */}
       <FloatingElement className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 z-0" duration={6} yOffset={20}>
@@ -23,11 +32,11 @@ export function PageHero({ title, description }: PageHeroProps) {
       <Container className="relative z-10">
         <AnimatedContainer animation="stagger-container" staggerChildren={0.15}>
           <AnimatedContainer animation="stagger-item">
-            <h1 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-glow">{title}</h1>
+            <h1 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">{title}</h1>
           </AnimatedContainer>
           {description && (
             <AnimatedContainer animation="stagger-item">
-              <p className="text-xl text-primary-foreground/80 max-w-2xl leading-relaxed">
+              <p className="text-xl text-white font-medium drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] max-w-2xl leading-relaxed">
                 {description}
               </p>
             </AnimatedContainer>

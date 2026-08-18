@@ -1,7 +1,7 @@
 "use client"
 
-import React, { useRef, useState } from "react"
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
+import React, { useRef } from "react"
+import { motion, useMotionValue, useSpring } from "framer-motion"
 
 interface MagneticButtonProps {
   children: React.ReactNode
@@ -11,7 +11,6 @@ interface MagneticButtonProps {
 
 export function MagneticButton({ children, className, strength = 0.2 }: MagneticButtonProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const [isHovered, setIsHovered] = useState(false)
 
   const x = useMotionValue(0)
   const y = useMotionValue(0)
@@ -31,9 +30,7 @@ export function MagneticButton({ children, className, strength = 0.2 }: Magnetic
     y.set(distanceY * strength)
   }
 
-  const handleMouseEnter = () => setIsHovered(true)
   const handleMouseLeave = () => {
-    setIsHovered(false)
     x.set(0)
     y.set(0)
   }
@@ -42,7 +39,6 @@ export function MagneticButton({ children, className, strength = 0.2 }: Magnetic
     <motion.div
       ref={ref}
       onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{ x: mouseXSpring, y: mouseYSpring }}
       className={className}

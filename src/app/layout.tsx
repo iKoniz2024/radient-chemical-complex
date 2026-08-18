@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Montserrat } from 'next/font/google'
+import { Plus_Jakarta_Sans, Outfit } from 'next/font/google'
 import './globals.css'
 import { cn } from '@/lib/utils'
 import { Providers } from '@/components/layout/Providers'
@@ -7,6 +7,8 @@ import { Providers } from '@/components/layout/Providers'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { SmartScrollButton } from '@/components/shared/SmartScrollButton'
+import { ScrollProgress, ScrollIndicator } from '@/components/shared/animations/SmoothScroll'
+import { CustomCursor } from '@/components/shared/animations/CustomCursor'
 
 export const metadata: Metadata = {
   title: {
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
   },
   description: 'Global leader in sustainable textile auxiliary chemicals, developing eco-friendly, high-efficiency solutions for modern textile production.',
   icons: {
-    icon: '/images/logo.png',
+    icon: '/images/logo2.png',
   },
   openGraph: {
     title: 'Radiant Chemical Complex',
@@ -24,14 +26,16 @@ export const metadata: Metadata = {
   },
 }
 
-const inter = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-sans',
+  display: 'swap',
 })
 
-const montserrat = Montserrat({
+const outfit = Outfit({
   subsets: ['latin'],
   variable: '--font-montserrat',
+  display: 'swap',
 })
 
 export default function RootLayout({
@@ -44,11 +48,13 @@ export default function RootLayout({
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased',
-          inter.variable,
-          montserrat.variable
+          plusJakartaSans.variable,
+          outfit.variable
         )}
       >
         <Providers attribute="class" defaultTheme="light" enableSystem>
+          <CustomCursor />
+          <ScrollProgress />
           <div className="flex min-h-screen flex-col">
             <Navbar />
             <main className="flex-1">
@@ -57,6 +63,7 @@ export default function RootLayout({
             <Footer />
             <SmartScrollButton />
           </div>
+          <ScrollIndicator />
         </Providers>
       </body>
     </html>

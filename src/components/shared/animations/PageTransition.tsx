@@ -10,13 +10,16 @@ interface PageTransitionProps {
 export function PageTransition({ children }: PageTransitionProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -16 }}
       transition={{
-        duration: 0.5,
-        ease: "easeOut",
+        type: "spring",
+        stiffness: 260,
+        damping: 24,
+        mass: 0.7,
       }}
+      className="transform-gpu"
     >
       {children}
     </motion.div>

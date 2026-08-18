@@ -1,57 +1,95 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import Image from "next/image"
+import { ArrowRight, Droplet, Layers } from "lucide-react"
 import { Product } from "@/data/products"
 import { categoriesData } from "@/data/categories"
-import { TiltCard } from "@/components/shared/animations/TiltCard"
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 
 export interface ProductCardProps {
   product: Product
   index?: number
+  catalogImage?: string
 }
 
-export function ProductCard({ product, index = 0 }: ProductCardProps) {
-  const category = categoriesData.find(c => c.id === product.categoryId)
+export function ProductCard({ product, index = 0, catalogImage }: ProductCardProps) {
+  const category = categoriesData.find((c) => c.id === product.categoryId)
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: false, margin: "-50px" })
+  const isInView = useInView(ref, { once: true, margin: "-40px" })
+
+  const isFlake = product.name.toLowerCase().includes("flake")
+  const isPowder = product.name.toLowerCase().includes("powder") || product.properties.toLowerCase().includes("powder")
+  const physicalForm = isFlake ? "Flakes" : isPowder ? "Powder" : "Liquid"
 
   return (
     <motion.div
       ref={ref}
-      className="h-full"
-      initial={{ opacity: 0, y: 60 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-      transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+      className="h-full transform-gpu"
+      initial={{ opacity: 0, y: 18 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: (index % 6) * 0.05 }}
+      whileHover={{ y: -4 }}
     >
-      <TiltCard tiltAmount={8} scaleAmount={1.03} className="h-full">
-        <Link 
-          href={`/products/${product.id}`}
-          className="group flex flex-col h-full bg-background border border-border rounded-xl p-6 shadow-sm hover:shadow-[0_15px_30px_rgba(217,155,34,0.15)] hover:border-secondary/30 transition-all duration-300 relative overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-linear-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
-          <div className="mb-4 relative z-10">
-            <span className="inline-block px-3 py-1 rounded-full bg-muted group-hover:bg-secondary/10 text-xs font-medium text-muted-foreground group-hover:text-secondary mb-3 transition-colors">
-              {category?.title || "Product"}
-            </span>
-            <h3 className="font-montserrat text-xl font-bold text-foreground group-hover:text-secondary transition-colors line-clamp-2">
-              {product.name}
-            </h3>
+      <Link 
+        href={`/products/${product.id}`}
+        className="group/card flex flex-col justify-between h-full bg-card border border-border rounded-3xl p-6 sm:p-7 shadow-xs hover:shadow-2xl hover:border-secondary/50 transition-all duration-500 relative overflow-hidden"
+      >
+        {/* Background Image Reveal on Mouse Hover with Zoom Effect */}
+        {catalogImage && (
+          <div className="absolute inset-0 z-0 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
+            <Image
+              src={catalogImage}
+              alt={product.name}
+              fill
+              className="object-cover scale-100 group-hover/card:scale-110 transition-transform duration-700 ease-out"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+            {/* Gradient Overlay for high text contrast in both themes when image reveals */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/95 via-[#060D18]/80 to-[#060D18]/70" />
           </div>
-          
-          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 mb-6 flex-1 relative z-10">
+        )}
+
+        {/* Ambient subtle corner glow on hover */}
+        <div className="absolute inset-0 bg-linear-to-br from-secondary/10 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none z-[1]" />
+
+        {/* Top Row: Category & Physical State Badges */}
+        <div className="relative z-10 flex items-center justify-between gap-2 mb-5">
+          <span className="px-3 py-1 rounded-full bg-muted group-hover/card:bg-secondary/20 text-xs font-bold text-muted-foreground group-hover/card:text-secondary transition-colors duration-300 border border-border group-hover/card:border-secondary/30">
+            {category?.title || "Product"}
+          </span>
+
+          <span className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-muted/80 group-hover/card:bg-black/50 text-[11px] font-semibold text-muted-foreground group-hover/card:text-white transition-colors duration-300">
+            {physicalForm === "Liquid" ? (
+              <Droplet className="w-3 h-3 text-cyan-500 group-hover/card:text-cyan-400" />
+            ) : (
+              <Layers className="w-3 h-3 text-secondary" />
+            )}
+            {physicalForm}
+          </span>
+        </div>
+
+        {/* Content Body: Product Name & Properties */}
+        <div className="relative z-10 flex flex-col flex-1">
+          <h3 className="font-montserrat text-xl font-bold text-foreground group-hover/card:text-white transition-colors duration-300 line-clamp-2 leading-snug mb-3">
+            {product.name}
+          </h3>
+
+          <p className="text-sm text-muted-foreground group-hover/card:text-slate-200 leading-relaxed line-clamp-3 mb-6 flex-1 transition-colors duration-300">
             {product.properties}
           </p>
-          
-          <div className="flex items-center text-sm font-semibold text-secondary mt-auto relative z-10">
-            View Details 
-            <ArrowRight className="ml-1 w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+        </div>
+
+        {/* Bottom Row: Action with Animated Arrow */}
+        <div className="relative z-10 pt-4 border-t border-border/60 group-hover/card:border-white/15 flex items-center justify-between text-xs font-bold text-secondary mt-auto transition-colors duration-300">
+          <span className="group-hover/card:text-secondary">View Specifications</span>
+          <div className="w-7 h-7 rounded-full bg-secondary/15 flex items-center justify-center text-secondary group-hover/card:bg-secondary group-hover/card:text-primary transition-all duration-300">
+            <ArrowRight className="w-3.5 h-3.5 group-hover/card:translate-x-0.5 transition-transform" />
           </div>
-        </Link>
-      </TiltCard>
+        </div>
+
+      </Link>
     </motion.div>
   )
 }

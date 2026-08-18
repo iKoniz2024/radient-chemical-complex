@@ -5,6 +5,8 @@ import { CinematicSection } from "@/components/shared/animations/CinematicSectio
 import { Metadata } from "next"
 import { companyData } from "@/data/company"
 
+import { PageHero } from "@/components/shared/PageHero"
+
 export const metadata: Metadata = {
   title: "Sustainability",
   description: "Our sustainability commitments and initiatives.",
@@ -12,15 +14,12 @@ export const metadata: Metadata = {
 
 export default function SustainabilityPage() {
   return (
-    <>
-      <CinematicSection depth={1.5}>
-        <div className="bg-primary text-primary-foreground py-20">
-          <Container className="text-center">
-            <h1 className="font-montserrat text-4xl md:text-5xl font-bold mb-4">Sustainability</h1>
-            <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">Our approach to sustainable production, safety, and environmental responsibility.</p>
-          </Container>
-        </div>
-      </CinematicSection>
+    <div className="min-h-screen bg-background text-foreground">
+      <PageHero
+        title="Sustainability"
+        description="Our approach to sustainable production, safety, and environmental responsibility."
+        backgroundImage="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1920"
+      />
 
       <CinematicSection depth={1}>
         <SectionWrapper>
@@ -38,6 +37,6 @@ export default function SustainabilityPage() {
           </Container>
         </SectionWrapper>
       </CinematicSection>
-    </>
+    </div>
   )
 }

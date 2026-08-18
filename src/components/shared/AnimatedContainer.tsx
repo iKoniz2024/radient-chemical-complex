@@ -6,7 +6,27 @@ import { motion, Variants } from "framer-motion"
 export interface AnimatedContainerProps {
   children: ReactNode
   className?: string
-  animation?: "fade-up" | "fade-in" | "slide-right" | "scale-up" | "blur-in" | "3d-tilt-up" | "stagger-container" | "stagger-item" | "clip-in-top" | "clip-in-bottom" | "clip-in-left" | "clip-in-right" | "clip-in-center"
+  animation?: 
+    | "fade-up" 
+    | "fade-down"
+    | "fade-left"
+    | "fade-right"
+    | "fade-in" 
+    | "slide-left" 
+    | "slide-right" 
+    | "slide-up"
+    | "slide-down"
+    | "zoom-in"
+    | "scale-up" 
+    | "blur-in" 
+    | "3d-tilt-up" 
+    | "stagger-container" 
+    | "stagger-item" 
+    | "clip-in-top" 
+    | "clip-in-bottom" 
+    | "clip-in-left" 
+    | "clip-in-right" 
+    | "clip-in-center"
   delay?: number
   duration?: number
   staggerChildren?: number
@@ -16,58 +36,96 @@ export interface AnimatedContainerProps {
 
 const variants: Record<string, Variants> = {
   "fade-up": {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 24 },
     visible: { opacity: 1, y: 0 }
+  },
+  "fade-down": {
+    hidden: { opacity: 0, y: -24 },
+    visible: { opacity: 1, y: 0 }
+  },
+  "fade-left": {
+    hidden: { opacity: 0, x: 24 },
+    visible: { opacity: 1, x: 0 }
+  },
+  "fade-right": {
+    hidden: { opacity: 0, x: -24 },
+    visible: { opacity: 1, x: 0 }
+  },
+  "slide-left": {
+    hidden: { opacity: 0, x: 28 },
+    visible: { opacity: 1, x: 0 }
+  },
+  "slide-right": {
+    hidden: { opacity: 0, x: -28 },
+    visible: { opacity: 1, x: 0 }
+  },
+  "slide-up": {
+    hidden: { opacity: 0, y: 28 },
+    visible: { opacity: 1, y: 0 }
+  },
+  "slide-down": {
+    hidden: { opacity: 0, y: -28 },
+    visible: { opacity: 1, y: 0 }
+  },
+  "zoom-in": {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { opacity: 1, scale: 1 }
   },
   "fade-in": {
     hidden: { opacity: 0 },
     visible: { opacity: 1 }
-  },
-  "slide-right": {
-    hidden: { opacity: 0, x: -40 },
-    visible: { opacity: 1, x: 0 }
   },
   "scale-up": {
     hidden: { opacity: 0, scale: 0.95 },
     visible: { opacity: 1, scale: 1 }
   },
   "blur-in": {
-    hidden: { opacity: 0, filter: "blur(10px)", y: 20 },
-    visible: { opacity: 1, filter: "blur(0px)", y: 0 }
+    hidden: { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0 }
   },
   "3d-tilt-up": {
-    hidden: { opacity: 0, y: 50, rotateX: -20, perspective: 1000 },
-    visible: { opacity: 1, y: 0, rotateX: 0, perspective: 1000 }
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0 }
+  },
+  "clip-in-top": {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0 }
+  },
+  "clip-in-bottom": {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  },
+  "clip-in-left": {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 }
+  },
+  "clip-in-right": {
+    hidden: { opacity: 0, x: 20 },
+    visible: { opacity: 1, x: 0 }
+  },
+  "clip-in-center": {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { opacity: 1, scale: 1 }
   },
   "stagger-container": {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
+      transition: {
+        staggerChildren: 0.08
+      }
     }
   },
   "stagger-item": {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  },
-  "clip-in-top": {
-    hidden: { clipPath: "inset(0 0 100% 0)" },
-    visible: { clipPath: "inset(0 0 0% 0)" }
-  },
-  "clip-in-bottom": {
-    hidden: { clipPath: "inset(100% 0 0 0)" },
-    visible: { clipPath: "inset(0% 0 0 0)" }
-  },
-  "clip-in-left": {
-    hidden: { clipPath: "inset(0 100% 0 0)" },
-    visible: { clipPath: "inset(0 0% 0 0)" }
-  },
-  "clip-in-right": {
-    hidden: { clipPath: "inset(0 0 0 100%)" },
-    visible: { clipPath: "inset(0 0 0 0%)" }
-  },
-  "clip-in-center": {
-    hidden: { clipPath: "inset(50% 50% 50% 50%)" },
-    visible: { clipPath: "inset(0% 0% 0% 0%)" }
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.22, 1, 0.36, 1]
+      }
+    }
   }
 }
 
@@ -76,10 +134,10 @@ export function AnimatedContainer({
   className, 
   animation = "fade-up", 
   delay = 0,
-  duration = 0.6,
-  staggerChildren = 0.1,
+  duration = 0.85,
+  staggerChildren = 0.12,
   staggerDelay = 0,
-  viewportAmount = 0.1
+  viewportAmount = 0.15
 }: AnimatedContainerProps) {
   const isStaggerContainer = animation === "stagger-container"
   
@@ -87,14 +145,18 @@ export function AnimatedContainer({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: viewportAmount, margin: "-50px" }}
+      viewport={{ once: true, amount: viewportAmount, margin: "-40px" }}
       variants={variants[animation]}
       transition={
         isStaggerContainer
           ? { delayChildren: staggerDelay, staggerChildren: staggerChildren }
-          : { duration, ease: "easeOut", delay }
+          : { 
+              duration, 
+              ease: [0.22, 1, 0.36, 1], 
+              delay 
+            }
       }
-      className={className}
+      className={className ? `transform-gpu ${className}` : "transform-gpu"}
     >
       {children}
     </motion.div>

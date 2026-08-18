@@ -17,7 +17,7 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const mounted = useSyncExternalStore(
-    () => () => {},
+    () => () => { },
     () => true,
     () => false,
   )
@@ -55,31 +55,31 @@ export function Navbar() {
   return (
     <header className={cn(
       "sticky top-0 z-50 w-full transition-all duration-500 ease-out border-b",
-      isScrolled 
-        ? "bg-background/70 backdrop-blur-xl border-border/40 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] py-0" 
+      isScrolled
+        ? "bg-background/70 backdrop-blur-xl border-border/40 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] py-0"
         : "bg-background/0 border-transparent py-2"
     )}>
-      <Container>
+      <Container className="max-w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         <div className="flex h-16 md:h-20 items-center justify-between">
           <div className="flex items-center gap-2">
-            <Link href="/" className="flex items-center gap-2" aria-label="Go to homepage">
+            <Link href="/" className="flex items-center" aria-label="Go to homepage">
               <Image
-                src="/images/logo.png"
+                src="/images/navbar.png"
                 alt="Radiant Chemical Complex"
-                width={350}
-                height={90}
-                className="h-20 md:h-24 w-auto"
+                width={260}
+                height={80}
+                className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-300 hover:scale-105"
                 priority
               />
             </Link>
           </div>
-          
+
           {/* Desktop Navigation */}
           <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium">
             {navLinks.map((link) => (
               <MagneticButton key={link.name} strength={0.1}>
-                <Link 
-                  href={link.href} 
+                <Link
+                  href={link.href}
                   className={cn(
                     "transition-all duration-300 hover:text-secondary relative group px-2 py-1",
                     pathname === link.href ? "text-secondary font-semibold" : "text-foreground/80"
@@ -96,7 +96,7 @@ export function Navbar() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
             <MagneticButton strength={0.15}>
               <Button variant="default" className="hidden lg:flex shadow-[0_0_15px_rgba(217,155,34,0.3)] hover:shadow-[0_0_25px_rgba(217,155,34,0.5)] transition-shadow duration-300" asChild>
                 <Link href="/contact">Request Sample</Link>
@@ -115,11 +115,11 @@ export function Navbar() {
                 {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
               </Button>
             )}
-            
+
             {/* Mobile Menu Toggle */}
-            <Button 
-              variant="outline" 
-              size="icon" 
+            <Button
+              variant="outline"
+              size="icon"
               className="md:hidden border-border bg-transparent text-foreground hover:bg-muted"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-expanded={isMobileMenuOpen}
@@ -137,18 +137,18 @@ export function Navbar() {
         {isMobileMenuOpen && (
           <motion.div
             id="mobile-menu"
-            initial={{ opacity: 0, y: -20, filter: "blur(10px)", scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
-            exit={{ opacity: 0, y: -20, filter: "blur(10px)", scale: 0.95 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="absolute top-16.25 left-0 right-0 h-[calc(100vh-65px)] bg-background/80 backdrop-blur-2xl border-t border-border/50 md:hidden z-40 overflow-y-auto"
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="fixed inset-x-0 top-16 md:top-20 h-[calc(100vh-64px)] bg-background/95 backdrop-blur-2xl border-t border-border md:hidden z-40 overflow-y-auto"
           >
             <Container className="py-8 flex flex-col gap-6">
               <nav className="flex flex-col gap-4" aria-label="Mobile Navigation">
                 {navLinks.map((link) => (
-                  <Link 
-                    key={link.name} 
-                    href={link.href} 
+                  <Link
+                    key={link.name}
+                    href={link.href}
                     className={cn(
                       "text-2xl font-montserrat font-bold py-2 border-b border-border/50",
                       pathname === link.href ? "text-secondary" : "text-foreground"
