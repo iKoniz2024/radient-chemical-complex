@@ -131,17 +131,17 @@ export function CustomizationProcessSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.85, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-16 max-w-4xl mx-auto rounded-3xl bg-[#0A1930] text-white border border-white/15 p-8 md:p-10 shadow-2xl relative overflow-hidden group transform-gpu"
+          className="mt-16 max-w-4xl mx-auto rounded-3xl bg-[#0A1930] text-white border border-white/15 p-6 sm:p-8 md:p-10 shadow-2xl relative overflow-hidden group transform-gpu"
         >
           <div className="absolute top-0 right-0 w-80 h-80 bg-secondary/15 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
-            <div className="flex items-start gap-5">
-              <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center text-[#0A1930] shadow-lg shrink-0 mt-1">
-                <FlaskConical className="w-7 h-7 text-[#0A1930]" />
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 relative z-10">
+            <div className="flex items-start gap-4 sm:gap-5">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-secondary flex items-center justify-center text-[#0A1930] shadow-lg shrink-0 mt-0.5 sm:mt-1">
+                <FlaskConical className="w-6 h-6 sm:w-7 sm:h-7 text-[#0A1930]" />
               </div>
               <div className="flex flex-col gap-1.5">
-                <h3 className="font-montserrat text-2xl font-bold text-white">
+                <h3 className="font-montserrat text-xl sm:text-2xl font-bold text-white">
                   Need a Specific Target Effect?
                 </h3>
                 <p className="text-sm md:text-base text-slate-300 leading-relaxed max-w-xl font-sans">
@@ -151,9 +151,10 @@ export function CustomizationProcessSection() {
             </div>
 
             <div className="shrink-0 w-full md:w-auto">
-              <Button asChild size="lg" className="w-full md:w-auto bg-secondary text-[#0A1930] font-bold hover:bg-secondary/90 shadow-lg shadow-secondary/25 text-base px-8 py-6 rounded-2xl group">
-                <Link href="/customization">
-                  Submit Fabric Sample <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              <Button asChild size="lg" className="w-full md:w-auto bg-secondary text-[#0A1930] font-bold hover:bg-secondary/90 shadow-lg shadow-secondary/25 text-sm sm:text-base h-auto py-3.5 sm:py-4 px-6 sm:px-8 rounded-2xl group leading-snug">
+                <Link href="/customization" className="flex items-center justify-center text-center">
+                  <span>Submit Fabric Sample</span>
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 shrink-0 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
             </div>

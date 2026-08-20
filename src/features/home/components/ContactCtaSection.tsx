@@ -70,20 +70,21 @@ export function ContactCtaSection() {
               transition={{ duration: 0.85, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
               className="lg:col-span-5 flex flex-col gap-4 transform-gpu"
             >
-              <div className="p-6 sm:p-7 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 flex flex-col gap-4 shadow-xl">
+              <div className="p-5 sm:p-7 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 flex flex-col gap-4 shadow-xl">
                 
                 {/* Primary Button */}
-                <Button asChild size="lg" className="w-full bg-secondary text-[#0A1930] font-bold hover:bg-secondary/90 shadow-xl shadow-secondary/25 text-base py-6 rounded-xl group">
-                  <Link href="/contact">
-                    Contact Our Chemists <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                <Button asChild size="lg" className="w-full bg-secondary text-[#0A1930] font-bold hover:bg-secondary/90 shadow-xl shadow-secondary/25 text-sm sm:text-base h-auto py-3.5 sm:py-4 rounded-xl group leading-snug">
+                  <Link href="/contact" className="flex items-center justify-center text-center">
+                    <span>Contact Our Chemists</span>
+                    <ArrowRight className="w-4 h-4 ml-1.5 shrink-0 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
 
                 {/* Secondary Button Row */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <Button asChild variant="outline" size="sm" className="w-full bg-white/5 border-white/20 text-white hover:bg-white hover:text-[#0A1930] py-5 rounded-xl text-xs font-semibold">
-                    <Link href="/products">
-                      <FlaskConical className="w-3.5 h-3.5 mr-1.5 text-secondary" />
+                  <Button asChild variant="outline" size="sm" className="w-full bg-white/5 border-white/20 text-white hover:bg-white hover:text-[#0A1930] h-auto py-3.5 rounded-xl text-xs font-semibold">
+                    <Link href="/products" className="truncate">
+                      <FlaskConical className="w-3.5 h-3.5 mr-1.5 text-secondary inline shrink-0" />
                       Browse 80+ Products
                     </Link>
                   </Button>
@@ -94,8 +95,8 @@ export function ContactCtaSection() {
                     rel="noopener noreferrer"
                     className="w-full"
                   >
-                    <Button variant="outline" size="sm" className="w-full bg-white/5 border-white/20 text-white hover:bg-white hover:text-[#0A1930] py-5 rounded-xl text-xs font-semibold">
-                      <Download className="w-3.5 h-3.5 mr-1.5 text-secondary" />
+                    <Button variant="outline" size="sm" className="w-full bg-white/5 border-white/20 text-white hover:bg-white hover:text-[#0A1930] h-auto py-3.5 rounded-xl text-xs font-semibold">
+                      <Download className="w-3.5 h-3.5 mr-1.5 text-secondary inline shrink-0" />
                       Download Catalog
                     </Button>
                   </a>
@@ -103,11 +104,11 @@ export function ContactCtaSection() {
 
                 {/* Direct Contact Footer */}
                 <div className="pt-3 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-slate-400">
-                  <a href="tel:+8801735221962" className="flex items-center gap-1.5 hover:text-secondary transition-colors">
-                    <Phone className="w-3.5 h-3.5 text-secondary" /> +880 1735-221962
+                  <a href="tel:+8801735221962" className="flex items-center gap-1.5 hover:text-secondary transition-colors shrink-0">
+                    <Phone className="w-3.5 h-3.5 text-secondary shrink-0" /> +880 1735-221962
                   </a>
-                  <a href="mailto:info@radiantgroup-bd.com" className="flex items-center gap-1.5 hover:text-secondary transition-colors">
-                    <Mail className="w-3.5 h-3.5 text-secondary" /> info@radiantgroup-bd.com
+                  <a href="mailto:info@radiantgroup-bd.com" className="flex items-center gap-1.5 hover:text-secondary transition-colors truncate max-w-full">
+                    <Mail className="w-3.5 h-3.5 text-secondary shrink-0" /> <span className="truncate">info@radiantgroup-bd.com</span>
                   </a>
                 </div>
 

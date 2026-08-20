@@ -13,15 +13,16 @@ export function Footer() {
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(0,0,0,0.4)_100%)] pointer-events-none" />
       <Container className="max-w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 relative z-10">
         <AnimatedContainer animation="stagger-container" staggerChildren={0.1} className="grid grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
-          <AnimatedContainer animation="stagger-item" className="flex flex-col items-center md:items-start gap-4">
+          <AnimatedContainer animation="stagger-item" className="flex flex-col items-center justify-center md:items-start gap-4">
             <FloatingElement yOffset={5} duration={3}>
-              <div className="px-2 py-2 inline-flex items-center justify-center">
+              <div className="p-1 inline-flex items-center justify-center">
                 <Image
                   src="/images/logo2.png"
                   alt="Radiant Chemical Complex"
-                  width={240}
-                  height={80}
-                  className="w-auto h-16 md:h-20 object-contain"
+                  width={400}
+                  height={140}
+                  className="w-72 sm:w-80 md:w-96 h-auto object-contain"
+                  priority
                 />
               </div>
             </FloatingElement>

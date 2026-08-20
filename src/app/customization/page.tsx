@@ -75,11 +75,11 @@ export default function CustomizationPage() {
       image: "https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&q=80&w=1000",
       summary: "Custom hydrophilic, elastomeric micro-emulsions and cationic flake concentrates engineered for supreme inner softness, surface slip, and non-yellowing whites.",
       specTable: [
-        { parameter: "Ionic Character", value: "Non-Ionic / Weakly Cationic / Micro-Emulsion" },
+        { parameter: "Ionic Character", value: "Non-Ionic / Weak Cationic / Micro-Emulsion" },
         { parameter: "Active Solid Range", value: "20% - 80% (Customizable to target dosage)" },
         { parameter: "Application Method", value: "Padding Mangle / Exhaust Jet / Garment Wash" },
-        { parameter: "Fabric Compatibility", value: "100% Cotton, CVC, Viscose, Modal, Fleece, Polyester" },
-        { parameter: "Ecological Benchmark", value: "ZDHC MRSL Level 3, OEKO-TEX Standard 100" }
+        { parameter: "Fabric Compatibility", value: "Cotton, CVC, Viscose, Modal, Polyester" },
+        { parameter: "Ecological Benchmark", value: "ZDHC Level 3, OEKO-TEX Standard 100" }
       ]
     },
     {
@@ -120,11 +120,11 @@ export default function CustomizationPage() {
       image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1000",
       summary: "Next-generation fluorine-free water repellents (PFC-Free DWR), moisture-wicking agents, and anti-static finishes for outerwear and activewear.",
       specTable: [
-        { parameter: "Finish Types", value: "PFC-Free Water Repellent / Moisture Management / Anti-Static" },
-        { parameter: "Durability Standard", value: "Maintains 80+ Spray Rating after 20 Home Laundering cycles" },
-        { parameter: "Touch & Breathability", value: "Zero Impact on Air Permeability & Natural Hand-Feel" },
-        { parameter: "Target Substrates", value: "Nylon, Polyester Ripstop, Cotton Canvas, Softshell" },
-        { parameter: "Safety Matrix", value: "Fluorine-Free, Heavy Metal Free, REACH Compliant" }
+        { parameter: "Finish Types", value: "PFC-Free Repellent / Wicking / Anti-Static" },
+        { parameter: "Durability Standard", value: "80+ Spray Rating after 20 Wash Cycles" },
+        { parameter: "Touch & Breathability", value: "Zero Impact on Breathability & Hand-Feel" },
+        { parameter: "Target Substrates", value: "Nylon, Polyester, Cotton Canvas, Softshell" },
+        { parameter: "Safety Matrix", value: "Fluorine-Free, Heavy Metal Free, REACH" }
       ]
     }
   ]
@@ -382,12 +382,12 @@ export default function CustomizationPage() {
                 </div>
 
                 {/* Right Column: Structured Specification Sheet Table (7 cols) */}
-                <div className="lg:col-span-7 bg-background/80 dark:bg-background/40 backdrop-blur-md rounded-2xl border border-border/80 p-6 sm:p-7 shadow-xs">
-                  <div className="flex items-center justify-between pb-4 mb-4 border-b border-border/60">
-                    <span className="text-xs font-bold uppercase tracking-wider text-secondary flex items-center gap-1.5 font-mono">
+                <div className="lg:col-span-7 bg-background/80 dark:bg-background/40 backdrop-blur-md rounded-2xl border border-border/80 p-4 sm:p-6 sm:p-7 shadow-xs overflow-hidden">
+                  <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-4 border-b border-border/60">
+                    <span className="text-xs font-bold uppercase tracking-wider text-secondary flex items-center gap-1.5 font-mono shrink-0">
                       <FileSpreadsheet className="w-4 h-4" /> Lab Specification Sheet
                     </span>
-                    <span className="text-xs font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/50 px-2.5 py-0.5 rounded-md border border-emerald-200 dark:border-emerald-800 flex items-center gap-1">
+                    <span className="text-[11px] sm:text-xs font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/50 px-2 py-0.5 rounded-md border border-emerald-200 dark:border-emerald-800 flex items-center gap-1 shrink-0">
                       <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
                       Standard Qualified
                     </span>
@@ -412,9 +412,9 @@ export default function CustomizationPage() {
                     ))}
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-border/60 flex items-center justify-between">
+                  <div className="mt-6 pt-4 border-t border-border/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                     <span className="text-xs text-muted-foreground">Need specific custom modification?</span>
-                    <Button asChild size="sm" className="bg-secondary text-[#0A1930] font-bold hover:bg-secondary/90 shadow-sm rounded-xl group">
+                    <Button asChild size="sm" className="bg-secondary text-[#0A1930] font-bold hover:bg-secondary/90 shadow-sm rounded-xl group shrink-0">
                       <Link href="/contact?type=customization">
                         Request Formulation <ArrowRight className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-1 transition-transform" />
                       </Link>
@@ -530,9 +530,10 @@ export default function CustomizationPage() {
                   </div>
                 </div>
 
-                <Button asChild size="lg" className="w-full bg-secondary text-[#0A1930] font-bold hover:bg-secondary/90 shadow-xl shadow-secondary/25 text-base py-6 rounded-2xl group mt-2 relative z-10">
-                  <Link href="/contact?type=customization">
-                    Submit Fabric Sample Request <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                <Button asChild size="lg" className="w-full bg-secondary text-[#0A1930] font-bold hover:bg-secondary/90 shadow-xl shadow-secondary/25 text-xs sm:text-sm md:text-base h-auto py-3.5 sm:py-4 px-4 rounded-2xl group mt-2 relative z-10 leading-snug">
+                  <Link href="/contact?type=customization" className="flex items-center justify-center text-center">
+                    <span>Submit Fabric Sample Request</span>
+                    <ArrowRight className="w-4 h-4 ml-1.5 shrink-0 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
               </div>

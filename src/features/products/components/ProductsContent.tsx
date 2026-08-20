@@ -237,11 +237,11 @@ export default function ProductsContent() {
                               <Icon className="w-6 h-6" />
                             </div>
                             <div>
-                              <div className="flex items-center gap-2">
+                              <div className="flex flex-wrap items-center gap-2">
                                 <h3 className="font-montserrat text-xl sm:text-2xl font-bold text-foreground">
                                   {group.title}
                                 </h3>
-                                <span className="text-xs font-bold text-secondary bg-secondary/10 px-2.5 py-0.5 rounded-full border border-secondary/20">
+                                <span className="text-xs font-bold text-secondary bg-secondary/10 px-2.5 py-0.5 rounded-full border border-secondary/20 shrink-0">
                                   {group.totalCount} Products
                                 </span>
                               </div>

@@ -55,12 +55,12 @@ export function CoreValuesSection() {
             <div className="absolute top-0 right-0 w-80 h-80 bg-secondary/10 rounded-full blur-3xl group-hover:bg-secondary/20 transition-colors pointer-events-none" />
             
             <div>
-              <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center text-[#0A1930] shadow-md">
+              <div className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 mb-6 text-center sm:text-left">
+                <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center text-[#0A1930] shadow-md shrink-0 mx-auto sm:mx-0">
                   <Leaf className="w-7 h-7" />
                 </div>
-                <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-secondary/15 border border-secondary/30 text-xs font-bold text-secondary uppercase tracking-wider">
-                  <Sparkles className="w-3 h-3 text-secondary" /> Sustainable Zero Discharge Benchmark
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/15 border border-secondary/30 text-[11px] sm:text-xs font-bold text-secondary uppercase tracking-wider max-w-full leading-tight">
+                  <Sparkles className="w-3 h-3 text-secondary shrink-0" /> Sustainable Zero Discharge Benchmark
                 </span>
               </div>
 
@@ -91,8 +91,8 @@ export function CoreValuesSection() {
             whileHover={{ y: -4 }}
             className="rounded-3xl bg-card border border-border/80 p-8 shadow-xs hover:shadow-xl hover:border-secondary/50 transition-all duration-300 relative overflow-hidden group transform-gpu flex flex-col justify-between"
           >
-            <div>
-              <div className="w-13 h-13 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-[#0A1930] transition-all duration-300 shadow-xs shrink-0">
+            <div className="text-center sm:text-left">
+              <div className="w-13 h-13 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-[#0A1930] transition-all duration-300 shadow-xs shrink-0 mx-auto sm:mx-0">
                 <ShieldCheck className="w-6 h-6" />
               </div>
               <h3 className="font-montserrat text-xl font-bold text-foreground mb-2 group-hover:text-secondary transition-colors">
@@ -118,8 +118,8 @@ export function CoreValuesSection() {
             whileHover={{ y: -4 }}
             className="rounded-3xl bg-card border border-border/80 p-8 shadow-xs hover:shadow-xl hover:border-secondary/50 transition-all duration-300 relative overflow-hidden group transform-gpu flex flex-col justify-between"
           >
-            <div>
-              <div className="w-13 h-13 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-[#0A1930] transition-all duration-300 shadow-xs shrink-0">
+            <div className="text-center sm:text-left">
+              <div className="w-13 h-13 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-[#0A1930] transition-all duration-300 shadow-xs shrink-0 mx-auto sm:mx-0">
                 <Lightbulb className="w-6 h-6" />
               </div>
               <h3 className="font-montserrat text-xl font-bold text-foreground mb-2 group-hover:text-secondary transition-colors">
@@ -145,8 +145,8 @@ export function CoreValuesSection() {
             whileHover={{ y: -4 }}
             className="rounded-3xl bg-card border border-border/80 p-8 shadow-xs hover:shadow-xl hover:border-secondary/50 transition-all duration-300 relative overflow-hidden group transform-gpu flex flex-col justify-between"
           >
-            <div>
-              <div className="w-13 h-13 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-[#0A1930] transition-all duration-300 shadow-xs shrink-0">
+            <div className="text-center sm:text-left">
+              <div className="w-13 h-13 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-[#0A1930] transition-all duration-300 shadow-xs shrink-0 mx-auto sm:mx-0">
                 <Handshake className="w-6 h-6" />
               </div>
               <h3 className="font-montserrat text-xl font-bold text-foreground mb-2 group-hover:text-secondary transition-colors">
@@ -172,8 +172,8 @@ export function CoreValuesSection() {
             whileHover={{ y: -4 }}
             className="rounded-3xl bg-card border border-border/80 p-8 shadow-xs hover:shadow-xl hover:border-secondary/50 transition-all duration-300 relative overflow-hidden group transform-gpu flex flex-col justify-between"
           >
-            <div>
-              <div className="w-13 h-13 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-[#0A1930] transition-all duration-300 shadow-xs shrink-0">
+            <div className="text-center sm:text-left">
+              <div className="w-13 h-13 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-[#0A1930] transition-all duration-300 shadow-xs shrink-0 mx-auto sm:mx-0">
                 <TrendingUp className="w-6 h-6" />
               </div>
               <h3 className="font-montserrat text-xl font-bold text-foreground mb-2 group-hover:text-secondary transition-colors">
@@ -199,8 +199,8 @@ export function CoreValuesSection() {
             whileHover={{ y: -4 }}
             className="md:col-span-2 lg:col-span-3 rounded-3xl bg-muted/40 border border-border/80 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs relative overflow-hidden group transform-gpu"
           >
-            <div className="flex items-center gap-4 sm:gap-5">
-              <div className="w-14 h-14 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary shrink-0 group-hover:bg-secondary group-hover:text-[#0A1930] transition-all duration-300">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 text-center sm:text-left">
+              <div className="w-14 h-14 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary shrink-0 group-hover:bg-secondary group-hover:text-[#0A1930] transition-all duration-300 mx-auto sm:mx-0">
                 <Users className="w-7 h-7" />
               </div>
               <div>

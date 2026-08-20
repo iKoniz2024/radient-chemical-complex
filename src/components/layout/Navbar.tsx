@@ -121,7 +121,12 @@ export function Navbar() {
               variant="outline"
               size="icon"
               className="md:hidden border-border bg-transparent text-foreground hover:bg-muted"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={() => {
+                if (!isMobileMenuOpen && typeof window !== "undefined") {
+                  window.scrollTo({ top: 0, behavior: "smooth" })
+                }
+                setIsMobileMenuOpen(!isMobileMenuOpen)
+              }}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-menu"
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
