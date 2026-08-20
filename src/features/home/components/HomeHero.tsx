@@ -10,6 +10,7 @@ import { Globe, Layers, Award, ChevronDown, Shield } from "lucide-react"
 import { MagneticButton } from "@/components/shared/animations/MagneticButton"
 import { TextReveal, SplitText } from "@/components/shared/animations/TextReveal"
 import { ScrambleText } from "@/components/shared/animations/ScrambleText"
+import { CounterAnimation } from "@/components/shared/animations/CounterAnimation"
 
 const heroImages = [
   { src: "/images/image1.jpeg", alt: "Chemical Production" },
@@ -238,15 +239,11 @@ export function HomeHero() {
                     <stat.icon className="h-4 w-4 sm:h-5 sm:w-5 text-secondary" />
                   </div>
                   <div>
-                    <ScrambleText
-                      as="p"
-                      className="font-montserrat text-xl sm:text-2xl font-bold text-white"
-                      delay={1 + i * 0.2}
-                      duration={0.8}
-                    >
-                      {stat.value}
-                    </ScrambleText>
-                    <p className="text-[10px] sm:text-xs text-white/60 leading-tight">{stat.label}</p>
+                    <CounterAnimation
+                      value={stat.value}
+                      className="font-montserrat text-xl sm:text-2xl font-bold text-white block"
+                    />
+                    <p className="text-xs sm:text-sm text-white/70 leading-tight">{stat.label}</p>
                   </div>
                 </motion.div>
               ))}
@@ -289,8 +286,8 @@ export function HomeHero() {
                 <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-2 shadow-[0_0_15px_rgba(217,155,34,0.3)]">
                   <Globe className="w-6 h-6 text-secondary animate-pulse" />
                 </div>
-                <span className="text-[10px] font-bold tracking-widest text-secondary uppercase">R&D CORE</span>
-                <span className="text-[9px] text-white/60 mt-0.5">Radiant Lab</span>
+                <span className="text-xs font-bold tracking-widest text-secondary uppercase">R&D CORE</span>
+                <span className="text-xs text-white/70 mt-0.5">Radiant Lab</span>
               </motion.div>
 
               {/* Orbiting Card 1 - Top Left */}
@@ -313,7 +310,7 @@ export function HomeHero() {
                     </div>
                     <span className="text-xs font-bold text-white font-montserrat">Eco-Friendly</span>
                   </div>
-                  <p className="text-[10px] text-white/60 leading-relaxed font-sans">
+                  <p className="text-xs text-white/70 leading-relaxed font-sans">
                     Developing biodegradable, certified green chemicals for sustainable processing.
                   </p>
                 </div>
@@ -340,7 +337,7 @@ export function HomeHero() {
                     </div>
                     <span className="text-xs font-bold text-white font-montserrat">Global Spec</span>
                   </div>
-                  <p className="text-[10px] text-white/60 leading-relaxed font-sans">
+                  <p className="text-xs text-white/70 leading-relaxed font-sans">
                     Products meeting international standards (OEKO-TEX, GOTS, ZDHC).
                   </p>
                 </div>
@@ -367,7 +364,7 @@ export function HomeHero() {
                     </div>
                     <span className="text-xs font-bold text-white font-montserrat">Certified Quality</span>
                   </div>
-                  <p className="text-[10px] text-white/60 leading-relaxed font-sans">
+                  <p className="text-xs text-white/70 leading-relaxed font-sans">
                     Strict compliance with ISO 9001 and international safety standards.
                   </p>
                 </div>
@@ -394,7 +391,7 @@ export function HomeHero() {
                     </div>
                     <span className="text-xs font-bold text-white font-montserrat">Advanced R&D</span>
                   </div>
-                  <p className="text-[10px] text-white/60 leading-relaxed font-sans">
+                  <p className="text-xs text-white/70 leading-relaxed font-sans">
                     Custom chemical recipes tailored exactly to your yarn or fabric quality spec.
                   </p>
                 </div>

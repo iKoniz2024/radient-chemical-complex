@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { Sparkles, CheckCircle2, Factory, FlaskConical, Leaf, ShieldCheck, ArrowRight, Activity, Zap } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { CounterAnimation } from "@/components/shared/animations/CounterAnimation"
 
 export function WhyChooseUsSection() {
   const capabilities = [
@@ -82,7 +83,7 @@ export function WhyChooseUsSection() {
                 <span className="text-xs font-bold uppercase tracking-wider text-secondary flex items-center gap-1.5">
                   <Activity className="w-3.5 h-3.5 animate-pulse" /> Live Synthesis Metrics
                 </span>
-                <span className="text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary border border-secondary/30">
+                <span className="text-xs font-extrabold uppercase px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary border border-secondary/30">
                   Active
                 </span>
               </div>
@@ -96,7 +97,7 @@ export function WhyChooseUsSection() {
                   <span className="text-foreground/90 font-medium flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-secondary shrink-0" /> {bench.title}
                   </span>
-                  <span className="font-montserrat font-bold text-secondary">{bench.value}</span>
+                  <CounterAnimation value={bench.value} className="font-montserrat font-bold text-secondary" />
                 </div>
               ))}
             </div>
@@ -130,7 +131,7 @@ export function WhyChooseUsSection() {
                     <div className="w-13 h-13 rounded-2xl bg-secondary/15 border border-secondary/20 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-[#0A1930] transition-all duration-300 shadow-xs shrink-0">
                       <cap.icon className="w-6 h-6" />
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">
+                    <span className="text-xs font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">
                       {cap.badge}
                     </span>
                   </div>
@@ -145,7 +146,7 @@ export function WhyChooseUsSection() {
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-border/60 flex items-center justify-between text-xs font-semibold">
-                  <span className="text-secondary font-bold">{cap.stat}</span>
+                  <CounterAnimation value={cap.stat} className="text-secondary font-bold" />
                   <span className="text-muted-foreground flex items-center gap-1 group-hover:text-secondary transition-colors">
                     Verified <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
                   </span>

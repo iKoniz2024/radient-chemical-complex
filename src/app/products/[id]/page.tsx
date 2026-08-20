@@ -239,7 +239,7 @@ export default async function ProductDetailPage({
                   </div>
                   <div>
                     <h2 className="font-montserrat text-2xl font-bold text-foreground">Properties & Application</h2>
-                    <p className="text-xs text-muted-foreground">Comprehensive functional profile and chemical mechanism</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">Comprehensive functional profile and chemical mechanism</p>
                   </div>
                 </div>
 
@@ -336,7 +336,7 @@ export default async function ProductDetailPage({
 
                 {/* Direct Contact info */}
                 <div className="mt-6 pt-6 border-t border-white/10 text-xs text-slate-400 flex flex-col gap-2">
-                  <p className="font-semibold text-slate-300 uppercase tracking-wider text-[10px]">Technical Inquiries</p>
+                  <p className="font-semibold text-slate-300 uppercase tracking-wider text-xs">Technical Inquiries</p>
                   <a href="tel:+8801833183921" className="flex items-center gap-2 hover:text-secondary transition-colors">
                     <Phone className="w-3.5 h-3.5 text-secondary" /> +880 1833-183921
                   </a>

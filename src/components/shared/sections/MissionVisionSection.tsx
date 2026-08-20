@@ -149,7 +149,7 @@ export function MissionVisionSection() {
                       </h3>
                     </div>
                   </div>
-                  <span className="hidden sm:inline-block text-[11px] font-semibold text-muted-foreground bg-muted px-3 py-1.5 rounded-full border border-border">
+                  <span className="hidden sm:inline-block text-xs font-semibold text-muted-foreground bg-muted px-3 py-1.5 rounded-full border border-border">
                     {card.tagline}
                   </span>
                 </div>
@@ -187,7 +187,7 @@ export function MissionVisionSection() {
                           <h4 className="text-sm font-bold text-foreground leading-snug">
                             {point.title}
                           </h4>
-                          <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
+                          <p className="text-xs sm:text-sm text-muted-foreground mt-0.5 leading-relaxed">
                             {point.desc}
                           </p>
                         </div>

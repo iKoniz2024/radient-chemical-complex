@@ -22,7 +22,7 @@ export function CategoryFilter({ activeCategoryId }: CategoryFilterProps) {
           <h3 className="font-montserrat font-extrabold text-base text-foreground flex items-center gap-2">
             <Layers className="w-4 h-4 text-secondary" /> Chemical Series
           </h3>
-          <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+          <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
             {totalProducts} Total
           </span>
         </div>
@@ -103,11 +103,11 @@ export function CategoryFilter({ activeCategoryId }: CategoryFilterProps) {
           Custom Formulation?
         </h4>
 
-        <p className="text-xs text-slate-300 leading-relaxed mb-4">
+        <p className="text-sm text-slate-300 leading-relaxed mb-4">
           Need a specific active concentration or viscosity? Our lab develops bespoke shade & softness matches.
         </p>
 
-        <Button asChild size="sm" className="w-full bg-secondary text-[#0A1930] font-bold hover:bg-secondary/90 shadow-md text-xs py-4 rounded-xl">
+        <Button asChild size="sm" className="w-full bg-secondary text-[#0A1930] font-bold hover:bg-secondary/90 shadow-md text-sm py-4 rounded-xl">
           <Link href="/customization">
             Request Custom R&D <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
           </Link>

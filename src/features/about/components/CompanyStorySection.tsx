@@ -6,6 +6,7 @@ import { AnimatedContainer } from "@/components/shared/AnimatedContainer"
 import { companyData } from "@/data/company"
 import { Factory, Calendar, Globe, FlaskConical, CheckCircle2, ShieldCheck, Award } from "lucide-react"
 import { motion } from "framer-motion"
+import { CounterAnimation } from "@/components/shared/animations/CounterAnimation"
 
 export function CompanyStorySection() {
   const highlights = [
@@ -110,19 +111,20 @@ export function CompanyStorySection() {
                       <div className="w-12 h-12 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-primary transition-all duration-300 shadow-sm">
                         <item.icon className="w-6 h-6" />
                       </div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2.5 py-1 rounded-full border border-secondary/20">
+                      <span className="text-xs font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2.5 py-1 rounded-full border border-secondary/20">
                         {item.unit}
                       </span>
                     </div>
 
                     <div>
-                      <h3 className="font-montserrat text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight group-hover:text-secondary transition-colors duration-300">
-                        {item.value}
-                      </h3>
+                      <CounterAnimation
+                        value={item.value}
+                        className="font-montserrat text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight group-hover:text-secondary transition-colors duration-300 block"
+                      />
                       <h4 className="text-sm font-bold text-foreground/90 mt-1 mb-2">
                         {item.label}
                       </h4>
-                      <p className="text-xs text-muted-foreground leading-relaxed">
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                         {item.desc}
                       </p>
                     </div>

@@ -92,7 +92,7 @@ export function CustomizationProcessSection() {
                     <item.icon className="w-6 h-6" />
                   </div>
                   {/* Step Number Badge */}
-                  <span className="absolute -bottom-2 -right-2 px-2 py-0.5 rounded-full bg-secondary text-[#0A1930] text-[10px] font-extrabold shadow-xs">
+                  <span className="absolute -bottom-2 -right-2 px-2 py-0.5 rounded-full bg-secondary text-[#0A1930] text-xs font-extrabold shadow-xs">
                     {item.step}
                   </span>
                 </div>
@@ -100,7 +100,7 @@ export function CustomizationProcessSection() {
                 {/* Pipeline Step Card */}
                 <div className="w-full h-full flex flex-col justify-between p-6 sm:p-7 rounded-3xl bg-card border border-border/80 shadow-xs hover:shadow-xl hover:border-secondary/50 transition-all duration-300 text-left relative overflow-hidden group-hover:-translate-y-1">
                   <div>
-                    <span className="text-[10px] font-bold text-secondary uppercase tracking-widest block mb-1">
+                    <span className="text-xs font-bold text-secondary uppercase tracking-widest block mb-1">
                       {item.tag}
                     </span>
 
@@ -108,7 +108,7 @@ export function CustomizationProcessSection() {
                       {item.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
+                    <p className="text-sm text-muted-foreground leading-relaxed font-sans">
                       {item.desc}
                     </p>
                   </div>

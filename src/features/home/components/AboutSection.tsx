@@ -8,6 +8,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { Factory, Calendar, Globe, ArrowRight, ShieldCheck, Sparkles, CheckCircle2, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { CounterAnimation } from "@/components/shared/animations/CounterAnimation"
 
 export function AboutSection() {
   const stats = [
@@ -118,7 +119,7 @@ export function AboutSection() {
                       <p className="text-xs text-muted-foreground">ZDHC Level 3, OEKO-TEX, GOTS &amp; EIM Compliant Chemistry</p>
                     </div>
                   </div>
-                  <span className="hidden sm:inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-3 py-1.5 rounded-xl border border-secondary/30 shrink-0">
+                  <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-3 py-1.5 rounded-xl border border-secondary/30 shrink-0">
                     <span className="flex h-1.5 w-1.5 rounded-full bg-secondary animate-ping" />
                     Live Standard
                   </span>
@@ -175,13 +176,14 @@ export function AboutSection() {
               <div className="grid grid-cols-3 divide-x divide-border/70 text-center">
                 {stats.map((stat, idx) => (
                   <div key={idx} className="px-2 sm:px-4 flex flex-col items-center justify-center">
-                    <span className="font-montserrat text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground tracking-tight">
-                      {stat.value}
-                    </span>
-                    <span className="text-[10px] sm:text-xs font-bold text-secondary uppercase tracking-wider mt-0.5">
+                    <CounterAnimation
+                      value={stat.value}
+                      className="font-montserrat text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground tracking-tight block"
+                    />
+                    <span className="text-xs sm:text-sm font-bold text-secondary uppercase tracking-wider mt-0.5">
                       {stat.unit}
                     </span>
-                    <span className="text-[11px] text-muted-foreground mt-1 hidden sm:block">
+                    <span className="text-xs text-muted-foreground mt-1 hidden sm:block">
                       {stat.label}
                     </span>
                   </div>
