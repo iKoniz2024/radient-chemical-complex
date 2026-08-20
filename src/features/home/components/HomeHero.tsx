@@ -12,11 +12,11 @@ import { TextReveal, SplitText } from "@/components/shared/animations/TextReveal
 import { ScrambleText } from "@/components/shared/animations/ScrambleText"
 
 const heroImages = [
-  { src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1920", alt: "Chemical Production" },
-  { src: "https://images.unsplash.com/photo-1532187640685-447881944288?auto=format&fit=crop&q=80&w=1920", alt: "Laboratory Research" },
-  { src: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=1920", alt: "Industrial Facility" },
-  { src: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=1920", alt: "Quality Testing" },
-  { src: "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&q=80&w=1920", alt: "Textile Processing" },
+  { src: "/images/image1.jpeg", alt: "Chemical Production" },
+  { src: "/images/image2.jpeg", alt: "Laboratory Research" },
+  { src: "/images/image3.jpeg", alt: "Industrial Facility" },
+  { src: "/images/image4.jpeg", alt: "Quality Testing" },
+  { src: "/images/image5.jpeg", alt: "Textile Processing" },
 ]
 
 const chemicalFormulas = [
