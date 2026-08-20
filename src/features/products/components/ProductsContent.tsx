@@ -78,13 +78,13 @@ export default function ProductsContent() {
 
   return (
     <>
-      {/* Hero Banner with Fixed Parallax and Live Search Bar */}
+      {/* Hero Banner with Smooth Fixed Parallax and Live Search Bar */}
       <div 
-        className="relative py-24 md:py-32 text-white bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden border-b border-white/10"
+        className="relative py-28 sm:py-32 md:py-36 min-h-[380px] flex items-center text-white bg-cover bg-center bg-no-repeat bg-fixed [backface-visibility:hidden] [transform-style:preserve-3d] overflow-hidden border-b border-white/10 bg-primary"
         style={{ backgroundImage: `url(${bannerImage})` }}
       >
         {/* Soft bottom gradient to preserve original image vividness while ensuring crisp readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/90 via-[#060D18]/45 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/90 via-[#060D18]/45 to-transparent pointer-events-none z-0" />
 
         <Container className="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center">
           

@@ -46,8 +46,8 @@ export function ProductCard({ product, index = 0, catalogImage }: ProductCardPro
               className="object-cover scale-105 md:scale-100 md:group-hover/card:scale-110 transition-transform duration-700 ease-out"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-            {/* Gradient Overlay for high text contrast in both themes */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/95 via-[#060D18]/85 to-[#060D18]/70" />
+            {/* Subtle Gradient Overlay to preserve 100% of original image colors while keeping text readable */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-transparent" />
           </div>
         )}
 

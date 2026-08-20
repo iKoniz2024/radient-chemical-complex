@@ -12,12 +12,12 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       
-      {/* 1. Hero Banner with Parallax Background */}
+      {/* 1. Hero Banner with Smooth Fixed Parallax */}
       <div 
-        className="relative py-24 md:py-32 text-white bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden border-b border-white/10"
+        className="relative py-28 sm:py-32 md:py-36 min-h-[380px] flex items-center text-white bg-cover bg-center bg-no-repeat bg-fixed [backface-visibility:hidden] [transform-style:preserve-3d] overflow-hidden border-b border-white/10 bg-primary"
         style={{ backgroundImage: `url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&q=80&w=1920')` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/95 via-[#060D18]/55 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/95 via-[#060D18]/55 to-transparent pointer-events-none z-0" />
 
         <Container className="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center">
           

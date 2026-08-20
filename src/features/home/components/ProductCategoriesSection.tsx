@@ -81,7 +81,7 @@ export function ProductCategoriesSection() {
 
   return (
     <SectionWrapper 
-      className="relative text-white overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed bg-primary"
+      className="relative text-white bg-cover bg-center bg-no-repeat bg-fixed [backface-visibility:hidden] [transform-style:preserve-3d] overflow-hidden bg-primary"
       style={{ backgroundImage: `url('https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&q=80&w=1920')` }}
     >
       {/* Light Overlay to let original image shine while keeping text sharp */}

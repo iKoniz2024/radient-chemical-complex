@@ -88,9 +88,9 @@ export default async function ProductDetailPage({
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Hero Header with Fixed Parallax Banner */}
+      {/* Hero Header with Smooth Fixed Parallax Banner */}
       <div 
-        className="relative py-20 md:py-24 text-white bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden bg-primary"
+        className="relative py-24 sm:py-28 md:py-32 min-h-[360px] flex items-center text-white bg-cover bg-center bg-no-repeat bg-fixed [backface-visibility:hidden] [transform-style:preserve-3d] overflow-hidden bg-primary"
         style={{ backgroundImage: `url('${bannerImage}')` }}
       >
         {/* Soft bottom gradient to preserve original image vividness while ensuring crisp readability */}
