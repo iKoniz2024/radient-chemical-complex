@@ -15,6 +15,7 @@ export default function PrivacyPage() {
         <PageHero 
           title="Privacy Policy" 
           description="How we collect, use, and protect your data."
+          backgroundImage="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1920"
         />
       </CinematicSection>
       

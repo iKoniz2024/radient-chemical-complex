@@ -23,7 +23,9 @@ export function Navbar() {
   )
   const pathname = usePathname()
   const { scrollY } = useScroll()
-  const { theme, setTheme } = useTheme()
+  const { theme, resolvedTheme, setTheme } = useTheme()
+  const isDark = mounted ? (theme === "dark" || resolvedTheme === "dark") : false
+  const logoSrc = isDark ? "/images/dark.png" : "/images/light.png"
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50)
@@ -64,11 +66,12 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center" aria-label="Go to homepage">
               <Image
-                src="/images/navbar.png"
+                key={logoSrc}
+                src={logoSrc}
                 alt="Radiant Chemical Complex"
-                width={260}
-                height={80}
-                className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                width={320}
+                height={100}
+                className="h-12 sm:h-14 md:h-16 lg:h-18 w-auto object-contain transition-transform duration-300 hover:scale-105"
                 priority
               />
             </Link>

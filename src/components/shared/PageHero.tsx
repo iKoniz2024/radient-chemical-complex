@@ -14,12 +14,16 @@ export function PageHero({ title, description, backgroundImage, className }: Pag
   return (
     <div 
       className={cn(
-        "text-white py-24 relative overflow-hidden bg-primary",
+        "text-white py-24 md:py-32 relative overflow-hidden bg-primary",
         backgroundImage && "bg-cover bg-center bg-no-repeat bg-fixed",
         className
       )}
       style={backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : undefined}
     >
+      {/* Dark overlay for cinematic depth and high text contrast */}
+      {backgroundImage && (
+        <div className="absolute inset-0 bg-[#0A1930]/75 backdrop-blur-xs z-0 pointer-events-none" />
+      )}
       
       {/* Decorative Elements */}
       <FloatingElement className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 z-0" duration={6} yOffset={20}>

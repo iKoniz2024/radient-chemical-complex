@@ -265,23 +265,26 @@ export function HomeHero() {
             <div className="relative w-80 h-80 flex items-center justify-center">
               {/* Outer orbital ring */}
               <motion.div
-                className="absolute inset-0 rounded-full border border-dashed border-secondary/30"
+                className="absolute inset-0 rounded-full border border-dashed border-secondary/30 transform-gpu"
                 animate={{ rotate: 360 }}
-                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                style={{ willChange: "transform" }}
               />
 
               {/* Inner orbital ring */}
               <motion.div
-                className="absolute w-60 h-60 rounded-full border border-dashed border-white/10"
+                className="absolute w-60 h-60 rounded-full border border-dashed border-white/10 transform-gpu"
                 animate={{ rotate: -360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                style={{ willChange: "transform" }}
               />
 
               {/* Center Core */}
               <motion.div
-                className="absolute w-36 h-36 rounded-full bg-linear-to-br from-secondary/30 to-secondary/5 backdrop-blur-md border border-secondary/30 shadow-[0_0_40px_rgba(217,155,34,0.2)] flex flex-col items-center justify-center p-4 text-center z-10"
+                className="absolute w-36 h-36 rounded-full bg-[#0A1930]/90 backdrop-blur-md border border-secondary/30 shadow-[0_0_40px_rgba(217,155,34,0.25)] flex flex-col items-center justify-center p-4 text-center z-10 transform-gpu"
                 whileHover={{ scale: 1.05, borderColor: "rgba(217,155,34,0.6)" }}
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                style={{ willChange: "transform" }}
               >
                 <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-2 shadow-[0_0_15px_rgba(217,155,34,0.3)]">
                   <Globe className="w-6 h-6 text-secondary animate-pulse" />
@@ -292,18 +295,19 @@ export function HomeHero() {
 
               {/* Orbiting Card 1 - Top Left */}
               <motion.div
-                className="absolute -top-0.5 -left-10 z-20"
+                className="absolute -top-0.5 -left-10 z-20 transform-gpu"
                 animate={{
-                  y: [0, -12, 0],
-                  x: [0, 6, 0]
+                  y: [0, -8, 0],
+                  x: [0, 4, 0]
                 }}
                 transition={{
                   duration: 6,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: [0.45, 0, 0.55, 1]
                 }}
+                style={{ willChange: "transform" }}
               >
-                <div className="p-4 rounded-2xl bg-primary/45 backdrop-blur-md border border-white/10 shadow-2xl max-w-[190px] group/item hover:border-secondary/50 hover:bg-primary/60 transition-all duration-300">
+                <div className="p-4 rounded-2xl bg-[#0A1930]/90 backdrop-blur-sm border border-white/15 shadow-2xl max-w-[190px] group/item hover:border-secondary/50 hover:bg-[#0A1930] transition-all duration-300">
                   <div className="flex items-center gap-2.5 mb-2">
                     <div className="w-7 h-7 rounded-lg bg-secondary/20 flex items-center justify-center text-secondary group-hover/item:bg-secondary group-hover/item:text-primary transition-all duration-300">
                       <Layers className="w-4 h-4" />
@@ -318,19 +322,20 @@ export function HomeHero() {
 
               {/* Orbiting Card 2 - Top Right */}
               <motion.div
-                className="absolute -top-0.5 -right-10 z-20"
+                className="absolute -top-0.5 -right-10 z-20 transform-gpu"
                 animate={{
-                  y: [0, -12, 0],
-                  x: [0, -6, 0]
+                  y: [0, -8, 0],
+                  x: [0, -4, 0]
                 }}
                 transition={{
                   duration: 5.5,
                   repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1.0
+                  ease: [0.45, 0, 0.55, 1],
+                  delay: 0.8
                 }}
+                style={{ willChange: "transform" }}
               >
-                <div className="p-4 rounded-2xl bg-primary/45 backdrop-blur-md border border-white/10 shadow-2xl max-w-[190px] group/item hover:border-secondary/50 hover:bg-primary/60 transition-all duration-300">
+                <div className="p-4 rounded-2xl bg-[#0A1930]/90 backdrop-blur-sm border border-white/15 shadow-2xl max-w-[190px] group/item hover:border-secondary/50 hover:bg-[#0A1930] transition-all duration-300">
                   <div className="flex items-center gap-2.5 mb-2">
                     <div className="w-7 h-7 rounded-lg bg-secondary/20 flex items-center justify-center text-secondary group-hover/item:bg-secondary group-hover/item:text-primary transition-all duration-300">
                       <Globe className="w-4 h-4" />
@@ -345,19 +350,20 @@ export function HomeHero() {
 
               {/* Orbiting Card 3 - Bottom Left */}
               <motion.div
-                className="absolute -bottom-0.5 -left-10 z-20"
+                className="absolute -bottom-0.5 -left-10 z-20 transform-gpu"
                 animate={{
-                  y: [0, 12, 0],
-                  x: [0, 6, 0]
+                  y: [0, 8, 0],
+                  x: [0, 4, 0]
                 }}
                 transition={{
                   duration: 6.5,
                   repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.5
+                  ease: [0.45, 0, 0.55, 1],
+                  delay: 0.4
                 }}
+                style={{ willChange: "transform" }}
               >
-                <div className="p-4 rounded-2xl bg-primary/45 backdrop-blur-md border border-white/10 shadow-2xl max-w-[190px] group/item hover:border-secondary/50 hover:bg-primary/60 transition-all duration-300">
+                <div className="p-4 rounded-2xl bg-[#0A1930]/90 backdrop-blur-sm border border-white/15 shadow-2xl max-w-[190px] group/item hover:border-secondary/50 hover:bg-[#0A1930] transition-all duration-300">
                   <div className="flex items-center gap-2.5 mb-2">
                     <div className="w-7 h-7 rounded-lg bg-secondary/20 flex items-center justify-center text-secondary group-hover/item:bg-secondary group-hover/item:text-primary transition-all duration-300">
                       <Shield className="w-4 h-4" />
@@ -372,19 +378,20 @@ export function HomeHero() {
 
               {/* Orbiting Card 4 - Bottom Right */}
               <motion.div
-                className="absolute -bottom-0.5 -right-10 z-20"
+                className="absolute -bottom-0.5 -right-10 z-20 transform-gpu"
                 animate={{
-                  y: [0, 12, 0],
-                  x: [0, -6, 0]
+                  y: [0, 8, 0],
+                  x: [0, -4, 0]
                 }}
                 transition={{
                   duration: 7,
                   repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1.5
+                  ease: [0.45, 0, 0.55, 1],
+                  delay: 1.2
                 }}
+                style={{ willChange: "transform" }}
               >
-                <div className="p-4 rounded-2xl bg-primary/45 backdrop-blur-md border border-white/10 shadow-2xl max-w-[190px] group/item hover:border-secondary/50 hover:bg-primary/60 transition-all duration-300">
+                <div className="p-4 rounded-2xl bg-[#0A1930]/90 backdrop-blur-sm border border-white/15 shadow-2xl max-w-[190px] group/item hover:border-secondary/50 hover:bg-[#0A1930] transition-all duration-300">
                   <div className="flex items-center gap-2.5 mb-2">
                     <div className="w-7 h-7 rounded-lg bg-secondary/20 flex items-center justify-center text-secondary group-hover/item:bg-secondary group-hover/item:text-primary transition-all duration-300">
                       <Award className="w-4 h-4" />

@@ -15,6 +15,7 @@ export default function TermsPage() {
         <PageHero 
           title="Terms of Service" 
           description="The rules and guidelines that govern your use of our website and services."
+          backgroundImage="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=1920"
         />
       </CinematicSection>
       

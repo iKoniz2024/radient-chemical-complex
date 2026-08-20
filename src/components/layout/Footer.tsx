@@ -17,7 +17,7 @@ export function Footer() {
             <FloatingElement yOffset={5} duration={3}>
               <div className="p-1 inline-flex items-center justify-center">
                 <Image
-                  src="/images/logo2.png"
+                  src="/images/dark.png"
                   alt="Radiant Chemical Complex"
                   width={400}
                   height={140}
