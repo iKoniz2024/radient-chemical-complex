@@ -70,7 +70,7 @@ export default function TermsPage() {
           badge="Legal & Compliance"
           title="Terms of Service" 
           description="The official rules, usage guidelines, and technical framework governing our products and digital services."
-          backgroundImage="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=1920"
+          backgroundImage="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=60&w=1280"
         />
       </CinematicSection>
       

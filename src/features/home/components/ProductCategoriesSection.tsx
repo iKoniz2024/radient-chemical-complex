@@ -82,7 +82,7 @@ export function ProductCategoriesSection() {
   return (
     <SectionWrapper 
       className="relative text-white bg-cover bg-center bg-no-repeat bg-fixed [backface-visibility:hidden] [transform-style:preserve-3d] overflow-hidden bg-primary"
-      style={{ backgroundImage: `url('https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&q=80&w=1920')` }}
+      style={{ backgroundImage: `url('https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&q=60&w=1280')` }}
     >
       {/* Light Overlay to let original image shine while keeping text sharp */}
       <div className="absolute inset-0 bg-[#0A1930]/35 pointer-events-none z-0" />

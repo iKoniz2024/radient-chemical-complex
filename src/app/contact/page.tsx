@@ -15,7 +15,7 @@ export default function ContactPage() {
       {/* 1. Hero Banner with Smooth Fixed Parallax */}
       <div 
         className="relative py-28 sm:py-32 md:py-36 min-h-[380px] flex items-center text-white bg-cover bg-center bg-no-repeat bg-fixed [backface-visibility:hidden] [transform-style:preserve-3d] overflow-hidden border-b border-white/10 bg-primary"
-        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&q=80&w=1920')` }}
+        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&q=60&w=1280')` }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/95 via-[#060D18]/55 to-transparent pointer-events-none z-0" />
 

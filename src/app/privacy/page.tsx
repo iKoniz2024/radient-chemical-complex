@@ -63,7 +63,7 @@ export default function PrivacyPage() {
           badge="Data Protection & Governance"
           title="Privacy Policy" 
           description="How we collect, safeguard, and maintain absolute confidentiality of your technical and corporate data."
-          backgroundImage="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1920"
+          backgroundImage="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=60&w=1280"
         />
       </CinematicSection>
       

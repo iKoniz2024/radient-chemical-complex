@@ -61,7 +61,7 @@ export default function SustainabilityPage() {
           badge="Green Auxiliary Chemistry"
           title="Sustainability & Eco Innovation"
           description="Pioneering eco-certified textile auxiliary formulations, ZDHC Level 3 compliance, and zero-discharge environmental responsibility."
-          backgroundImage="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1920"
+          backgroundImage="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=60&w=1280"
         />
       </CinematicSection>
 

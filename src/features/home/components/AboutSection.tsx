@@ -99,7 +99,7 @@ export function AboutSection() {
           >
             <div className="relative rounded-3xl overflow-hidden border border-border shadow-xl group aspect-4/3">
               <Image
-                src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=1200"
+                src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=60&w=900"
                 alt="Radiant Chemical Research & Development"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"

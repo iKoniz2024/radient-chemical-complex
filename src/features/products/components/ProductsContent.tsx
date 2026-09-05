@@ -15,12 +15,12 @@ import Link from "next/link"
 import { ArrowRight, Search, X, Sparkles, Filter, PackageOpen, Layers } from "lucide-react"
 
 const catalogImageMap: Record<string, string> = {
-  pretreatment: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=1920",
-  dyeing: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&q=80&w=1920",
-  finishing: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=80&w=1920",
-  "denim-washing": "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&q=80&w=1920",
-  psf: "https://images.unsplash.com/photo-1528255915607-9012fda0f838?auto=format&fit=crop&q=80&w=1920",
-  others: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=1920",
+  pretreatment: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=60&w=1280",
+  dyeing: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&q=60&w=1280",
+  finishing: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=60&w=1280",
+  "denim-washing": "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&q=60&w=1280",
+  psf: "https://images.unsplash.com/photo-1528255915607-9012fda0f838?auto=format&fit=crop&q=60&w=1280",
+  others: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=60&w=1280",
 }
 
 export default function ProductsContent() {
@@ -74,7 +74,7 @@ export default function ProductsContent() {
 
   const bannerImage = category
     ? (catalogImageMap[category] ?? catalogImageMap.others)
-    : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1920"
+    : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=60&w=1280"
 
   return (
     <>
