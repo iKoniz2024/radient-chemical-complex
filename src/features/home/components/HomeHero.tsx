@@ -104,9 +104,8 @@ export function HomeHero() {
           />
         ))}
 
-        {/* Dark overlay so text is readable */}
-        <div className="absolute inset-0 z-[10] bg-[#0A1930]/65" />
-        <div className="absolute inset-0 z-[10] bg-gradient-to-t from-[#0A1930]/95 via-[#0A1930]/40 to-[#0A1930]/65" />
+        {/* Subtle light gradient overlay so the image stays bright, clear and natural */}
+        <div className="absolute inset-0 z-[10] bg-gradient-to-t from-[#060D18]/60 via-transparent to-black/10 pointer-events-none" />
 
         {/* Interactive Floating Particles & Chemical Formulas */}
         <div className="absolute inset-0 z-[11] overflow-hidden pointer-events-none">
