@@ -14,7 +14,7 @@ export default function AboutPage() {
       <PageHero 
         title="About Radiant Chemical Complex" 
         description="Pioneering sustainable, high-efficiency textile auxiliary solutions for a greener, thriving global industry."
-        backgroundImage="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=60&w=1280"
+        backgroundImage="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1920"
       />
       
       <div className="relative z-10">

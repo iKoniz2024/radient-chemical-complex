@@ -15,12 +15,12 @@ import Link from "next/link"
 import { ArrowRight, Search, X, Sparkles, Filter, PackageOpen, Layers } from "lucide-react"
 
 const catalogImageMap: Record<string, string> = {
-  pretreatment: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=60&w=1280",
-  dyeing: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&q=60&w=1280",
-  finishing: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=60&w=1280",
-  "denim-washing": "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&q=60&w=1280",
-  psf: "https://images.unsplash.com/photo-1528255915607-9012fda0f838?auto=format&fit=crop&q=60&w=1280",
-  others: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=60&w=1280",
+  pretreatment: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=1920",
+  dyeing: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&q=80&w=1920",
+  finishing: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=80&w=1920",
+  "denim-washing": "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&q=80&w=1920",
+  psf: "https://images.unsplash.com/photo-1528255915607-9012fda0f838?auto=format&fit=crop&q=80&w=1920",
+  others: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=1920",
 }
 
 export default function ProductsContent() {
@@ -74,7 +74,7 @@ export default function ProductsContent() {
 
   const bannerImage = category
     ? (catalogImageMap[category] ?? catalogImageMap.others)
-    : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=60&w=1280"
+    : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1920"
 
   return (
     <>
@@ -84,7 +84,7 @@ export default function ProductsContent() {
         style={{ backgroundImage: `url(${bannerImage})` }}
       >
         {/* Soft bottom gradient to preserve original image vividness while ensuring crisp readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/90 via-[#060D18]/45 to-transparent pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/70 via-[#060D18]/30 to-black/15 pointer-events-none z-0" />
 
         <Container className="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center">
           

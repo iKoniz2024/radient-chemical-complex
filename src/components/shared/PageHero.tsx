@@ -21,9 +21,9 @@ export function PageHero({ title, description, badge, backgroundImage, className
       )}
       style={backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : undefined}
     >
-      {/* Subtle overlay for text readability */}
+      {/* Light Gradient Overlay to make background image vibrant and clear while maintaining text readability */}
       {backgroundImage && (
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-xs z-0 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/70 via-[#060D18]/30 to-black/20 z-0 pointer-events-none" />
       )}
 
       {/* Decorative Glow Elements */}

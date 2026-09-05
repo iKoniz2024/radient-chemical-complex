@@ -80,17 +80,17 @@ export function ProductCategoriesSection() {
   const imageSrc = currentProduct ? getProductImageUrl(currentProduct.id, activeTab) : activeCategory.catalogPage
 
   return (
-    <SectionWrapper 
+    <SectionWrapper
       className="relative text-white bg-cover bg-center bg-no-repeat bg-fixed [backface-visibility:hidden] [transform-style:preserve-3d] overflow-hidden bg-primary"
-      style={{ backgroundImage: `url('https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&q=60&w=1280')` }}
+      style={{ backgroundImage: `url('https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&q=80&w=1920')` }}
     >
       {/* Light Overlay to let original image shine while keeping text sharp */}
       <div className="absolute inset-0 bg-[#0A1930]/35 pointer-events-none z-0" />
 
       <Container className="relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <SectionTitle 
-            title="Our Product Portfolio" 
+          <SectionTitle
+            title="Our Product Portfolio"
             subtitle="Sustainable solutions for every stage of textile production."
             alignment="left"
             className="mb-0 text-white [&>p]:text-white/90 [&>h2]:text-white [&>h2]:drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] [&>p]:drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
@@ -110,9 +110,8 @@ export function ProductCategoriesSection() {
               <button
                 key={category.id}
                 onClick={() => handleTabChange(category.id)}
-                className={`relative flex items-center gap-3 px-5 py-3.5 rounded-xl font-montserrat font-bold text-sm transition-all duration-300 select-none cursor-pointer ${
-                  isActive ? "text-primary" : "text-white/60 hover:text-white hover:bg-white/5"
-                }`}
+                className={`relative flex items-center gap-3 px-5 py-3.5 rounded-xl font-montserrat font-bold text-sm transition-all duration-300 select-none cursor-pointer ${isActive ? "text-primary" : "text-white/60 hover:text-white hover:bg-white/5"
+                  }`}
               >
                 {isActive && (
                   <motion.div
@@ -204,10 +203,10 @@ export function ProductCategoriesSection() {
                     />
                   </motion.div>
                 </AnimatePresence>
-                
+
                 {/* Product Name Overlay */}
                 {currentProduct && (
-                  <motion.div 
+                  <motion.div
                     key={currentProduct.id}
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -223,9 +222,8 @@ export function ProductCategoriesSection() {
                     <button
                       key={idx}
                       onClick={() => setImgIndex(idx)}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                        idx === imgIndex ? "bg-secondary w-5" : "bg-white/50 hover:bg-white"
-                      }`}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${idx === imgIndex ? "bg-secondary w-5" : "bg-white/50 hover:bg-white"
+                        }`}
                     />
                   ))}
                 </div>

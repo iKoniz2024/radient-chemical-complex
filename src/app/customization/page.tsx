@@ -37,7 +37,7 @@ export default function CustomizationPage() {
       title: "Substrate & Target Analysis",
       subtitle: "Spectral Evaluation",
       desc: "We analyze untreated and target swatches under spectrophotometers to quantify shade depth, hand-feel shear stiffness, and fiber blend ratios.",
-      image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=60&w=600",
+      image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800",
       specs: ["Spectrophotometer Color Delta E", "Weave Tension & GSM Check", "Fiber Blend (Cotton/Poly/Spandex)"]
     },
     {
@@ -45,7 +45,7 @@ export default function CustomizationPage() {
       title: "Molecular Recipe Synthesis",
       subtitle: "Custom Formulation",
       desc: "Our R&D synthesis chemists modify active solid percentages, ionic charge balance, and emulsifier matrices to engineer the exact chemical recipe.",
-      image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=60&w=600",
+      image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=800",
       specs: ["Bespoke Active Solids %", "Zero Harmful VOCs / Formaldehyde", "ZDHC MRSL Level 3 Qualified"]
     },
     {
@@ -53,7 +53,7 @@ export default function CustomizationPage() {
       title: "Fast Sample Dispatch",
       subtitle: "48-72h Turnaround",
       desc: "We package complimentary laboratory trial samples accompanied by a comprehensive Technical Data Sheet (TDS) and application recipe.",
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=60&w=600",
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
       specs: ["48-72h Express Courier Dispatch", "Complete TDS & Recipe Guide", "500ml / 1kg Trial Batches"]
     },
     {
@@ -61,7 +61,7 @@ export default function CustomizationPage() {
       title: "Bulk Reactor Scale-Up",
       subtitle: "Industrial Replication",
       desc: "Once validated on your factory padding or exhaust machines, we execute bulk synthesis with strict lot-to-lot consistency guarantees.",
-      image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=60&w=600",
+      image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800",
       specs: ["Automated Reactor Monitoring", "Certificate of Analysis (COA)", "100% Batch-to-Batch Repeatability"]
     }
   ]
@@ -72,7 +72,7 @@ export default function CustomizationPage() {
       name: "Silicone & Organic Softeners",
       tag: "Hand-Feel & Drape",
       icon: Droplet,
-      image: "https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&q=60&w=800",
+      image: "https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&q=80&w=1000",
       summary: "Custom hydrophilic, elastomeric micro-emulsions and cationic flake concentrates engineered for supreme inner softness, surface slip, and non-yellowing whites.",
       specTable: [
         { parameter: "Ionic Character", value: "Non-Ionic / Weak Cationic / Micro-Emulsion" },
@@ -87,7 +87,7 @@ export default function CustomizationPage() {
       name: "Bio-Polishing & Washing Enzymes",
       tag: "Sustainable Surface Action",
       icon: Sparkles,
-      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=60&w=800",
+      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1000",
       summary: "High-concentration neutral and acid cellulases designed for ultra-clean pilling removal, denim abrasive contrast, and energy-saving low-temp bio-washing.",
       specTable: [
         { parameter: "Enzyme Activity Profile", value: "Neutral Cellulase / High-Activity Acid Powder" },
@@ -102,7 +102,7 @@ export default function CustomizationPage() {
       name: "Dyeing Fastness Improvers",
       tag: "Color Fixation Chemistry",
       icon: Layers,
-      image: "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&q=60&w=800",
+      image: "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&q=80&w=1000",
       summary: "Formaldehyde-free polycationic fixing agents and leveling auxiliaries that maximize rub-fastness, washing fastness, and perspiration resistance.",
       specTable: [
         { parameter: "Chemical Nature", value: "Formaldehyde-Free Polycationic Aqueous Solution" },
@@ -117,7 +117,7 @@ export default function CustomizationPage() {
       name: "Functional Textile Finishes",
       tag: "High-Performance Surface",
       icon: Flame,
-      image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=60&w=800",
+      image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1000",
       summary: "Next-generation fluorine-free water repellents (PFC-Free DWR), moisture-wicking agents, and anti-static finishes for outerwear and activewear.",
       specTable: [
         { parameter: "Finish Types", value: "PFC-Free Repellent / Wicking / Anti-Static" },
@@ -153,9 +153,9 @@ export default function CustomizationPage() {
       {/* 1. Hero Banner with Smooth Fixed Parallax */}
       <div 
         className="relative py-28 sm:py-32 md:py-36 min-h-[380px] flex items-center text-white bg-cover bg-center bg-no-repeat bg-fixed [backface-visibility:hidden] [transform-style:preserve-3d] overflow-hidden border-b border-white/10 bg-primary"
-        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=60&w=1280')` }}
+        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=1920')` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/95 via-[#060D18]/55 to-transparent pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/70 via-[#060D18]/30 to-black/15 pointer-events-none z-0" />
 
         {/* Ambient Subtle Pulsing Light in Hero */}
         <motion.div 

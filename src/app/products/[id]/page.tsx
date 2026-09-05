@@ -26,12 +26,12 @@ import {
 import { Metadata } from "next"
 
 const categoryBannerMap: Record<string, string> = {
-  pretreatment: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=60&w=1280",
-  dyeing: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&q=60&w=1280",
-  finishing: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=60&w=1280",
-  "denim-washing": "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&q=60&w=1280",
-  psf: "https://images.unsplash.com/photo-1528255915607-9012fda0f838?auto=format&fit=crop&q=60&w=1280",
-  others: "https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?auto=format&fit=crop&q=60&w=1280",
+  pretreatment: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=1920",
+  dyeing: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&q=80&w=1920",
+  finishing: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=80&w=1920",
+  "denim-washing": "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&q=80&w=1920",
+  psf: "https://images.unsplash.com/photo-1528255915607-9012fda0f838?auto=format&fit=crop&q=80&w=1920",
+  others: "https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?auto=format&fit=crop&q=80&w=1920",
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
@@ -94,7 +94,7 @@ export default async function ProductDetailPage({
         style={{ backgroundImage: `url('${bannerImage}')` }}
       >
         {/* Soft bottom gradient to preserve original image vividness while ensuring crisp readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1930]/95 via-[#0A1930]/40 to-transparent z-0 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/70 via-[#060D18]/30 to-black/15 z-0 pointer-events-none" />
 
         <Container className="relative z-10">
           {/* Breadcrumb Navigation */}

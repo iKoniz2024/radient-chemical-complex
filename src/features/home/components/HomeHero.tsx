@@ -81,13 +81,13 @@ export function HomeHero() {
 
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 35 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
         duration: 0.85,
         ease: [0.22, 1, 0.36, 1],
-      } 
+      }
     },
   }
 
