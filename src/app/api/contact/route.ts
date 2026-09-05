@@ -6,7 +6,6 @@ export async function POST(request: Request) {
     const body = await request.json()
     const { name, email, company, phone, message } = body
 
-    // 1. Validation
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Name, email, and message are required fields." },
@@ -33,18 +32,16 @@ export async function POST(request: Request) {
     const receiverEmail = process.env.CONTACT_RECEIVER_EMAIL || "info@radiantgroup-bd.com"
     const fromName = process.env.SMTP_FROM_NAME || "Radiant Contact Form"
 
-    // 2. Create Nodemailer Transporter
     const transporter = nodemailer.createTransport({
       host: smtpHost,
       port: smtpPort,
-      secure: isSecure, // true for 465, false for other ports (e.g. 587)
+      secure: isSecure,
       auth: {
         user: smtpUser,
         pass: smtpPass,
       },
     })
 
-    // 3. Send Mail
     const info = await transporter.sendMail({
       from: `"${fromName}" <${smtpUser}>`,
       to: receiverEmail,

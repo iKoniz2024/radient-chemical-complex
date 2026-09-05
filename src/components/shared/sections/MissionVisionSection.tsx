@@ -85,14 +85,11 @@ export function MissionVisionSection() {
 
   return (
     <SectionWrapper className="bg-muted/30 border-y border-border/60 py-20 md:py-28 overflow-hidden relative">
-      {/* Lightweight Ambient Glow */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-80 bg-secondary/5 rounded-full blur-3xl pointer-events-none -z-10" />
+<div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-80 bg-secondary/5 rounded-full blur-3xl pointer-events-none -z-10" />
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-80 h-80 bg-accent/5 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <Container className="relative z-10">
-        
-        {/* Section Header */}
-        <motion.div 
+<motion.div 
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -109,9 +106,7 @@ export function MissionVisionSection() {
             Our mission and vision define how we formulate sustainable solutions, partner with textile leaders, and shape the future of global chemistry.
           </p>
         </motion.div>
-
-        {/* 2-Card Grid with Crisp Scale & Points Reveal */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           {cards.map((card, idx) => (
             <motion.div
               key={card.type}
@@ -126,12 +121,10 @@ export function MissionVisionSection() {
               whileHover={{ y: -5 }}
               className="h-full flex flex-col justify-between bg-card border border-border/80 rounded-3xl p-8 sm:p-10 shadow-sm hover:shadow-xl hover:border-secondary/50 transition-all duration-300 relative overflow-hidden group transform-gpu"
             >
-              {/* Corner Glow Accent */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-colors pointer-events-none" />
+<div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-colors pointer-events-none" />
 
               <div>
-                {/* Header with Icon & Badge */}
-                <div className="flex items-center justify-between gap-4 mb-6 pb-6 border-b border-border/60">
+<div className="flex items-center justify-between gap-4 mb-6 pb-6 border-b border-border/60">
                   <div className="flex items-center gap-4">
                     <motion.div 
                       animate={{ y: [-2.5, 2.5, -2.5] }}
@@ -153,16 +146,12 @@ export function MissionVisionSection() {
                     {card.tagline}
                   </span>
                 </div>
-
-                {/* Lead Description Box */}
-                <div className="mb-8 p-4 sm:p-5 rounded-2xl bg-muted/40 border border-border/50 border-l-4 border-l-secondary">
+<div className="mb-8 p-4 sm:p-5 rounded-2xl bg-muted/40 border border-border/50 border-l-4 border-l-secondary">
                   <p className="text-sm sm:text-base text-foreground/90 font-medium leading-relaxed">
                     {card.description}
                   </p>
                 </div>
-
-                {/* Strategic Pillars (Cascading Key Points) */}
-                <div className="flex flex-col gap-4">
+<div className="flex flex-col gap-4">
                   <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                     Strategic Commitments
                   </span>
@@ -196,9 +185,7 @@ export function MissionVisionSection() {
                   </motion.div>
                 </div>
               </div>
-
-              {/* Bottom decorative bar */}
-              <div className="mt-8 pt-4 border-t border-border/50 flex items-center justify-between text-xs text-muted-foreground">
+<div className="mt-8 pt-4 border-t border-border/50 flex items-center justify-between text-xs text-muted-foreground">
                 <span className="flex items-center gap-1.5 font-medium">
                   <Sparkles className="w-3.5 h-3.5 text-secondary" /> Radiant Chemical Complex
                 </span>

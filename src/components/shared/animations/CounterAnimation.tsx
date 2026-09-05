@@ -18,10 +18,8 @@ export function CounterAnimation({
 }: CounterAnimationProps) {
   const ref = useRef<HTMLSpanElement>(null)
 
-  // Trigger only when at least 40% of the element is visible on screen
   const isInView = useInView(ref, { once: true, amount: 0.4, margin: "0px 0px -50px 0px" })
 
-  // Parse pattern e.g.: "20,000+", "2017", "99.8%", "48 Hours", "Up to 30%"
   const parsed = useMemo(() => {
     const match = value.match(/^(.*?)([\d,.]+)(.*)$/)
     if (!match) return null
@@ -42,7 +40,6 @@ export function CounterAnimation({
     return { prefix, targetNum, suffix, hasComma, decimals }
   }, [value])
 
-  // Initial value starts at 0 formatted with prefix and suffix
   const initialZeroFormatted = useMemo(() => {
     if (!parsed) return value
     const zeroStr = (0).toFixed(parsed.decimals)
@@ -59,7 +56,7 @@ export function CounterAnimation({
     const timer = setTimeout(() => {
       const controls = animate(0, targetNum, {
         duration,
-        ease: [0.16, 1, 0.3, 1], // Smooth cubic bezier easeOut
+        ease: [0.16, 1, 0.3, 1],
         onUpdate: (latest) => {
           let numFormatted = latest.toFixed(decimals)
           if (hasComma) {

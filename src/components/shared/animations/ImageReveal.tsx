@@ -108,9 +108,7 @@ export function ImageReveal({
             )}
           />
         )}
-
-        {/* Optional Ambient Subtle Overlay Glow */}
-        {overlayColor && (
+{overlayColor && (
           <motion.div
             initial={{ opacity: 0.6 }}
             animate={{ opacity: isInView ? 0 : 0.6 }}

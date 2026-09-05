@@ -30,8 +30,7 @@ export function ContactInfo() {
 
   return (
     <div className="flex flex-col gap-8">
-      {/* Clean Intro */}
-      <div>
+<div>
         <h2 className="font-montserrat text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight mb-3">
           Get in <span className="text-secondary">Touch</span>
         </h2>
@@ -39,9 +38,7 @@ export function ContactInfo() {
           Have questions about our products, need a trial sample, or want to discuss custom formulations? We&apos;re here to help.
         </p>
       </div>
-      
-      {/* 3 Simple, Clean Cards */}
-      <div className="flex flex-col gap-4">
+<div className="flex flex-col gap-4">
         {contactItems.map((item, idx) => {
           const Content = (
             <div className="p-5 rounded-2xl bg-card border border-border shadow-xs hover:border-secondary/50 hover:shadow-md transition-all duration-300 flex items-start gap-4 group">
@@ -71,9 +68,7 @@ export function ContactInfo() {
           )
         })}
       </div>
-      
-      {/* Clean Social Links */}
-      <div className="pt-2 flex flex-col gap-3">
+<div className="pt-2 flex flex-col gap-3">
         <h4 className="font-montserrat font-bold text-xs text-muted-foreground uppercase tracking-wider">
           Follow Us
         </h4>

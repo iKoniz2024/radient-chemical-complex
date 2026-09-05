@@ -6,9 +6,7 @@ export interface Product {
 }
 
 export const productsData: Product[] = [
-  // ============================================
-  // PRETREATMENT AUXILIARY SERIES
-  // ============================================
+
   {
     id: "pre-sequestering",
     categoryId: "pretreatment",
@@ -76,9 +74,6 @@ export const productsData: Product[] = [
     properties: "A spot free silicone based high concentrate defoamer. Very effective non silicone based defoamer. Non-ionic silicone antifoam for use in acid and alkaline conditions."
   },
 
-  // ============================================
-  // DYEING AUXILIARY SERIES
-  // ============================================
   {
     id: "dye-levelling",
     categoryId: "dyeing",
@@ -122,9 +117,6 @@ export const productsData: Product[] = [
     properties: "Highly effective soda ash substitute for fixation of all types of reactive dyes on cellulosic, reducing load on effluent treatment plant due to its lower TDS, BOD and COD. Highly effective 10 times concentrated soda ash substitute in powder form for fixation of all types of reactive and Sulphur dyes on cellulosic yarn, fiber and garments. Highly effective 4 times concentrated soda ash substitute in powder form for fixation of all types of reactive and Sulphur dyes on cellulosic yarn, fiber and garments. Effect on light fastness. Highly effective 6 times concentrated soda ash substitute in powder form for fixation of all types of reactive and Sulphur dyes on cellulosic yarn, fiber and garments. cationic monomer. Alkaline donor for the use in reactive dyeing of cellulose. High stability in reactive dyeing temperature giving a complete liberation of alkaline for the dyeing of reactive on cellulose fibers. 1/4-1/5 compared to soda ash light."
   },
 
-  // ============================================
-  // FINISHING AUXILIARY SERIES
-  // ============================================
   {
     id: "fin-cationic-flakes",
     categoryId: "finishing",
@@ -174,9 +166,6 @@ export const productsData: Product[] = [
     properties: "Powder Form Soaping Agent. Powder Form Levelling Agent. Powder Form Anti-Creasing Agent. Powder Form Hydrogen Peroxide Stabilizer. Powder Form Hydrogen Peroxide Killer. Powder Form Dispersing Agent. Powder Form Sequestering Agent. Powder Form De-Sizing Agent."
   },
 
-  // ============================================
-  // DENIM WASHING / WASHING CHEMICAL SERIES
-  // ============================================
   {
     id: "wash-green-acid",
     categoryId: "denim-washing",
@@ -328,9 +317,6 @@ export const productsData: Product[] = [
     properties: "Highly effective soda ash substitute for fixation of all types of reactive dyes on cellulosic, reducing load on effluent treatment plant due to its lower TDS, BOD and COD."
   },
 
-  // ============================================
-  // PSF INDUSTRIES CHEMICAL SERIES
-  // ============================================
   {
     id: "psf-washing",
     categoryId: "psf",
@@ -356,9 +342,6 @@ export const productsData: Product[] = [
     properties: "High-grade silicone oil for industrial fiber applications."
   },
 
-  // ============================================
-  // OTHERS AUXILIARY SERIES
-  // ============================================
   {
     id: "oth-cross-linking",
     categoryId: "others",

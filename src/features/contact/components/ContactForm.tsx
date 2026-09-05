@@ -77,8 +77,7 @@ export function ContactForm() {
 
   return (
     <div className="bg-card border border-border rounded-3xl p-8 sm:p-10 shadow-xl relative overflow-hidden">
-      {/* Header */}
-      <div className="mb-6">
+<div className="mb-6">
         <h3 className="font-montserrat text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight mb-1.5">
           {product ? `Inquire: ${product}` : "Send a Message"}
         </h3>
@@ -115,9 +114,7 @@ export function ContactForm() {
               </div>
             </div>
           )}
-          
-          {/* Name & Email */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5">
               <label htmlFor="name" className="text-xs font-semibold text-foreground">
                 Your Name <span className="text-secondary">*</span>
@@ -146,9 +143,7 @@ export function ContactForm() {
               />
             </div>
           </div>
-
-          {/* Company & Phone */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5">
               <label htmlFor="company" className="text-xs font-semibold text-foreground">
                 Company Name
@@ -174,9 +169,7 @@ export function ContactForm() {
               />
             </div>
           </div>
-
-          {/* Message Area */}
-          <div className="flex flex-col gap-1.5">
+<div className="flex flex-col gap-1.5">
             <label htmlFor="message" className="text-xs font-semibold text-foreground">
               Message <span className="text-secondary">*</span>
             </label>
@@ -190,9 +183,7 @@ export function ContactForm() {
               className="rounded-xl bg-background border-border text-sm focus:border-secondary shadow-xs resize-none"
             />
           </div>
-
-          {/* Submit Button */}
-          <Button 
+<Button 
             type="submit" 
             size="lg" 
             disabled={isSubmitting}

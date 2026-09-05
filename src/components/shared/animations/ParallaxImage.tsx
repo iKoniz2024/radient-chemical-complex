@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 interface ParallaxImageProps extends Omit<ImageProps, "className"> {
   containerClassName?: string
   imageClassName?: string
-  speed?: number // -1 to 1 (negative goes opposite direction of scroll)
+  speed?: number
 }
 
 export function ParallaxImage({
@@ -23,8 +23,6 @@ export function ParallaxImage({
     offset: ["start end", "end start"],
   })
 
-  // Calculate the translate Y value based on speed.
-  // speed 0.5 means it will move 50% slower than the scroll.
   const y = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"])
   const yMapped = useTransform(y, (value) => `calc(${value} * ${speed})`)
 

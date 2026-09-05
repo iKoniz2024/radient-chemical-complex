@@ -70,9 +70,7 @@ export default function PrivacyPage() {
       <CinematicSection depth={1}>
         <section className="py-16 md:py-24 bg-background">
           <Container className="max-w-6xl mx-auto">
-
-            {/* Quick Metadata Bar */}
-            <div className="mb-12 p-6 rounded-3xl bg-card border border-border/80 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
+<div className="mb-12 p-6 rounded-3xl bg-card border border-border/80 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <CheckCircle2 className="w-5 h-5 text-secondary shrink-0" />
                 <span>Data Protection Standard: <strong>Enterprise SSL & Encrypted Storage</strong></span>
@@ -81,12 +79,8 @@ export default function PrivacyPage() {
                 NDA Protected
               </span>
             </div>
-
-            {/* Main Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-              
-              {/* Left Column - Sticky Navigation Index */}
-              <div className="lg:col-span-4 sticky top-28 hidden lg:block">
+<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+<div className="lg:col-span-4 sticky top-28 hidden lg:block">
                 <div className="p-6 rounded-3xl bg-card border border-border shadow-xs">
                   <h3 className="font-montserrat font-bold text-sm uppercase tracking-wider text-muted-foreground mb-4 pb-3 border-b border-border/60">
                     Policy Index
@@ -107,9 +101,7 @@ export default function PrivacyPage() {
                   </nav>
                 </div>
               </div>
-
-              {/* Right Column - Privacy Cards */}
-              <div className="lg:col-span-8 flex flex-col gap-8">
+<div className="lg:col-span-8 flex flex-col gap-8">
                 {sections.map((sec) => {
                   const Icon = sec.icon
                   return (
@@ -147,9 +139,7 @@ export default function PrivacyPage() {
                     </article>
                   )
                 })}
-
-                {/* Bottom Security Support CTA Card */}
-                <div className="p-8 sm:p-10 rounded-3xl bg-linear-to-br from-[#0A1930] to-[#060D18] text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+<div className="p-8 sm:p-10 rounded-3xl bg-linear-to-br from-[#0A1930] to-[#060D18] text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
                   <div>
                     <h3 className="font-montserrat text-xl font-bold mb-2">Need a Signed Non-Disclosure Agreement (NDA)?</h3>
                     <p className="text-sm text-slate-300 max-w-md leading-relaxed">

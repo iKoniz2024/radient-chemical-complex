@@ -31,13 +31,11 @@ export function Navbar() {
     setIsScrolled(latest > 50)
   })
 
-  // Close mobile menu when route changes
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+
     setIsMobileMenuOpen(false)
   }, [pathname])
 
-  // Prevent scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden"
@@ -76,9 +74,7 @@ export function Navbar() {
               />
             </Link>
           </div>
-
-          {/* Desktop Navigation */}
-          <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium">
+<nav aria-label="Main Navigation" className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium">
             {navLinks.map((link) => (
               <MagneticButton key={link.name} strength={0.1}>
                 <Link
@@ -105,9 +101,7 @@ export function Navbar() {
                 <Link href="/contact">Request Sample</Link>
               </Button>
             </MagneticButton>
-
-            {/* Theme Toggle */}
-            {mounted && (
+{mounted && (
               <Button
                 variant="outline"
                 size="icon"
@@ -118,9 +112,7 @@ export function Navbar() {
                 {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
               </Button>
             )}
-
-            {/* Mobile Menu Toggle */}
-            <Button
+<Button
               variant="outline"
               size="icon"
               className="md:hidden border-border bg-transparent text-foreground hover:bg-muted"
@@ -139,9 +131,7 @@ export function Navbar() {
           </div>
         </div>
       </Container>
-
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
+<AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             id="mobile-menu"

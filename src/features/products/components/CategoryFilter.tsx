@@ -16,8 +16,7 @@ export function CategoryFilter({ activeCategoryId }: CategoryFilterProps) {
 
   return (
     <div className="flex flex-col gap-6 sticky top-24">
-      {/* Category Navigation List */}
-      <div className="flex flex-col gap-1.5 bg-card border border-border rounded-3xl p-4 sm:p-5 shadow-xs w-full overflow-hidden">
+<div className="flex flex-col gap-1.5 bg-card border border-border rounded-3xl p-4 sm:p-5 shadow-xs w-full overflow-hidden">
         <div className="flex items-center justify-between px-2 py-2 mb-2 border-b border-border/60">
           <h3 className="font-montserrat font-extrabold text-base text-foreground flex items-center gap-2">
             <Layers className="w-4 h-4 text-secondary" /> Chemical Series
@@ -26,9 +25,7 @@ export function CategoryFilter({ activeCategoryId }: CategoryFilterProps) {
             {totalProducts} Total
           </span>
         </div>
-        
-        {/* All Products link */}
-        <Link 
+<Link 
           href="/products"
           className={cn(
             "w-full px-3.5 py-3 rounded-2xl text-sm font-semibold transition-all duration-200 flex items-center justify-between group overflow-hidden box-border",
@@ -52,9 +49,7 @@ export function CategoryFilter({ activeCategoryId }: CategoryFilterProps) {
             {totalProducts}
           </span>
         </Link>
-        
-        {/* Categories */}
-        {categoriesData.map((category) => {
+{categoriesData.map((category) => {
           const count = productsData.filter((p) => p.categoryId === category.id).length
           const isActive = activeCategoryId === category.id
           const Icon = category.icon
@@ -90,9 +85,7 @@ export function CategoryFilter({ activeCategoryId }: CategoryFilterProps) {
           )
         })}
       </div>
-
-      {/* Sidebar Custom Formulation R&D Box */}
-      <div className="bg-[#0A1930] text-white rounded-3xl p-6 border border-white/10 shadow-xl relative overflow-hidden hidden lg:block">
+<div className="bg-[#0A1930] text-white rounded-3xl p-6 border border-white/10 shadow-xl relative overflow-hidden hidden lg:block">
         <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/15 rounded-full blur-2xl pointer-events-none" />
 
         <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-[#0A1930] mb-4 shadow-md">

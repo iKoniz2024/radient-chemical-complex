@@ -53,9 +53,7 @@ export function CompanyStorySection() {
     <SectionWrapper className="bg-background overflow-hidden text-foreground py-16 md:py-24">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
-          {/* Left Narrative Column (7 cols) */}
-          <div className="lg:col-span-6 flex flex-col gap-6">
+<div className="lg:col-span-6 flex flex-col gap-6">
             <AnimatedContainer animation="slide-right">
               <div className="inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-secondary w-fit">
                 <Award className="w-3.5 h-3.5" /> Our Heritage & Mission
@@ -93,9 +91,7 @@ export function CompanyStorySection() {
               </div>
             </AnimatedContainer>
           </div>
-          
-          {/* Right Metrics Grid Column (6 cols) */}
-          <div className="lg:col-span-6 flex flex-col gap-6">
+<div className="lg:col-span-6 flex flex-col gap-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
               {highlights.map((item, idx) => (
                 <AnimatedContainer key={idx} animation="fade-in" delay={idx * 0.1}>
@@ -104,8 +100,7 @@ export function CompanyStorySection() {
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     className="h-full bg-card border border-border rounded-3xl p-6 sm:p-7 shadow-sm hover:shadow-xl hover:border-secondary/50 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group"
                   >
-                    {/* Top ambient glow */}
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-colors pointer-events-none" />
+<div className="absolute top-0 right-0 w-24 h-24 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-colors pointer-events-none" />
 
                     <div className="flex items-center justify-between mb-4">
                       <div className="w-12 h-12 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-primary transition-all duration-300 shadow-sm">
@@ -132,9 +127,7 @@ export function CompanyStorySection() {
                 </AnimatedContainer>
               ))}
             </div>
-
-            {/* Certifications Bar */}
-            <AnimatedContainer animation="fade-in" delay={0.4}>
+<AnimatedContainer animation="fade-in" delay={0.4}>
               <div className="bg-card border border-border/80 rounded-2xl p-5 shadow-sm flex flex-col gap-3">
                 <div className="flex items-center gap-2 text-xs font-bold text-muted-foreground uppercase tracking-widest">
                   <ShieldCheck className="w-4 h-4 text-secondary" /> Compliances & Global Standards

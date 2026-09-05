@@ -46,8 +46,7 @@ export function WhyChooseUsSection() {
 
   return (
     <SectionWrapper className="relative overflow-hidden bg-background py-20 md:py-28 border-b border-border/40">
-      {/* Background Ambient Glow with Continuous Breathing Pulse */}
-      <motion.div 
+<motion.div 
         animate={{ scale: [1, 1.25, 1], opacity: [0.3, 0.7, 0.3] }}
         transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
         className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-secondary/10 rounded-full blur-[140px] pointer-events-none -z-10" 
@@ -56,9 +55,7 @@ export function WhyChooseUsSection() {
       <Container className="relative z-10">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-          
-          {/* Left Column: Executive Pitch & Verified Scorecard (5 cols) */}
-          <motion.div
+<motion.div
             initial={{ opacity: 0, x: -45 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -76,9 +73,7 @@ export function WhyChooseUsSection() {
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-sans">
               We bridge breakthrough molecular engineering with high-capacity reactor execution, empowering your dyehouse with unmatched batch repeatability and verified environmental safety.
             </p>
-
-            {/* Executive Verified Scorecard */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-card border border-border/80 shadow-xs flex flex-col gap-3.5 relative overflow-hidden group">
+<div className="p-6 sm:p-7 rounded-3xl bg-card border border-border/80 shadow-xs flex flex-col gap-3.5 relative overflow-hidden group">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold uppercase tracking-wider text-secondary flex items-center gap-1.5">
                   <Activity className="w-3.5 h-3.5 animate-pulse" /> Live Synthesis Metrics
@@ -110,9 +105,7 @@ export function WhyChooseUsSection() {
               </Button>
             </div>
           </motion.div>
-
-          {/* Right Column: 2x2 Capability Modules (7 cols) with Slow Motion Cascade */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+<div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
             {capabilities.map((cap, idx) => (
               <motion.div
                 key={idx}
@@ -123,8 +116,7 @@ export function WhyChooseUsSection() {
                 whileHover={{ y: -4 }}
                 className="h-full flex flex-col justify-between p-7 sm:p-8 rounded-3xl bg-card border border-border/80 shadow-xs hover:shadow-xl hover:border-secondary/50 transition-all duration-300 relative group overflow-hidden transform-gpu"
               >
-                {/* Ambient corner glow */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-colors pointer-events-none" />
+<div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-colors pointer-events-none" />
 
                 <div>
                   <div className="flex items-center justify-between gap-3 mb-5">

@@ -1,4 +1,4 @@
-// Unique, high-quality, matched Unsplash images for every single product (80 products)
+
 export const productImageMap: Record<string, string> = {
   "pre-sequestering": "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800", // Sequestering Agent
   "pre-core-alkali": "https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?auto=format&fit=crop&q=80&w=800", // Core Alkali Neutraliser
@@ -82,14 +82,13 @@ export const productImageMap: Record<string, string> = {
   "oth-decoloring": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800", // De-Coloring Agent
 };
 
-// Returns a specific product image URL or falls back to a high-quality category default
 export function getProductImageUrl(productId: string, categoryId: string): string {
-  // If specific image exists, return it
+
   if (productImageMap[productId]) {
     return productImageMap[productId];
   }
   
-  // Category default fallbacks if product image not found
+
   const defaults: Record<string, string> = {
     pretreatment: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=800",
     dyeing: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&q=80&w=800",

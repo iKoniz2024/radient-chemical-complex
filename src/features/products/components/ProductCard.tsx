@@ -36,8 +36,7 @@ export function ProductCard({ product, index = 0, catalogImage }: ProductCardPro
         href={`/products/${product.id}`}
         className="group/card flex flex-col justify-between h-full bg-card border border-border rounded-3xl p-6 sm:p-7 shadow-xs hover:shadow-2xl hover:border-secondary/50 transition-all duration-500 relative overflow-hidden"
       >
-        {/* Background Image Reveal on Mouse Hover (Desktop) & Always Visible (Mobile) */}
-        {catalogImage && (
+{catalogImage && (
           <div className="absolute inset-0 z-0 opacity-100 md:opacity-0 md:group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
             <Image
               src={catalogImage}
@@ -46,16 +45,11 @@ export function ProductCard({ product, index = 0, catalogImage }: ProductCardPro
               className="object-cover scale-105 md:scale-100 md:group-hover/card:scale-110 transition-transform duration-700 ease-out"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-            {/* Subtle Gradient Overlay to preserve 100% of original image colors while keeping text readable */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-transparent" />
+<div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-transparent" />
           </div>
         )}
-
-        {/* Ambient subtle corner glow on hover */}
-        <div className="absolute inset-0 bg-linear-to-br from-secondary/10 to-transparent opacity-100 md:opacity-0 md:group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none z-[1]" />
-
-        {/* Top Row: Category & Physical State Badges */}
-        <div className="relative z-10 flex items-center justify-between gap-2 mb-5">
+<div className="absolute inset-0 bg-linear-to-br from-secondary/10 to-transparent opacity-100 md:opacity-0 md:group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none z-[1]" />
+<div className="relative z-10 flex items-center justify-between gap-2 mb-5">
           <span className="px-3 py-1 rounded-full bg-secondary/20 md:bg-muted md:group-hover/card:bg-secondary/20 text-xs font-bold text-secondary md:text-muted-foreground md:group-hover/card:text-secondary transition-colors duration-300 border border-secondary/30 md:border-border md:group-hover/card:border-secondary/30">
             {category?.title || "Product"}
           </span>
@@ -69,9 +63,7 @@ export function ProductCard({ product, index = 0, catalogImage }: ProductCardPro
             {physicalForm}
           </span>
         </div>
-
-        {/* Content Body: Product Name & Properties */}
-        <div className="relative z-10 flex flex-col flex-1">
+<div className="relative z-10 flex flex-col flex-1">
           <h3 className="font-montserrat text-xl font-bold text-white md:text-foreground md:group-hover/card:text-white transition-colors duration-300 line-clamp-2 leading-snug mb-3">
             {product.name}
           </h3>
@@ -80,9 +72,7 @@ export function ProductCard({ product, index = 0, catalogImage }: ProductCardPro
             {product.properties}
           </p>
         </div>
-
-        {/* Bottom Row: Action with Animated Arrow */}
-        <div className="relative z-10 pt-4 border-t border-white/15 md:border-border/60 md:group-hover/card:border-white/15 flex items-center justify-between text-sm font-bold text-secondary mt-auto transition-colors duration-300">
+<div className="relative z-10 pt-4 border-t border-white/15 md:border-border/60 md:group-hover/card:border-white/15 flex items-center justify-between text-sm font-bold text-secondary mt-auto transition-colors duration-300">
           <span className="text-secondary">View Specifications</span>
           <div className="w-7 h-7 rounded-full bg-secondary text-primary md:bg-secondary/15 md:text-secondary md:group-hover/card:bg-secondary md:group-hover/card:text-primary flex items-center justify-center transition-all duration-300">
             <ArrowRight className="w-3.5 h-3.5 md:group-hover/card:translate-x-0.5 transition-transform" />

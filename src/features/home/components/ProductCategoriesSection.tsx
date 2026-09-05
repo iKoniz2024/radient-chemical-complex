@@ -14,7 +14,6 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect } from "react"
 import { MagneticButton } from "@/components/shared/animations/MagneticButton"
 
-// Extra bullet points for each category to make detail card rich and "live"
 const categoryHighlights: Record<string, string[]> = {
   pretreatment: [
     "Reduces energy consumption by up to 30%",
@@ -60,7 +59,6 @@ export function ProductCategoriesSection() {
 
   const activeCategory = categoriesData.find((c) => c.id === activeTab) || categoriesData[0]
 
-  // Filter products belonging to the active category
   const categoryProducts = productsData.filter((p) => p.categoryId === activeTab)
 
   const handleTabChange = (id: string) => {
@@ -68,7 +66,6 @@ export function ProductCategoriesSection() {
     setImgIndex(0)
   }
 
-  // Automatic slideshow cycle matching exact number of products under this category
   useEffect(() => {
     const timer = setInterval(() => {
       setImgIndex((prev) => (prev + 1) % (categoryProducts.length || 1))
@@ -84,8 +81,7 @@ export function ProductCategoriesSection() {
       className="relative text-white bg-cover bg-center bg-no-repeat bg-fixed [backface-visibility:hidden] [transform-style:preserve-3d] overflow-hidden bg-primary"
       style={{ backgroundImage: `url('https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&q=80&w=1920')` }}
     >
-      {/* Light Overlay to let original image shine while keeping text sharp */}
-      <div className="absolute inset-0 bg-[#0A1930]/35 pointer-events-none z-0" />
+<div className="absolute inset-0 bg-[#0A1930]/35 pointer-events-none z-0" />
 
       <Container className="relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -101,9 +97,7 @@ export function ProductCategoriesSection() {
             </Button>
           </MagneticButton>
         </div>
-
-        {/* Tab Selection panel - inspired by exotexo.com filtering */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-10 border-b border-white/10 pb-6">
+<div className="flex flex-wrap items-center justify-center gap-3 mb-10 border-b border-white/10 pb-6">
           {categoriesData.map((category) => {
             const isActive = category.id === activeTab
             return (
@@ -128,9 +122,7 @@ export function ProductCategoriesSection() {
             )
           })}
         </div>
-
-        {/* Dynamic Detail Card with Split Layout & AnimatePresence */}
-        <div className="min-h-[450px] relative">
+<div className="min-h-[450px] relative">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -140,8 +132,7 @@ export function ProductCategoriesSection() {
               transition={{ type: "spring", stiffness: 240, damping: 22, mass: 0.75 }}
               className="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.3)] transform-gpu"
             >
-              {/* Left Column: Details */}
-              <div className="lg:col-span-7 flex flex-col justify-center">
+<div className="lg:col-span-7 flex flex-col justify-center">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-secondary text-primary shadow-[0_0_20px_rgba(217,155,34,0.4)]">
                     <activeCategory.icon className="w-7 h-7" />
@@ -154,9 +145,7 @@ export function ProductCategoriesSection() {
                 <p className="text-white/80 text-lg leading-relaxed mb-8 max-w-2xl">
                   {activeCategory.description}
                 </p>
-
-                {/* Highlights List */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                   {categoryHighlights[activeTab]?.map((highlight, index) => (
                     <motion.div
                       key={index}
@@ -181,9 +170,7 @@ export function ProductCategoriesSection() {
                   </MagneticButton>
                 </div>
               </div>
-
-              {/* Right Column: High-Res Image Slideshow with click controls & dots */}
-              <div className="lg:col-span-5 relative min-h-[300px] lg:min-h-auto overflow-hidden rounded-2xl group/img">
+<div className="lg:col-span-5 relative min-h-[300px] lg:min-h-auto overflow-hidden rounded-2xl group/img">
                 <AnimatePresence mode="popLayout">
                   <motion.div
                     key={`${activeTab}-${imgIndex}`}
@@ -203,9 +190,7 @@ export function ProductCategoriesSection() {
                     />
                   </motion.div>
                 </AnimatePresence>
-
-                {/* Product Name Overlay */}
-                {currentProduct && (
+{currentProduct && (
                   <motion.div
                     key={currentProduct.id}
                     initial={{ opacity: 0, y: -10 }}
@@ -215,9 +200,7 @@ export function ProductCategoriesSection() {
                     Product: {currentProduct.name}
                   </motion.div>
                 )}
-
-                {/* Navigation Dots */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2 bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-xs max-w-[85%] overflow-x-auto">
+<div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2 bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-xs max-w-[85%] overflow-x-auto">
                   {categoryProducts.map((_, idx) => (
                     <button
                       key={idx}
@@ -227,9 +210,7 @@ export function ProductCategoriesSection() {
                     />
                   ))}
                 </div>
-
-                {/* Glowing Overlay */}
-                <div className="absolute inset-0 bg-linear-to-b from-primary/30 via-transparent to-primary/60 pointer-events-none z-10" />
+<div className="absolute inset-0 bg-linear-to-b from-primary/30 via-transparent to-primary/60 pointer-events-none z-10" />
                 <div className="absolute inset-0 border-2 border-white/10 group-hover/img:border-secondary/30 transition-colors duration-500 rounded-2xl pointer-events-none z-10" />
               </div>
             </motion.div>

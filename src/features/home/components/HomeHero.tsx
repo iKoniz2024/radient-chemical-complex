@@ -93,8 +93,7 @@ export function HomeHero() {
 
   return (
     <section ref={ref} className="relative flex min-h-screen items-center overflow-hidden">
-      {/* Ken Burns background slideshow - zoom in/out like video */}
-      <motion.div className="hero-slideshow" style={{ opacity: videoOpacity }}>
+<motion.div className="hero-slideshow" style={{ opacity: videoOpacity }}>
         {heroImages.map((img) => (
           <img
             key={img.src}
@@ -103,12 +102,8 @@ export function HomeHero() {
             className="hero-slideshow-img"
           />
         ))}
-
-        {/* Subtle light gradient overlay so the image stays bright, clear and natural */}
-        <div className="absolute inset-0 z-[10] bg-gradient-to-t from-[#060D18]/60 via-transparent to-black/10 pointer-events-none" />
-
-        {/* Interactive Floating Particles & Chemical Formulas */}
-        <div className="absolute inset-0 z-[11] overflow-hidden pointer-events-none">
+<div className="absolute inset-0 z-[10] bg-gradient-to-t from-[#060D18]/60 via-transparent to-black/10 pointer-events-none" />
+<div className="absolute inset-0 z-[11] overflow-hidden pointer-events-none">
           {particlePositions.map((particle, i) => {
             const formula = chemicalFormulas[particle.formulaIndex]
             return (
@@ -248,38 +243,28 @@ export function HomeHero() {
               ))}
             </motion.div>
           </motion.div>
-
-          {/* Right Column - Interactive R&D Visualizer */}
-          <motion.div
+<motion.div
             className="hidden lg:flex relative items-center justify-center min-h-[500px]"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
             style={{ y: contentY }}
           >
-            {/* Glowing background blob */}
-            <div className="absolute w-72 h-72 rounded-full bg-secondary/10 blur-[80px] animate-pulse pointer-events-none" />
-
-            {/* Central chemistry orb */}
-            <div className="relative w-80 h-80 flex items-center justify-center">
-              {/* Outer orbital ring */}
-              <motion.div
+<div className="absolute w-72 h-72 rounded-full bg-secondary/10 blur-[80px] animate-pulse pointer-events-none" />
+<div className="relative w-80 h-80 flex items-center justify-center">
+<motion.div
                 className="absolute inset-0 rounded-full border border-dashed border-secondary/30 transform-gpu"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                 style={{ willChange: "transform" }}
               />
-
-              {/* Inner orbital ring */}
-              <motion.div
+<motion.div
                 className="absolute w-60 h-60 rounded-full border border-dashed border-white/10 transform-gpu"
                 animate={{ rotate: -360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 style={{ willChange: "transform" }}
               />
-
-              {/* Center Core */}
-              <motion.div
+<motion.div
                 className="absolute w-36 h-36 rounded-full bg-[#0A1930]/90 backdrop-blur-md border border-secondary/30 shadow-[0_0_40px_rgba(217,155,34,0.25)] flex flex-col items-center justify-center p-4 text-center z-10 transform-gpu"
                 whileHover={{ scale: 1.05, borderColor: "rgba(217,155,34,0.6)" }}
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
@@ -291,9 +276,7 @@ export function HomeHero() {
                 <span className="text-xs font-bold tracking-widest text-secondary uppercase">R&D CORE</span>
                 <span className="text-xs text-white/70 mt-0.5">Radiant Lab</span>
               </motion.div>
-
-              {/* Orbiting Card 1 - Top Left */}
-              <motion.div
+<motion.div
                 className="absolute -top-0.5 -left-10 z-20 transform-gpu"
                 animate={{
                   y: [0, -8, 0],
@@ -318,9 +301,7 @@ export function HomeHero() {
                   </p>
                 </div>
               </motion.div>
-
-              {/* Orbiting Card 2 - Top Right */}
-              <motion.div
+<motion.div
                 className="absolute -top-0.5 -right-10 z-20 transform-gpu"
                 animate={{
                   y: [0, -8, 0],
@@ -346,9 +327,7 @@ export function HomeHero() {
                   </p>
                 </div>
               </motion.div>
-
-              {/* Orbiting Card 3 - Bottom Left */}
-              <motion.div
+<motion.div
                 className="absolute -bottom-0.5 -left-10 z-20 transform-gpu"
                 animate={{
                   y: [0, 8, 0],
@@ -374,9 +353,7 @@ export function HomeHero() {
                   </p>
                 </div>
               </motion.div>
-
-              {/* Orbiting Card 4 - Bottom Right */}
-              <motion.div
+<motion.div
                 className="absolute -bottom-0.5 -right-10 z-20 transform-gpu"
                 animate={{
                   y: [0, 8, 0],

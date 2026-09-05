@@ -11,17 +11,14 @@ export function CoreValuesSection() {
 
   return (
     <SectionWrapper className="relative overflow-hidden bg-background py-20 md:py-28 border-b border-border/40">
-      {/* Ambient Subtle Background Glow with Continuous Breathing Pulse */}
-      <motion.div 
+<motion.div 
         animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.7, 0.3] }}
         transition={{ repeat: Infinity, duration: 7, ease: "easeInOut" }}
         className="absolute top-1/3 left-1/2 -translate-x-1/2 w-4/5 h-96 bg-secondary/5 rounded-full blur-[140px] pointer-events-none -z-10" 
       />
 
       <Container className="relative z-10">
-        
-        {/* Section Title Header */}
-        <motion.div 
+<motion.div 
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -39,12 +36,8 @@ export function CoreValuesSection() {
             The foundation guiding our molecular research, sustainable operations, and trusted partnerships across the global textile chemical ecosystem.
           </p>
         </motion.div>
-        
-        {/* Modern Unified Bento Grid with Slow Graceful Cascade */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          
-          {/* Bento Tile 1: Hero Featured Tile (2 cols on desktop) */}
-          <motion.div
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<motion.div
             initial={{ opacity: 0, y: 35 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
@@ -81,9 +74,7 @@ export function CoreValuesSection() {
               </span>
             </div>
           </motion.div>
-
-          {/* Bento Tile 2: Integrity & Transparency */}
-          <motion.div
+<motion.div
             initial={{ opacity: 0, y: 35 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
@@ -108,9 +99,7 @@ export function CoreValuesSection() {
               <ArrowUpRight className="w-4 h-4" />
             </div>
           </motion.div>
-
-          {/* Bento Tile 3: Collaborative Innovation */}
-          <motion.div
+<motion.div
             initial={{ opacity: 0, y: 35 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
@@ -135,9 +124,7 @@ export function CoreValuesSection() {
               <ArrowUpRight className="w-4 h-4" />
             </div>
           </motion.div>
-
-          {/* Bento Tile 4: Customer Centricity */}
-          <motion.div
+<motion.div
             initial={{ opacity: 0, y: 35 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
@@ -162,9 +149,7 @@ export function CoreValuesSection() {
               <ArrowUpRight className="w-4 h-4" />
             </div>
           </motion.div>
-
-          {/* Bento Tile 5: Economic Excellence */}
-          <motion.div
+<motion.div
             initial={{ opacity: 0, y: 35 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
@@ -189,9 +174,7 @@ export function CoreValuesSection() {
               <ArrowUpRight className="w-4 h-4" />
             </div>
           </motion.div>
-
-          {/* Bento Tile 6: Full Width Bottom Tile (Community Empowerment) */}
-          <motion.div
+<motion.div
             initial={{ opacity: 0, y: 35 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}

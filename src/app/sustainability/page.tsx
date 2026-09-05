@@ -64,9 +64,7 @@ export default function SustainabilityPage() {
           backgroundImage="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1920"
         />
       </CinematicSection>
-
-      {/* Sustainability Metrics Banner */}
-      <section className="-mt-12 relative z-20">
+<section className="-mt-12 relative z-20">
         <Container>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 p-6 sm:p-8 rounded-3xl bg-card border border-border shadow-2xl backdrop-blur-md">
             {metrics.map((m, idx) => (
@@ -81,9 +79,7 @@ export default function SustainabilityPage() {
           </div>
         </Container>
       </section>
-
-      {/* Main Commitments Grid */}
-      <CinematicSection depth={1}>
+<CinematicSection depth={1}>
         <SectionWrapper>
           <Container>
             <SectionTitle
@@ -119,9 +115,7 @@ export default function SustainabilityPage() {
                 )
               })}
             </div>
-
-            {/* Bottom Sustainability Callout Card */}
-            <div className="mt-16 p-8 sm:p-12 rounded-3xl bg-linear-to-br from-[#0A1930] to-[#060D18] text-white shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 border border-white/10">
+<div className="mt-16 p-8 sm:p-12 rounded-3xl bg-linear-to-br from-[#0A1930] to-[#060D18] text-white shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 border border-white/10">
               <div className="max-w-2xl">
                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/20 border border-secondary/30 text-xs font-bold text-secondary uppercase tracking-widest mb-4">
                   <Leaf className="w-3.5 h-3.5" /> Eco Consultation

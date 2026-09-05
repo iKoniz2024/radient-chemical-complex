@@ -21,17 +21,12 @@ export function CeoMessageSection() {
           transition={{ duration: 0.7 }}
           className="relative rounded-3xl sm:rounded-[36px] bg-[#0A1930] text-white border border-white/15 p-8 sm:p-12 lg:p-14 shadow-2xl overflow-hidden"
         >
-          {/* Ambient Lighting Orbs */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/15 rounded-full blur-3xl pointer-events-none" />
+<div className="absolute top-0 right-0 w-96 h-96 bg-secondary/15 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#06B6D4]/10 rounded-full blur-3xl pointer-events-none" />
-
-          {/* Large Background Quote Watermark */}
-          <Quote className="absolute top-6 right-8 w-32 h-32 text-white/5 rotate-180 pointer-events-none" />
+<Quote className="absolute top-6 right-8 w-32 h-32 text-white/5 rotate-180 pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            
-            {/* Left Column: CEO Portrait (Enters from Left) */}
-            <motion.div 
+<motion.div 
               initial={{ opacity: 0, x: -55 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-40px" }}
@@ -39,8 +34,7 @@ export function CeoMessageSection() {
               className="lg:col-span-5 flex flex-col items-center justify-center w-full transform-gpu"
             >
               <div className="w-full max-w-[400px] rounded-3xl bg-gradient-to-b from-white/12 to-white/5 p-3.5 sm:p-4 border border-secondary/40 shadow-2xl group">
-                {/* Clean Photo Frame */}
-                <div className="relative w-full aspect-4/5 rounded-2xl overflow-hidden shadow-inner bg-slate-900">
+<div className="relative w-full aspect-4/5 rounded-2xl overflow-hidden shadow-inner bg-slate-900">
                   <Image
                     src="/images/ceo-photo.jpeg"
                     alt={ceoMessage.name}
@@ -51,9 +45,7 @@ export function CeoMessageSection() {
                     unoptimized
                   />
                 </div>
-                
-                {/* Clean Executive Name & Title Plate */}
-                <div className="pt-4 pb-2 px-2 text-center">
+<div className="pt-4 pb-2 px-2 text-center">
                   <h3 className="font-montserrat font-bold text-white text-xl sm:text-2xl tracking-tight">
                     {ceoMessage.name}
                   </h3>
@@ -66,35 +58,25 @@ export function CeoMessageSection() {
                 </div>
               </div>
             </motion.div>
-
-            {/* Right Column: Executive Quote & Typewriter Message (Enters from Right) */}
-            <motion.div 
+<motion.div 
               initial={{ opacity: 0, x: 55 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
               className="lg:col-span-7 flex flex-col gap-6 text-left transform-gpu"
             >
-              
-              {/* Kicker Badge */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-secondary/40 bg-secondary/15 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-secondary w-fit shadow-xs">
+<div className="inline-flex items-center gap-2 rounded-full border border-secondary/40 bg-secondary/15 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-secondary w-fit shadow-xs">
                 <Sparkles className="w-3.5 h-3.5" /> Leadership & Vision
               </div>
-
-              {/* CEO Quote */}
-              <h2 className="font-montserrat text-2xl sm:text-3xl lg:text-4xl font-extrabold text-secondary leading-snug tracking-tight">
+<h2 className="font-montserrat text-2xl sm:text-3xl lg:text-4xl font-extrabold text-secondary leading-snug tracking-tight">
                 &ldquo;{ceoMessage.quote}&rdquo;
               </h2>
-
-              {/* Typewriter Body Message */}
-              <div className="text-base sm:text-lg text-slate-200 leading-relaxed font-sans min-h-[110px]">
+<div className="text-base sm:text-lg text-slate-200 leading-relaxed font-sans min-h-[110px]">
                 <Typewriter speed={16} delay={0.3}>
                   {ceoMessage.content}
                 </Typewriter>
               </div>
-
-              {/* Leadership Pillar Badges */}
-              <div className="pt-4 border-t border-white/15 flex flex-wrap items-center gap-3">
+<div className="pt-4 border-t border-white/15 flex flex-wrap items-center gap-3">
                 <div className="flex items-center gap-2 text-xs font-semibold text-slate-300 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full">
                   <ShieldCheck className="w-4 h-4 text-secondary" />
                   Sustainable Chemistry

@@ -57,17 +57,14 @@ export function AboutSection() {
 
   return (
     <SectionWrapper className="bg-background text-foreground py-20 md:py-28 overflow-hidden relative border-b border-border/40">
-      {/* Background Subtle Gradient Glow with Continuous Breathing Pulse */}
-      <motion.div 
+<motion.div 
         animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.65, 0.3] }}
         transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
         className="absolute top-1/4 left-1/2 -translate-x-1/2 w-3/4 h-96 bg-secondary/5 rounded-full blur-[140px] pointer-events-none -z-10" 
       />
 
       <Container className="relative z-10">
-
-        {/* Section Header */}
-        <motion.div
+<motion.div
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -85,12 +82,8 @@ export function AboutSection() {
             Developing eco-friendly, high-efficiency, and cost-effective chemical auxiliaries that empower modern textile production while safeguarding our planet.
           </p>
         </motion.div>
-
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-
-          {/* Left Column: Visual Showcase & Highlight Badges (Enters from Left) */}
-          <motion.div
+<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+<motion.div
             initial={{ opacity: 0, x: -45 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-40px" }}
@@ -106,9 +99,7 @@ export function AboutSection() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/90 via-[#060D18]/30 to-transparent" />
-
-              {/* Floating Live Highlight Card on Image */}
-              <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-background/90 backdrop-blur-md border border-border/80 shadow-2xl">
+<div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-background/90 backdrop-blur-md border border-border/80 shadow-2xl">
                 <div className="flex items-center justify-between gap-4">
                   <div className="flex items-center gap-3.5">
                     <div className="w-11 h-11 rounded-xl bg-secondary flex items-center justify-center text-primary shadow-md shrink-0">
@@ -126,9 +117,7 @@ export function AboutSection() {
                 </div>
               </div>
             </div>
-
-            {/* 2 Key Feature Checkpoints */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
               <div className="flex items-start gap-3 p-4 rounded-2xl bg-card border border-border/70 shadow-xs">
                 <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-secondary/15 text-secondary">
                   <CheckCircle2 className="h-4 w-4" />
@@ -150,9 +139,7 @@ export function AboutSection() {
               </div>
             </div>
           </motion.div>
-
-          {/* Right Column: Narrative & Key Metrics (Enters from Right) */}
-          <motion.div
+<motion.div
             initial={{ opacity: 0, x: 45 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-40px" }}
@@ -170,9 +157,7 @@ export function AboutSection() {
                 With dual manufacturing facilities in Bangladesh and China, we maintain rigorous batch repeatability, fast technical support, and global compliance standards trusted by tier-1 mills worldwide.
               </p>
             </div>
-
-            {/* Integrated Sleek Horizontal Stat Bar */}
-            <div className="rounded-2xl bg-card/80 backdrop-blur-xs border border-border/80 p-4 sm:p-5 shadow-xs">
+<div className="rounded-2xl bg-card/80 backdrop-blur-xs border border-border/80 p-4 sm:p-5 shadow-xs">
               <div className="grid grid-cols-3 divide-x divide-border/70 text-center">
                 {stats.map((stat, idx) => (
                   <div key={idx} className="px-2 sm:px-4 flex flex-col items-center justify-center">
@@ -190,9 +175,7 @@ export function AboutSection() {
                 ))}
               </div>
             </div>
-
-            {/* CTA Button & Trust Note */}
-            <div className="flex flex-wrap items-center gap-4">
+<div className="flex flex-wrap items-center gap-4">
               <Button asChild size="lg" className="bg-secondary text-[#0A1930] font-bold hover:bg-secondary/90 shadow-lg shadow-secondary/20 group">
                 <Link href="/about">
                   Explore Company Story <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -205,9 +188,7 @@ export function AboutSection() {
           </motion.div>
 
         </div>
-
-        {/* Certificates & Global Accreditations - Modern Unified Banner Bar */}
-        <div className="mt-20 pt-10 border-t border-border/60">
+<div className="mt-20 pt-10 border-t border-border/60">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-secondary block mb-1">
@@ -229,8 +210,7 @@ export function AboutSection() {
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             className="w-full bg-[#050C16] border border-white/10 hover:border-secondary/40 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden group transition-all duration-500"
           >
-            {/* Subtle Golden Ambient Glow on Hover */}
-            <div className="absolute inset-0 bg-radial from-secondary/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+<div className="absolute inset-0 bg-radial from-secondary/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
             <div className="relative z-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 items-center gap-6 sm:gap-8 lg:gap-10">
               {certificates.map((cert, i) => (
@@ -248,8 +228,7 @@ export function AboutSection() {
                       unoptimized
                     />
                   </div>
-                  {/* Animated Glowing Vertical Divider between logos on desktop */}
-                  {i < certificates.length - 1 && (
+{i < certificates.length - 1 && (
                     <motion.div
                       animate={{
                         opacity: [0.3, 1, 0.3],

@@ -11,9 +11,7 @@ import { Sparkles, Clock, ShieldCheck, FlaskConical, MapPin } from "lucide-react
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-
-      {/* 1. Hero Banner with Smooth Fixed Parallax */}
-      <div
+<div
         className="relative py-28 sm:py-32 md:py-36 min-h-[380px] flex items-center text-white bg-cover bg-center bg-no-repeat bg-fixed [backface-visibility:hidden] [transform-style:preserve-3d] overflow-hidden border-b border-white/10 bg-primary"
         style={{ backgroundImage: `url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&q=80&w=1920')` }}
       >
@@ -32,9 +30,7 @@ export default function ContactPage() {
           <p className="text-base sm:text-lg text-white font-medium max-w-2xl mx-auto leading-relaxed mb-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
             Have a technical inquiry, need a complimentary sample trial, or looking for custom auxiliary development? Our senior chemical engineers are ready to assist.
           </p>
-
-          {/* 4 Quick Assurance Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-3 mt-2 text-xs text-white font-semibold">
+<div className="flex flex-wrap items-center justify-center gap-3 mt-2 text-xs text-white font-semibold">
             <span className="bg-black/50 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 shadow-md flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-secondary" /> 2-Hour Response Time
             </span>
@@ -48,9 +44,7 @@ export default function ContactPage() {
 
         </Container>
       </div>
-
-      {/* 2. Main Contact Grid */}
-      <SectionWrapper className="bg-background py-20 md:py-28">
+<SectionWrapper className="bg-background py-20 md:py-28">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
@@ -67,9 +61,7 @@ export default function ContactPage() {
           </div>
         </Container>
       </SectionWrapper>
-
-      {/* 3. Google Map Location Hub */}
-      <div className="w-full h-[450px] md:h-[500px] border-t border-border overflow-hidden">
+<div className="w-full h-[450px] md:h-[500px] border-t border-border overflow-hidden">
         <GoogleMap
           lat={23.8691713}
           lng={90.3591579}

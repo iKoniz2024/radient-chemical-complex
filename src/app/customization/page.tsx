@@ -149,16 +149,12 @@ export default function CustomizationPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
-
-      {/* 1. Hero Banner with Smooth Fixed Parallax */}
-      <div
+<div
         className="relative py-28 sm:py-32 md:py-36 min-h-[380px] flex items-center text-white bg-cover bg-center bg-no-repeat bg-fixed [backface-visibility:hidden] [transform-style:preserve-3d] overflow-hidden border-b border-white/10 bg-primary"
         style={{ backgroundImage: `url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=1920')` }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/95 via-[#060D18]/55 to-transparent pointer-events-none z-0" />
-
-        {/* Ambient Subtle Pulsing Light in Hero */}
-        <motion.div
+<motion.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.45, 0.2] }}
           transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
           className="absolute top-1/3 left-1/2 -translate-x-1/2 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] pointer-events-none -z-0"
@@ -192,9 +188,7 @@ export default function CustomizationPage() {
           >
             Send us your fabric substrate and desired finish. Our senior application chemists will formulate, synthesize, and validate bespoke auxiliary recipes with guaranteed batch repeatability.
           </motion.p>
-
-          {/* 4 Live Capability Metric Badges with Slow Cascading Reveal */}
-          <div className="flex flex-wrap items-center justify-center gap-3 mt-2 text-xs text-white font-semibold">
+<div className="flex flex-wrap items-center justify-center gap-3 mt-2 text-xs text-white font-semibold">
             {[
               { icon: FlaskConical, text: "48h Sample Synthesis" },
               { icon: CheckCircle2, text: "99.8% Effect Match" },
@@ -216,9 +210,7 @@ export default function CustomizationPage() {
 
         </Container>
       </div>
-
-      {/* 2. Editorial Photo-Driven 4-Step Process Showcase with Dark/Light Support */}
-      <section className="py-20 md:py-28 bg-background border-b border-border/60 relative overflow-hidden">
+<section className="py-20 md:py-28 bg-background border-b border-border/60 relative overflow-hidden">
         <Container className="relative z-10">
 
           <motion.div
@@ -238,9 +230,7 @@ export default function CustomizationPage() {
               From microscopic fiber analysis to multi-ton reactor production, our editorial protocol ensures absolute batch precision.
             </p>
           </motion.div>
-
-          {/* 4 Editorial Visual Step Cards with Semantic Theme Styling */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
             {processSteps.map((step, idx) => (
               <motion.div
                 key={idx}
@@ -252,8 +242,7 @@ export default function CustomizationPage() {
                 className="flex flex-col justify-between bg-card rounded-3xl border border-border/80 shadow-xs hover:shadow-xl hover:border-secondary/50 transition-all duration-300 overflow-hidden group transform-gpu"
               >
                 <div>
-                  {/* Photo Header with Integrated Step Badge */}
-                  <div className="relative h-48 w-full overflow-hidden bg-muted">
+<div className="relative h-48 w-full overflow-hidden bg-muted">
                     <Image
                       src={step.image}
                       alt={step.title}
@@ -271,18 +260,14 @@ export default function CustomizationPage() {
                       {step.subtitle}
                     </span>
                   </div>
-
-                  {/* Step Narrative Body */}
-                  <div className="p-6">
+<div className="p-6">
                     <h3 className="font-montserrat text-lg font-bold text-foreground group-hover:text-secondary transition-colors duration-300 mb-2.5">
                       {step.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans mb-5">
                       {step.desc}
                     </p>
-
-                    {/* Step Specs List */}
-                    <div className="space-y-2 pt-4 border-t border-border/60">
+<div className="space-y-2 pt-4 border-t border-border/60">
                       {step.specs.map((item, sIdx) => (
                         <div key={sIdx} className="flex items-center gap-2 text-xs text-foreground/90 font-medium">
                           <div className="w-4 h-4 rounded-full bg-secondary/15 flex items-center justify-center text-secondary shrink-0">
@@ -300,9 +285,7 @@ export default function CustomizationPage() {
 
         </Container>
       </section>
-
-      {/* 3. Interactive Technical Specification Deck & TDS Matrix */}
-      <section className="py-20 md:py-28 bg-card/40 border-b border-border/60 relative overflow-hidden">
+<section className="py-20 md:py-28 bg-card/40 border-b border-border/60 relative overflow-hidden">
         <Container className="relative z-10">
 
           <motion.div
@@ -322,9 +305,7 @@ export default function CustomizationPage() {
               Select a chemistry family below to inspect synthesis profiles, fabric substrate compatibility, and testing benchmarks.
             </p>
           </motion.div>
-
-          {/* Interactive Category Selector Pill Bar */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 max-w-4xl mx-auto">
+<div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 max-w-4xl mx-auto">
             {capabilityTabs.map((tab, idx) => (
               <motion.button
                 key={tab.id}
@@ -341,9 +322,7 @@ export default function CustomizationPage() {
               </motion.button>
             ))}
           </div>
-
-          {/* Active Category Technical Inspection Sheet Card with Smooth Transition */}
-          <AnimatePresence mode="wait">
+<AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
               initial={{ opacity: 0, scale: 0.97, y: 20 }}
@@ -353,9 +332,7 @@ export default function CustomizationPage() {
               className="bg-card border border-border rounded-3xl p-8 sm:p-10 lg:p-12 shadow-md max-w-6xl mx-auto"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-
-                {/* Left Column: Visual Card + Category Overview (5 cols) */}
-                <div className="lg:col-span-5 flex flex-col gap-6">
+<div className="lg:col-span-5 flex flex-col gap-6">
                   <div className="relative h-64 w-full rounded-2xl overflow-hidden border border-border shadow-md group">
                     <Image
                       src={capabilityTabs[activeTab].image}
@@ -379,9 +356,7 @@ export default function CustomizationPage() {
                     </p>
                   </div>
                 </div>
-
-                {/* Right Column: Structured Specification Sheet Table (7 cols) */}
-                <div className="lg:col-span-7 bg-background/80 dark:bg-background/40 backdrop-blur-md rounded-2xl border border-border/80 p-4 sm:p-6 sm:p-7 shadow-xs overflow-hidden">
+<div className="lg:col-span-7 bg-background/80 dark:bg-background/40 backdrop-blur-md rounded-2xl border border-border/80 p-4 sm:p-6 sm:p-7 shadow-xs overflow-hidden">
                   <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-4 border-b border-border/60">
                     <span className="text-xs font-bold uppercase tracking-wider text-secondary flex items-center gap-1.5 font-mono shrink-0">
                       <FileSpreadsheet className="w-4 h-4" /> Lab Specification Sheet
@@ -427,14 +402,10 @@ export default function CustomizationPage() {
 
         </Container>
       </section>
-
-      {/* 4. Editorial Sample Submission Guide & Lab Dispatch Console with Dark/Light Adaptation */}
-      <section className="py-20 md:py-28 bg-background relative overflow-hidden">
+<section className="py-20 md:py-28 bg-background relative overflow-hidden">
         <Container className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-
-            {/* Left Column: Sample Swatch Preparation Guide (7 cols) */}
-            <motion.div
+<motion.div
               initial={{ opacity: 0, x: -45 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
@@ -452,9 +423,7 @@ export default function CustomizationPage() {
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-sans">
                 To enable precise spectral and tactile recipe reproduction, our laboratory requires the following items along with your trial request:
               </p>
-
-              {/* 3 Step Instruction Cards with Semantic Theme */}
-              <div className="space-y-4 mt-2">
+<div className="space-y-4 mt-2">
                 {sampleGuidelines.map((guide, idx) => (
                   <motion.div
                     key={idx}
@@ -480,9 +449,7 @@ export default function CustomizationPage() {
                 ))}
               </div>
             </motion.div>
-
-            {/* Right Column: Executive Lab Hub Console (5 cols) in Brand Navy with Smooth Reveal */}
-            <motion.div
+<motion.div
               initial={{ opacity: 0, x: 45 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}

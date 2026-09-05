@@ -45,13 +45,10 @@ export function CustomizationProcessSection() {
 
   return (
     <SectionWrapper className="bg-muted/30 border-y border-border/60 py-20 md:py-28 overflow-hidden relative">
-      {/* Subtle Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 h-96 bg-secondary/5 rounded-full blur-[140px] pointer-events-none -z-10" />
+<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 h-96 bg-secondary/5 rounded-full blur-[140px] pointer-events-none -z-10" />
 
       <Container className="relative z-10">
-        
-        {/* Section Header */}
-        <motion.div 
+<motion.div 
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -68,15 +65,9 @@ export function CustomizationProcessSection() {
             From molecular R&D to bulk industrial execution — we engineer customized auxiliary chemicals designed specifically for your factory machinery.
           </p>
         </motion.div>
-
-        {/* Connected Industrial Flow Pipeline */}
-        <div className="relative">
-          
-          {/* Continuous Glowing Progress Track (Desktop) */}
-          <div className="hidden lg:block absolute top-7 left-[10%] right-[10%] h-[2.5px] bg-gradient-to-r from-secondary/20 via-secondary to-secondary/20 z-0 pointer-events-none" />
-
-          {/* 4 Pipeline Step Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative z-10">
+<div className="relative">
+<div className="hidden lg:block absolute top-7 left-[10%] right-[10%] h-[2.5px] bg-gradient-to-r from-secondary/20 via-secondary to-secondary/20 z-0 pointer-events-none" />
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative z-10">
             {steps.map((item, idx) => (
               <motion.div
                 key={idx}
@@ -86,19 +77,15 @@ export function CustomizationProcessSection() {
                 transition={{ duration: 0.55, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
                 className="flex flex-col items-center text-center transform-gpu group"
               >
-                {/* Illuminated Step Node Marker */}
-                <div className="relative mb-6">
+<div className="relative mb-6">
                   <div className="w-14 h-14 rounded-2xl bg-card border-2 border-secondary/60 flex items-center justify-center text-secondary shadow-lg group-hover:bg-secondary group-hover:text-[#0A1930] group-hover:border-secondary transition-all duration-300">
                     <item.icon className="w-6 h-6" />
                   </div>
-                  {/* Step Number Badge */}
-                  <span className="absolute -bottom-2 -right-2 px-2 py-0.5 rounded-full bg-secondary text-[#0A1930] text-xs font-extrabold shadow-xs">
+<span className="absolute -bottom-2 -right-2 px-2 py-0.5 rounded-full bg-secondary text-[#0A1930] text-xs font-extrabold shadow-xs">
                     {item.step}
                   </span>
                 </div>
-
-                {/* Pipeline Step Card */}
-                <div className="w-full h-full flex flex-col justify-between p-6 sm:p-7 rounded-3xl bg-card border border-border/80 shadow-xs hover:shadow-xl hover:border-secondary/50 transition-all duration-300 text-left relative overflow-hidden group-hover:-translate-y-1">
+<div className="w-full h-full flex flex-col justify-between p-6 sm:p-7 rounded-3xl bg-card border border-border/80 shadow-xs hover:shadow-xl hover:border-secondary/50 transition-all duration-300 text-left relative overflow-hidden group-hover:-translate-y-1">
                   <div>
                     <span className="text-xs font-bold text-secondary uppercase tracking-widest block mb-1">
                       {item.tag}
@@ -124,9 +111,7 @@ export function CustomizationProcessSection() {
           </div>
 
         </div>
-        
-        {/* Bottom Interactive Sample Submission Card */}
-        <motion.div 
+<motion.div 
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}

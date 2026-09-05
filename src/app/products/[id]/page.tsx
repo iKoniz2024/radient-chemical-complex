@@ -70,12 +70,10 @@ export default async function ProductDetailPage({
   const productImageUrl = getProductImageUrl(product.id, product.categoryId)
   const bannerImage = productImageUrl || categoryBannerMap[product.categoryId] || categoryBannerMap.others
 
-  // Related products from the same category (excluding current)
   const relatedProducts = productsData
     .filter((p) => p.categoryId === product.categoryId && p.id !== product.id)
     .slice(0, 3)
 
-  // Determine physical state and ionic nature hints based on naming
   const isFlake = product.name.toLowerCase().includes("flake")
   const isPowder = product.name.toLowerCase().includes("powder") || product.properties.toLowerCase().includes("powder")
   const isLiquid = !isFlake && !isPowder
@@ -88,17 +86,14 @@ export default async function ProductDetailPage({
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Hero Header with Smooth Fixed Parallax Banner */}
-      <div
+<div
         className="relative py-24 sm:py-28 md:py-32 min-h-[360px] flex items-center text-white bg-cover bg-center bg-no-repeat bg-fixed [backface-visibility:hidden] [transform-style:preserve-3d] overflow-hidden bg-primary"
         style={{ backgroundImage: `url('${bannerImage}')` }}
       >
-        {/* Soft bottom gradient to preserve original image vividness while ensuring crisp readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1930]/95 via-[#0A1930]/40 to-transparent z-0 pointer-events-none" />
+<div className="absolute inset-0 bg-gradient-to-t from-[#0A1930]/95 via-[#0A1930]/40 to-transparent z-0 pointer-events-none" />
 
         <Container className="relative z-10">
-          {/* Breadcrumb Navigation */}
-          <div className="flex flex-wrap items-center gap-2 text-sm text-white/80 mb-6 font-medium">
+<div className="flex flex-wrap items-center gap-2 text-sm text-white/80 mb-6 font-medium">
             <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
             <ChevronRight className="w-3.5 h-3.5" />
             <Link href="/products" className="hover:text-secondary transition-colors">Products</Link>
@@ -159,17 +154,11 @@ export default async function ProductDetailPage({
           </div>
         </Container>
       </div>
-
-      {/* Main Product Content Section */}
-      <SectionWrapper className="bg-muted/30 py-16">
+<SectionWrapper className="bg-muted/30 py-16">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-
-            {/* Left Content Area (8 Cols) */}
-            <div className="lg:col-span-8 flex flex-col gap-10">
-
-              {/* Product Visual Showcase & Quick Badges */}
-              <div className="bg-background border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div className="lg:col-span-8 flex flex-col gap-10">
+<div className="bg-background border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <div className="relative h-72 sm:h-96 w-full overflow-hidden bg-primary/5">
                   <Image
                     src={productImageUrl}
@@ -180,9 +169,7 @@ export default async function ProductDetailPage({
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/20" />
-
-                  {/* Floating Tag */}
-                  <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-3">
+<div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-3">
                     <div className="bg-background/90 backdrop-blur-md px-4 py-2 rounded-2xl border border-border/80 shadow-md">
                       <p className="text-xs text-muted-foreground uppercase font-semibold tracking-wider">Product Category</p>
                       <p className="text-sm font-bold text-foreground">{category?.title ?? "Textile Auxiliary"}</p>
@@ -198,9 +185,7 @@ export default async function ProductDetailPage({
                     </div>
                   </div>
                 </div>
-
-                {/* Key Technical Matrix */}
-                <div className="p-6 md:p-8 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-border bg-card">
+<div className="p-6 md:p-8 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-border bg-card">
                   <div className="flex flex-col gap-1">
                     <span className="text-xs text-muted-foreground font-medium flex items-center gap-1.5">
                       <Layers className="w-3.5 h-3.5 text-secondary" /> Physical Form
@@ -230,9 +215,7 @@ export default async function ProductDetailPage({
                   </div>
                 </div>
               </div>
-
-              {/* Properties & Functional Uses */}
-              <div className="bg-background border border-border rounded-3xl p-8 md:p-10 shadow-sm">
+<div className="bg-background border border-border rounded-3xl p-8 md:p-10 shadow-sm">
                 <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border">
                   <div className="w-10 h-10 rounded-xl bg-secondary/15 flex items-center justify-center text-secondary">
                     <FlaskConical className="w-5 h-5" />
@@ -248,9 +231,7 @@ export default async function ProductDetailPage({
                     {product.properties}
                   </p>
                 </div>
-
-                {/* Benefits Grid */}
-                <div className="mt-8 pt-6 border-t border-border">
+<div className="mt-8 pt-6 border-t border-border">
                   <h3 className="font-montserrat text-lg font-bold text-foreground mb-4">Key Industrial Advantages</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {[
@@ -269,9 +250,7 @@ export default async function ProductDetailPage({
                   </div>
                 </div>
               </div>
-
-              {/* Compatible Fibers & Applications */}
-              <div className="bg-background border border-border rounded-3xl p-8 shadow-sm">
+<div className="bg-background border border-border rounded-3xl p-8 shadow-sm">
                 <h3 className="font-montserrat text-lg font-bold text-foreground mb-4">Recommended Substrates & Fibers</h3>
                 <div className="flex flex-wrap gap-2.5">
                   {["100% Cotton", "Polyester (PET)", "Denim & Indigo Fabrics", "Cotton / Poly Blends", "Viscose & Rayon", "Wool & Silk", "Synthetic PSF Fibers"].map((fiber, idx) => (
@@ -283,12 +262,8 @@ export default async function ProductDetailPage({
               </div>
 
             </div>
-
-            {/* Right Sticky Sidebar (4 Cols) */}
-            <div className="lg:col-span-4 flex flex-col gap-6">
-
-              {/* Sample Request Card */}
-              <div className="bg-[#0A1930] text-white rounded-3xl p-8 shadow-2xl relative overflow-hidden sticky top-24 border border-white/10">
+<div className="lg:col-span-4 flex flex-col gap-6">
+<div className="bg-[#0A1930] text-white rounded-3xl p-8 shadow-2xl relative overflow-hidden sticky top-24 border border-white/10">
                 <div className="absolute top-0 right-0 -translate-y-1/3 translate-x-1/3 w-40 h-40 bg-secondary/20 rounded-full blur-3xl pointer-events-none" />
 
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/20 text-secondary text-xs font-bold uppercase tracking-wider mb-4">
@@ -318,9 +293,7 @@ export default async function ProductDetailPage({
                     <Clock className="w-4 h-4 text-secondary" /> Fast 48h Dispatch
                   </span>
                 </div>
-
-                {/* Custom R&D Box inside sidebar */}
-                <div className="mt-8 pt-6 border-t border-white/10">
+<div className="mt-8 pt-6 border-t border-white/10">
                   <h4 className="font-montserrat text-sm font-bold text-white mb-2 flex items-center gap-2">
                     <FlaskConical className="w-4 h-4 text-secondary" /> Need Custom Modification?
                   </h4>
@@ -333,9 +306,7 @@ export default async function ProductDetailPage({
                     </Link>
                   </Button>
                 </div>
-
-                {/* Direct Contact info */}
-                <div className="mt-6 pt-6 border-t border-white/10 text-xs text-slate-400 flex flex-col gap-2">
+<div className="mt-6 pt-6 border-t border-white/10 text-xs text-slate-400 flex flex-col gap-2">
                   <p className="font-semibold text-slate-300 uppercase tracking-wider text-xs">Technical Inquiries</p>
                   <a href="tel:+8801833183921" className="flex items-center gap-2 hover:text-secondary transition-colors">
                     <Phone className="w-3.5 h-3.5 text-secondary" /> +880 1833-183921
@@ -349,9 +320,7 @@ export default async function ProductDetailPage({
             </div>
 
           </div>
-
-          {/* Related Products in the Same Category */}
-          {relatedProducts.length > 0 && (
+{relatedProducts.length > 0 && (
             <div className="mt-20 pt-12 border-t border-border">
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
                 <div>

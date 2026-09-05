@@ -31,8 +31,7 @@ function TimelineItem({ item, idx }: { item: typeof timelineData[number]; idx: n
       ref={ref}
       className={`relative flex items-start md:items-center ${isEven ? "md:flex-row-reverse" : "md:flex-row"}`}
     >
-      {/* Center Node */}
-      <motion.div
+<motion.div
         initial={{ scale: 0.6, opacity: 0 }}
         animate={showCard
           ? { scale: isHovered ? 1.12 : 1, opacity: 1 }
@@ -53,9 +52,7 @@ function TimelineItem({ item, idx }: { item: typeof timelineData[number]; idx: n
           className="w-2.5 h-2.5 bg-secondary rounded-full"
         />
       </motion.div>
-
-      {/* Content Box */}
-      <div className={`w-full pl-16 md:pl-0 md:w-1/2 ${isEven ? "md:pl-12" : "md:pr-12 text-left md:text-right"}`}>
+<div className={`w-full pl-16 md:pl-0 md:w-1/2 ${isEven ? "md:pl-12" : "md:pr-12 text-left md:text-right"}`}>
         <motion.div
           initial={{ opacity: 0, x: isEven ? 28 : -28 }}
           animate={showCard
@@ -110,8 +107,7 @@ export function TimelineSection() {
         </motion.div>
 
         <div ref={sectionRef} className="relative mt-16 max-w-4xl mx-auto">
-          {/* Vertical Line */}
-          <motion.div
+<motion.div
             initial={{ scaleY: 0 }}
             animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
             transition={{ type: "spring" as const, stiffness: 60, damping: 20, delay: 0.2 }}
