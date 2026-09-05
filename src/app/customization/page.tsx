@@ -7,16 +7,16 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { 
-  FlaskConical, 
-  Send, 
-  Rocket, 
-  Sparkles, 
-  ArrowRight, 
-  CheckCircle2, 
-  ShieldCheck, 
-  Droplet, 
-  Flame, 
+import {
+  FlaskConical,
+  Send,
+  Rocket,
+  Sparkles,
+  ArrowRight,
+  CheckCircle2,
+  ShieldCheck,
+  Droplet,
+  Flame,
   Microscope,
   Phone,
   Mail,
@@ -149,24 +149,24 @@ export default function CustomizationPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
-      
+
       {/* 1. Hero Banner with Smooth Fixed Parallax */}
-      <div 
+      <div
         className="relative py-28 sm:py-32 md:py-36 min-h-[380px] flex items-center text-white bg-cover bg-center bg-no-repeat bg-fixed [backface-visibility:hidden] [transform-style:preserve-3d] overflow-hidden border-b border-white/10 bg-primary"
         style={{ backgroundImage: `url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=1920')` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/70 via-[#060D18]/30 to-black/15 pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/95 via-[#060D18]/55 to-transparent pointer-events-none z-0" />
 
         {/* Ambient Subtle Pulsing Light in Hero */}
-        <motion.div 
+        <motion.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.45, 0.2] }}
           transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
           className="absolute top-1/3 left-1/2 -translate-x-1/2 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] pointer-events-none -z-0"
         />
 
         <Container className="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center">
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, scale: 0.9, y: -20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
@@ -175,7 +175,7 @@ export default function CustomizationPage() {
             <Sparkles className="w-3.5 h-3.5 text-secondary animate-pulse" /> Bespoke Chemical Formulation &amp; Matching
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -184,7 +184,7 @@ export default function CustomizationPage() {
             Custom <span className="text-secondary">R&amp;D &amp; Fabric</span> Matching
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
@@ -220,8 +220,8 @@ export default function CustomizationPage() {
       {/* 2. Editorial Photo-Driven 4-Step Process Showcase with Dark/Light Support */}
       <section className="py-20 md:py-28 bg-background border-b border-border/60 relative overflow-hidden">
         <Container className="relative z-10">
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 35 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -262,7 +262,7 @@ export default function CustomizationPage() {
                       sizes="(max-width: 768px) 100vw, 25vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
-                    
+
                     <span className="absolute top-4 left-4 px-3 py-1 rounded-xl bg-slate-900/85 backdrop-blur-md text-white font-mono text-xs font-bold border border-white/20 shadow-xs">
                       STEP {step.step}
                     </span>
@@ -304,8 +304,8 @@ export default function CustomizationPage() {
       {/* 3. Interactive Technical Specification Deck & TDS Matrix */}
       <section className="py-20 md:py-28 bg-card/40 border-b border-border/60 relative overflow-hidden">
         <Container className="relative z-10">
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 35 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -331,11 +331,10 @@ export default function CustomizationPage() {
                 onClick={() => setActiveTab(idx)}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className={`flex items-center gap-2.5 px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${
-                  activeTab === idx
+                className={`flex items-center gap-2.5 px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${activeTab === idx
                     ? "bg-[#0A1930] dark:bg-secondary text-white dark:text-[#0A1930] shadow-lg shadow-black/15 dark:shadow-secondary/20"
                     : "bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80 border border-border/70"
-                }`}
+                  }`}
               >
                 <tab.icon className={`w-4 h-4 ${activeTab === idx ? "text-secondary dark:text-[#0A1930]" : "text-muted-foreground"}`} />
                 {tab.name}
@@ -354,7 +353,7 @@ export default function CustomizationPage() {
               className="bg-card border border-border rounded-3xl p-8 sm:p-10 lg:p-12 shadow-md max-w-6xl mx-auto"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-                
+
                 {/* Left Column: Visual Card + Category Overview (5 cols) */}
                 <div className="lg:col-span-5 flex flex-col gap-6">
                   <div className="relative h-64 w-full rounded-2xl overflow-hidden border border-border shadow-md group">
@@ -395,8 +394,8 @@ export default function CustomizationPage() {
 
                   <div className="divide-y divide-border/50">
                     {capabilityTabs[activeTab].specTable.map((spec, sIdx) => (
-                      <motion.div 
-                        key={sIdx} 
+                      <motion.div
+                        key={sIdx}
                         initial={{ opacity: 0, x: -15 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.55, delay: sIdx * 0.08, ease: [0.22, 1, 0.36, 1] }}
@@ -433,9 +432,9 @@ export default function CustomizationPage() {
       <section className="py-20 md:py-28 bg-background relative overflow-hidden">
         <Container className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-            
+
             {/* Left Column: Sample Swatch Preparation Guide (7 cols) */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -45 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
@@ -457,8 +456,8 @@ export default function CustomizationPage() {
               {/* 3 Step Instruction Cards with Semantic Theme */}
               <div className="space-y-4 mt-2">
                 {sampleGuidelines.map((guide, idx) => (
-                  <motion.div 
-                    key={idx} 
+                  <motion.div
+                    key={idx}
                     initial={{ opacity: 0, y: 25 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -483,7 +482,7 @@ export default function CustomizationPage() {
             </motion.div>
 
             {/* Right Column: Executive Lab Hub Console (5 cols) in Brand Navy with Smooth Reveal */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 45 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
@@ -491,10 +490,10 @@ export default function CustomizationPage() {
               className="lg:col-span-5 transform-gpu"
             >
               <div className="rounded-3xl bg-[#0A1930] dark:bg-card text-white dark:text-foreground border border-white/15 dark:border-secondary/30 p-8 sm:p-10 shadow-2xl relative overflow-hidden flex flex-col gap-6 group">
-                <motion.div 
+                <motion.div
                   animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
                   transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                  className="absolute top-0 right-0 w-60 h-60 bg-secondary/20 rounded-full blur-3xl pointer-events-none" 
+                  className="absolute top-0 right-0 w-60 h-60 bg-secondary/20 rounded-full blur-3xl pointer-events-none"
                 />
 
                 <div className="flex items-center gap-4 relative z-10">

@@ -79,15 +79,15 @@ export default function ProductsContent() {
   return (
     <>
       {/* Hero Banner with Smooth Fixed Parallax and Live Search Bar */}
-      <div 
+      <div
         className="relative py-28 sm:py-32 md:py-36 min-h-[380px] flex items-center text-white bg-cover bg-center bg-no-repeat bg-fixed [backface-visibility:hidden] [transform-style:preserve-3d] overflow-hidden border-b border-white/10 bg-primary"
         style={{ backgroundImage: `url(${bannerImage})` }}
       >
         {/* Soft bottom gradient to preserve original image vividness while ensuring crisp readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/70 via-[#060D18]/30 to-black/15 pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/90 via-[#060D18]/45 to-transparent pointer-events-none z-0" />
 
         <Container className="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center">
-          
+
           <div className="inline-flex items-center gap-2 rounded-full border border-secondary/40 bg-secondary/20 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-secondary mb-4 backdrop-blur-md shadow-md">
             <Sparkles className="w-3.5 h-3.5 text-secondary" /> Sustainable Textile Auxiliary Chemistry
           </div>
@@ -97,7 +97,7 @@ export default function ProductsContent() {
           </h1>
 
           <p className="text-base sm:text-lg text-white font-medium max-w-2xl mx-auto leading-relaxed mb-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
-            {category 
+            {category
               ? selectedCategory?.description ?? "Explore our comprehensive range of specialized auxiliary chemicals."
               : "Discover over 80+ specialized, eco-certified textile auxiliary formulations engineered for maximum efficiency and sustainable processing."
             }
@@ -146,7 +146,7 @@ export default function ProductsContent() {
       <SectionWrapper className="bg-background py-16 md:py-24">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-10">
-            
+
             {/* Left Sidebar Category Filter */}
             <aside className="lg:col-span-1">
               <CategoryFilter activeCategoryId={category} />
@@ -154,7 +154,7 @@ export default function ProductsContent() {
 
             {/* Main Product Showcase (3 Cols) */}
             <main className="lg:col-span-3 flex flex-col gap-10">
-              
+
               {/* Header Status Bar */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border/80">
                 <div>

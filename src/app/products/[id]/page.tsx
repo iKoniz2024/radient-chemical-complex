@@ -7,17 +7,17 @@ import { Button } from "@/components/ui/button"
 import { productsData } from "@/data/products"
 import { categoriesData } from "@/data/categories"
 import { getProductImageUrl } from "@/data/productImages"
-import { 
-  ArrowLeft, 
-  CheckCircle2, 
-  Mail, 
-  FlaskConical, 
-  ShieldCheck, 
-  Leaf, 
-  Layers, 
-  Sparkles, 
-  Package, 
-  Clock, 
+import {
+  ArrowLeft,
+  CheckCircle2,
+  Mail,
+  FlaskConical,
+  ShieldCheck,
+  Leaf,
+  Layers,
+  Sparkles,
+  Package,
+  Clock,
   Droplet,
   ChevronRight,
   ArrowRight,
@@ -37,11 +37,11 @@ const categoryBannerMap: Record<string, string> = {
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params
   const product = productsData.find((p) => p.id === id)
-  
+
   if (!product) {
     return { title: 'Product Not Found' }
   }
-  
+
   return {
     title: `${product.name} | Radiant Chemical Complex`,
     description: product.properties.substring(0, 160) + '...',
@@ -89,12 +89,12 @@ export default async function ProductDetailPage({
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Header with Smooth Fixed Parallax Banner */}
-      <div 
+      <div
         className="relative py-24 sm:py-28 md:py-32 min-h-[360px] flex items-center text-white bg-cover bg-center bg-no-repeat bg-fixed [backface-visibility:hidden] [transform-style:preserve-3d] overflow-hidden bg-primary"
         style={{ backgroundImage: `url('${bannerImage}')` }}
       >
         {/* Soft bottom gradient to preserve original image vividness while ensuring crisp readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060D18]/70 via-[#060D18]/30 to-black/15 z-0 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1930]/95 via-[#0A1930]/40 to-transparent z-0 pointer-events-none" />
 
         <Container className="relative z-10">
           {/* Breadcrumb Navigation */}
@@ -164,10 +164,10 @@ export default async function ProductDetailPage({
       <SectionWrapper className="bg-muted/30 py-16">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            
+
             {/* Left Content Area (8 Cols) */}
             <div className="lg:col-span-8 flex flex-col gap-10">
-              
+
               {/* Product Visual Showcase & Quick Badges */}
               <div className="bg-background border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <div className="relative h-72 sm:h-96 w-full overflow-hidden bg-primary/5">
@@ -180,7 +180,7 @@ export default async function ProductDetailPage({
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/20" />
-                  
+
                   {/* Floating Tag */}
                   <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-3">
                     <div className="bg-background/90 backdrop-blur-md px-4 py-2 rounded-2xl border border-border/80 shadow-md">
@@ -286,11 +286,11 @@ export default async function ProductDetailPage({
 
             {/* Right Sticky Sidebar (4 Cols) */}
             <div className="lg:col-span-4 flex flex-col gap-6">
-              
+
               {/* Sample Request Card */}
               <div className="bg-[#0A1930] text-white rounded-3xl p-8 shadow-2xl relative overflow-hidden sticky top-24 border border-white/10">
                 <div className="absolute top-0 right-0 -translate-y-1/3 translate-x-1/3 w-40 h-40 bg-secondary/20 rounded-full blur-3xl pointer-events-none" />
-                
+
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/20 text-secondary text-xs font-bold uppercase tracking-wider mb-4">
                   <Package className="w-3.5 h-3.5" /> Free Sample Trial
                 </div>
@@ -298,7 +298,7 @@ export default async function ProductDetailPage({
                 <h3 className="font-montserrat text-2xl font-bold mb-3 text-white">
                   Request a Lab Sample
                 </h3>
-                
+
                 <p className="text-slate-300 text-sm mb-6 leading-relaxed">
                   Evaluate <strong className="text-secondary">{product.name}</strong> on your own production machinery. We provide complimentary test samples and technical support.
                 </p>
